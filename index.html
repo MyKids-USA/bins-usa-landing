@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bins-USA — Shopify Warehouse Bin Management</title>
+  <meta name="description" content="Organize your Shopify warehouse with bins, scan products, generate pick lists, and track inventory — all in one app." />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Inter', sans-serif; color: #1e293b; background: #fff; }
+
+    /* NAV */
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: #fff; border-bottom: 2px solid #e2e8f0; box-shadow: 0 2px 0 0 #EAB308; padding: 0 40px; height: 64px; display: flex; align-items: center; justify-content: space-between; }
+    .nav-logo { display: flex; align-items: center; gap: 10px; font-size: 22px; font-weight: 800; color: #1e293b; }
+    .nav-logo span { color: #EAB308; }
+    .nav-links { display: flex; gap: 32px; }
+    .nav-links a { text-decoration: none; color: #64748b; font-size: 14px; font-weight: 500; transition: color 0.2s; }
+    .nav-links a:hover { color: #1e293b; }
+    .nav-cta { background: #2563eb; color: #fff; padding: 10px 20px; border-radius: 8px; font-size: 14px; font-weight: 600; text-decoration: none; transition: background 0.2s; }
+    .nav-cta:hover { background: #1d4ed8; }
+
+    /* HERO */
+    .hero { padding: 140px 40px 80px; text-align: center; background: linear-gradient(180deg, #f8fafc 0%, #fff 100%); }
+    .hero-badge { display: inline-block; background: #fef9c3; color: #854d0e; padding: 6px 16px; border-radius: 999px; font-size: 13px; font-weight: 600; margin-bottom: 24px; border: 1px solid #fde047; }
+    .hero h1 { font-size: clamp(36px, 6vw, 64px); font-weight: 800; line-height: 1.1; margin-bottom: 24px; }
+    .hero h1 span { color: #2563eb; }
+    .hero p { font-size: 20px; color: #64748b; max-width: 600px; margin: 0 auto 40px; line-height: 1.6; }
+    .hero-buttons { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+    .btn-primary { background: #2563eb; color: #fff; padding: 16px 32px; border-radius: 10px; font-size: 16px; font-weight: 700; text-decoration: none; transition: all 0.2s; display: flex; align-items: center; gap: 8px; }
+    .btn-primary:hover { background: #1d4ed8; transform: translateY(-1px); }
+    .btn-secondary { background: #fff; color: #1e293b; padding: 16px 32px; border-radius: 10px; font-size: 16px; font-weight: 600; text-decoration: none; border: 2px solid #e2e8f0; transition: all 0.2s; }
+    .btn-secondary:hover { border-color: #2563eb; color: #2563eb; }
+    .hero-stats { display: flex; gap: 48px; justify-content: center; margin-top: 64px; flex-wrap: wrap; }
+    .hero-stat { text-align: center; }
+    .hero-stat strong { display: block; font-size: 32px; font-weight: 800; color: #1e293b; }
+    .hero-stat span { font-size: 14px; color: #64748b; }
+
+    /* FEATURES */
+    .section { padding: 80px 40px; max-width: 1200px; margin: 0 auto; }
+    .section-label { text-align: center; font-size: 13px; font-weight: 600; color: #2563eb; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 12px; }
+    .section-title { text-align: center; font-size: clamp(28px, 4vw, 40px); font-weight: 800; margin-bottom: 16px; }
+    .section-subtitle { text-align: center; font-size: 18px; color: #64748b; max-width: 600px; margin: 0 auto 64px; }
+    .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; }
+    .feature-card { background: #f8fafc; border-radius: 16px; padding: 32px; border: 1px solid #e2e8f0; transition: all 0.2s; }
+    .feature-card:hover { border-color: #2563eb; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(37,99,235,0.1); }
+    .feature-icon { font-size: 36px; margin-bottom: 16px; }
+    .feature-card h3 { font-size: 18px; font-weight: 700; margin-bottom: 8px; }
+    .feature-card p { font-size: 14px; color: #64748b; line-height: 1.6; }
+    .feature-badge { display: inline-block; background: #faf5ff; color: #7c3aed; padding: 3px 10px; border-radius: 999px; font-size: 11px; font-weight: 600; margin-top: 12px; border: 1px solid #e9d5ff; }
+
+    /* HOW IT WORKS */
+    .how-section { background: #f8fafc; padding: 80px 40px; }
+    .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 32px; max-width: 1200px; margin: 0 auto; }
+    .step { text-align: center; }
+    .step-number { width: 56px; height: 56px; background: #2563eb; color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 22px; font-weight: 800; margin: 0 auto 20px; }
+    .step h3 { font-size: 18px; font-weight: 700; margin-bottom: 8px; }
+    .step p { font-size: 14px; color: #64748b; line-height: 1.6; }
+
+    /* PRICING */
+    .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; max-width: 1000px; margin: 0 auto; }
+    .pricing-card { border-radius: 16px; padding: 32px; border: 2px solid #e2e8f0; position: relative; }
+    .pricing-card.popular { border-color: #2563eb; background: #eff6ff; }
+    .pricing-card.pro { border-color: #9333ea; background: #faf5ff; }
+    .pricing-card.enterprise { border-color: #EAB308; background: #fefce8; }
+    .pricing-badge { position: absolute; top: -14px; left: 50%; transform: translateX(-50%); background: #2563eb; color: #fff; padding: 4px 16px; border-radius: 999px; font-size: 12px; font-weight: 700; white-space: nowrap; }
+    .pricing-badge.pro { background: #9333ea; }
+    .pricing-badge.enterprise { background: #EAB308; color: #1e293b; }
+    .pricing-card h3 { font-size: 22px; font-weight: 800; margin-bottom: 8px; }
+    .price { font-size: 48px; font-weight: 800; margin: 16px 0 4px; }
+    .price span { font-size: 16px; font-weight: 500; color: #64748b; }
+    .pricing-desc { font-size: 14px; color: #64748b; margin-bottom: 24px; }
+    .pricing-features { list-style: none; margin-bottom: 32px; }
+    .pricing-features li { font-size: 14px; padding: 6px 0; border-bottom: 1px solid rgba(0,0,0,0.05); display: flex; align-items: center; gap: 8px; }
+    .pricing-features li:last-child { border-bottom: none; }
+    .btn-plan { display: block; text-align: center; padding: 14px; border-radius: 10px; font-size: 15px; font-weight: 700; text-decoration: none; transition: all 0.2s; }
+    .btn-plan.basic { background: #2563eb; color: #fff; }
+    .btn-plan.basic:hover { background: #1d4ed8; }
+    .btn-plan.pro { background: #9333ea; color: #fff; }
+    .btn-plan.pro:hover { background: #7c3aed; }
+    .btn-plan.enterprise { background: #EAB308; color: #1e293b; }
+    .btn-plan.enterprise:hover { background: #ca8a04; }
+
+    /* FAQ */
+    .faq-section { background: #f8fafc; padding: 80px 40px; }
+    .faq-grid { max-width: 800px; margin: 0 auto; display: flex; flex-direction: column; gap: 16px; }
+    .faq-item { background: #fff; border-radius: 12px; padding: 24px; border: 1px solid #e2e8f0; }
+    .faq-item h4 { font-size: 16px; font-weight: 700; margin-bottom: 8px; }
+    .faq-item p { font-size: 14px; color: #64748b; line-height: 1.6; }
+
+    /* FOOTER */
+    footer { background: #1e293b; color: #fff; padding: 48px 40px; }
+    .footer-inner { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 24px; }
+    .footer-logo { font-size: 20px; font-weight: 800; }
+    .footer-logo span { color: #EAB308; }
+    .footer-links { display: flex; gap: 24px; }
+    .footer-links a { color: #94a3b8; font-size: 14px; text-decoration: none; transition: color 0.2s; }
+    .footer-links a:hover { color: #fff; }
+    .footer-copy { color: #64748b; font-size: 13px; width: 100%; text-align: center; margin-top: 24px; border-top: 1px solid #334155; padding-top: 24px; }
+
+    @media (max-width: 768px) {
+      nav { padding: 0 20px; }
+      .nav-links { display: none; }
+      .hero { padding: 100px 20px 60px; }
+      .section { padding: 60px 20px; }
+      .how-section, .faq-section { padding: 60px 20px; }
+      footer { padding: 40px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <div class="nav-logo">📦 Bins<span>-USA</span></div>
+    <div class="nav-links">
+      <a href="#features">Features</a>
+      <a href="#how">How it works</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#faq">FAQ</a>
+    </div>
+    <a href="https://apps.shopify.com/bins-usa" class="nav-cta">Install Free →</a>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-badge">🚀 Now available on Shopify App Store</div>
+    <h1>Warehouse Management<br/>Made <span>Simple</span></h1>
+    <p>Organize your Shopify inventory with bins, scan products, generate pick lists, and ship faster — all from one powerful app.</p>
+    <div class="hero-buttons">
+      <a href="https://apps.shopify.com/bins-usa" class="btn-primary">🛍️ Install on Shopify — Free Trial</a>
+      <a href="#how" class="btn-secondary">See how it works</a>
+    </div>
+    <div class="hero-stats">
+      <div class="hero-stat"><strong>14 days</strong><span>Free trial</span></div>
+      <div class="hero-stat"><strong>∞</strong><span>Unlimited bins</span></div>
+      <div class="hero-stat"><strong>3 plans</strong><span>Basic, Pro, Enterprise</span></div>
+      <div class="hero-stat"><strong>5 min</strong><span>Setup time</span></div>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section class="section" id="features">
+    <div class="section-label">Features</div>
+    <h2 class="section-title">Everything your warehouse needs</h2>
+    <p class="section-subtitle">From scanning barcodes to generating purchase orders — Bins-USA has you covered.</p>
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon">📦</div>
+        <h3>Bin Management</h3>
+        <p>Create unlimited bins per location. Assign products, track quantities, and print QR code labels for every bin.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🔍</div>
+        <h3>Barcode Scanning</h3>
+        <p>Scan any SKU or barcode to instantly find which bin a product is in. Works with any barcode scanner.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">📋</div>
+        <h3>Pick Lists</h3>
+        <p>Generate detailed pick lists for every Shopify order. Scan items to mark them as picked and print for your team.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">📥</div>
+        <h3>Receive Inventory</h3>
+        <p>Scan incoming products to add them to bins and automatically update Shopify inventory in real time.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🔄</div>
+        <h3>Cycle Count</h3>
+        <p>Count products in any bin and sync the differences directly to Shopify inventory with one click.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">📊</div>
+        <h3>Reports</h3>
+        <p>View inventory value by bin with charts. Export to Excel or print. Know exactly what your warehouse is worth.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">📈</div>
+        <h3>Sales Forecast</h3>
+        <p>Analyze sales velocity and get suggested order quantities. Never run out of stock again.</p>
+        <span class="feature-badge">⭐ Pro</span>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">📝</div>
+        <h3>Purchase Orders</h3>
+        <p>Create purchase orders directly from your forecast. Track status from draft to received.</p>
+        <span class="feature-badge">⭐ Pro</span>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🏭</div>
+        <h3>Vendor Management</h3>
+        <p>Manage suppliers, import products from Shopify, and track costs per vendor.</p>
+        <span class="feature-badge">⭐ Pro</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="how-section" id="how">
+    <div class="section-label" style="text-align:center">How it works</div>
+    <h2 class="section-title" style="text-align:center;margin-bottom:12px">Up and running in 5 minutes</h2>
+    <p class="section-subtitle">No complicated setup. No training required.</p>
+    <div class="steps">
+      <div class="step">
+        <div class="step-number">1</div>
+        <h3>Install the app</h3>
+        <p>Install Bins-USA from the Shopify App Store. Start your 14-day free trial — no credit card required.</p>
+      </div>
+      <div class="step">
+        <div class="step-number">2</div>
+        <h3>Create your bins</h3>
+        <p>Create bins that match your physical warehouse. Name them BIN-001, SHELF-A, or anything you like.</p>
+      </div>
+      <div class="step">
+        <div class="step-number">3</div>
+        <h3>Assign products</h3>
+        <p>Scan or search for products and assign them to bins. Print QR labels to attach to each physical bin.</p>
+      </div>
+      <div class="step">
+        <div class="step-number">4</div>
+        <h3>Start picking faster</h3>
+        <p>When orders come in, open the pick list. Each item shows its bin location so your team picks in seconds.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section class="section" id="pricing">
+    <div class="section-label">Pricing</div>
+    <h2 class="section-title">Simple, transparent pricing</h2>
+    <p class="section-subtitle">Start free for 14 days. No credit card required. Cancel anytime.</p>
+    <div class="pricing-grid">
+      <div class="pricing-card popular">
+        <div class="pricing-badge">⭐ Most Popular</div>
+        <h3>Basic</h3>
+        <div class="price">$24.99<span>/mo</span></div>
+        <p class="pricing-desc">Everything you need to organize your warehouse.</p>
+        <ul class="pricing-features">
+          <li>✅ Unlimited bins</li>
+          <li>✅ Barcode & SKU scanning</li>
+          <li>✅ Pick lists & printing</li>
+          <li>✅ Cycle counting</li>
+          <li>✅ Bin transfers</li>
+          <li>✅ Receive inventory</li>
+          <li>✅ Reports & Excel export</li>
+          <li>✅ Multi-location support</li>
+          <li>✅ 14-day free trial</li>
+        </ul>
+        <a href="https://apps.shopify.com/bins-usa" class="btn-plan basic">Start Free Trial →</a>
+      </div>
+      <div class="pricing-card pro">
+        <div class="pricing-badge pro">⭐ Pro</div>
+        <h3>Pro</h3>
+        <div class="price">$69.99<span>/mo</span></div>
+        <p class="pricing-desc">Advanced tools for growing warehouses.</p>
+        <ul class="pricing-features">
+          <li>✅ Everything in Basic</li>
+          <li>✅ Sales Forecast</li>
+          <li>✅ Suggested order quantities</li>
+          <li>✅ Purchase Orders</li>
+          <li>✅ Vendor Management</li>
+          <li>✅ Reports Pro (6 reports)</li>
+          <li>✅ Dead stock analysis</li>
+          <li>✅ Margin reports</li>
+          <li>✅ 14-day free trial</li>
+        </ul>
+        <a href="https://apps.shopify.com/bins-usa" class="btn-plan pro">Start Free Trial →</a>
+      </div>
+      <div class="pricing-card enterprise">
+        <div class="pricing-badge enterprise">🏢 Enterprise</div>
+        <h3>Enterprise</h3>
+        <div class="price">$199<span>/mo</span></div>
+        <p class="pricing-desc">For large warehouses and multi-store operations.</p>
+        <ul class="pricing-features">
+          <li>✅ Everything in Pro</li>
+          <li>✅ Multi-store support</li>
+          <li>✅ User roles & permissions</li>
+          <li>✅ Batch picking</li>
+          <li>✅ Route optimization</li>
+          <li>✅ API access & Webhooks</li>
+          <li>✅ QuickBooks integration</li>
+          <li>✅ Priority support</li>
+          <li>✅ Dedicated onboarding</li>
+        </ul>
+        <a href="mailto:sales@mykids-usa.com" class="btn-plan enterprise">Contact Sales →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq-section" id="faq">
+    <div class="section-label" style="text-align:center">FAQ</div>
+    <h2 class="section-title" style="text-align:center;margin-bottom:48px">Frequently asked questions</h2>
+    <div class="faq-grid">
+      <div class="faq-item">
+        <h4>Do I need any special hardware?</h4>
+        <p>No. Bins-USA works with any standard barcode scanner or you can type SKUs manually. No special hardware required.</p>
+      </div>
+      <div class="faq-item">
+        <h4>Does it work with multiple Shopify locations?</h4>
+        <p>Yes. Bins-USA supports multiple Shopify locations. Each location has its own independent set of bins.</p>
+      </div>
+      <div class="faq-item">
+        <h4>Can I cancel anytime?</h4>
+        <p>Yes. Cancel anytime directly from the app. Your subscription remains active until the end of the billing period.</p>
+      </div>
+      <div class="faq-item">
+        <h4>Is there an annual plan?</h4>
+        <p>Yes! Basic annual is $239.90/year (save $59.98) and Pro annual is $599.90/year (save $239.98).</p>
+      </div>
+      <div class="faq-item">
+        <h4>What happens to my data if I cancel?</h4>
+        <p>Your bin and inventory data is retained for 90 days after cancellation. Resubscribe anytime to restore everything.</p>
+      </div>
+      <div class="faq-item">
+        <h4>How long does setup take?</h4>
+        <p>Most users are up and running in under 5 minutes. Install the app, create your first bin, and start scanning.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section style="background: #2563eb; padding: 80px 40px; text-align: center;">
+    <h2 style="font-size: clamp(28px,4vw,40px); font-weight: 800; color: #fff; margin-bottom: 16px;">Ready to organize your warehouse?</h2>
+    <p style="font-size: 18px; color: #bfdbfe; margin-bottom: 40px;">Start your 14-day free trial today. No credit card required.</p>
+    <a href="https://apps.shopify.com/bins-usa" style="background: #EAB308; color: #1e293b; padding: 18px 40px; border-radius: 10px; font-size: 18px; font-weight: 800; text-decoration: none; display: inline-block; transition: all 0.2s;">🛍️ Install on Shopify — It's Free →</a>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-logo">📦 Bins<span>-USA</span></div>
+      <div class="footer-links">
+        <a href="#features">Features</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#faq">FAQ</a>
+        <a href="mailto:support@bins-usa.com">Support</a>
+        <a href="mailto:sales@mykids-usa.com">Contact</a>
+      </div>
+    </div>
+    <div class="footer-copy">© 2026 Bins-USA. All rights reserved. Made with ❤️ for Shopify merchants.</div>
+  </footer>
+
+</body>
+</html>
