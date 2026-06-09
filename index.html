@@ -60,7 +60,7 @@
 
     /* PRICING */
     .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 24px; max-width: 1280px; margin: 0 auto; }
-    .pricing-card { border-radius: 16px; padding: 32px; border: 2px solid #e2e8f0; position: relative; }
+    .pricing-card { border-radius: 16px; padding: 32px; border: 2px solid #e2e8f0; position: relative; display: flex; flex-direction: column; }
     .pricing-card.popular { border-color: #2563eb; background: #eff6ff; }
     .pricing-card.pro { border-color: #9333ea; background: #faf5ff; }
     .pricing-card.enterprise { border-color: #EAB308; background: #fefce8; }
@@ -74,7 +74,7 @@
     .pricing-features { list-style: none; margin-bottom: 32px; }
     .pricing-features li { font-size: 14px; padding: 6px 0; border-bottom: 1px solid rgba(0,0,0,0.05); display: flex; align-items: center; gap: 8px; }
     .pricing-features li:last-child { border-bottom: none; }
-    .btn-plan { display: block; text-align: center; padding: 14px; border-radius: 10px; font-size: 15px; font-weight: 700; text-decoration: none; transition: all 0.2s; }
+    .btn-plan { display: block; text-align: center; padding: 14px; border-radius: 10px; font-size: 15px; font-weight: 700; text-decoration: none; transition: all 0.2s; margin-top: auto; }
     .btn-plan.basic { background: #2563eb; color: #fff; }
     .btn-plan.basic:hover { background: #1d4ed8; }
     .btn-plan.pro { background: #9333ea; color: #fff; }
