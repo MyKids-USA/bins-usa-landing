@@ -59,7 +59,7 @@
     .step p { font-size: 14px; color: #64748b; line-height: 1.6; }
 
     /* PRICING */
-    .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; max-width: 1000px; margin: 0 auto; }
+    .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 24px; max-width: 1280px; margin: 0 auto; }
     .pricing-card { border-radius: 16px; padding: 32px; border: 2px solid #e2e8f0; position: relative; }
     .pricing-card.popular { border-color: #2563eb; background: #eff6ff; }
     .pricing-card.pro { border-color: #9333ea; background: #faf5ff; }
@@ -144,7 +144,7 @@
     <div class="hero-stats">
       <div class="hero-stat"><strong>14 days</strong><span>Free trial</span></div>
       <div class="hero-stat"><strong>∞</strong><span>Unlimited bins</span></div>
-      <div class="hero-stat"><strong>3 plans</strong><span>Basic, Pro, WMS Cloud</span></div>
+      <div class="hero-stat"><strong>Free</strong><span>plan available</span></div>
       <div class="hero-stat"><strong>5 min</strong><span>Setup time</span></div>
     </div>
   </section>
@@ -241,20 +241,33 @@
     <h2 class="section-title">Simple, transparent pricing</h2>
     <p class="section-subtitle">Start free for 14 days. No credit card required. Cancel anytime.</p>
     <div class="pricing-grid">
+      <div class="pricing-card">
+        <div class="pricing-badge" style="background:#64748b;">🎁 Free</div>
+        <h3>Free</h3>
+        <div class="price">$0<span>/mo</span></div>
+        <p class="pricing-desc">Try Bins-USA at no cost.</p>
+        <ul class="pricing-features">
+          <li>✅ Up to 3 bins</li>
+          <li>✅ Up to 50 products</li>
+          <li>✅ Barcode scanning</li>
+          <li>✅ Basic reports</li>
+        </ul>
+        <a href="https://apps.shopify.com/bins-usa" class="btn-plan" style="background:#fff;color:#2563eb;border:2px solid #2563eb;">Install Free →</a>
+      </div>
       <div class="pricing-card popular">
         <div class="pricing-badge">⭐ Most Popular</div>
         <h3>Basic</h3>
         <div class="price">$24.99<span>/mo</span></div>
+        <div style="font-size:13px;color:#64748b;margin:-2px 0 14px;">or $239.90/year · save 20%</div>
         <p class="pricing-desc">Everything you need to organize your warehouse.</p>
         <ul class="pricing-features">
           <li>✅ Unlimited bins</li>
-          <li>✅ Barcode & SKU scanning</li>
-          <li>✅ Pick lists & printing</li>
-          <li>✅ Cycle counting</li>
-          <li>✅ Bin transfers</li>
+          <li>✅ Barcode scanning</li>
+          <li>✅ Order picking lists</li>
+          <li>✅ Cycle count</li>
+          <li>✅ Inventory transfers</li>
           <li>✅ Receive inventory</li>
-          <li>✅ Reports & Excel export</li>
-          <li>✅ Multi-location support</li>
+          <li>✅ Basic reports</li>
           <li>✅ 14-day free trial</li>
         </ul>
         <a href="https://apps.shopify.com/bins-usa" class="btn-plan basic">Start Free Trial →</a>
@@ -263,16 +276,16 @@
         <div class="pricing-badge pro">⭐ Pro</div>
         <h3>Pro</h3>
         <div class="price">$69.99<span>/mo</span></div>
+        <div style="font-size:13px;color:#64748b;margin:-2px 0 14px;">or $599.90/year · save 29%</div>
         <p class="pricing-desc">Advanced tools for growing warehouses.</p>
         <ul class="pricing-features">
           <li>✅ Everything in Basic</li>
-          <li>✅ Sales Forecast</li>
-          <li>✅ Suggested order quantities</li>
-          <li>✅ Purchase Orders</li>
-          <li>✅ Vendor Management</li>
-          <li>✅ Reports Pro (6 reports)</li>
-          <li>✅ Dead stock analysis</li>
-          <li>✅ Margin reports</li>
+          <li>✅ Sales forecasting</li>
+          <li>✅ Purchase orders</li>
+          <li>✅ Vendor management</li>
+          <li>✅ Advanced reports</li>
+          <li>✅ Profit & loss analysis</li>
+          <li>✅ Multi-bin product tracking</li>
           <li>✅ 14-day free trial</li>
         </ul>
         <a href="https://apps.shopify.com/bins-usa" class="btn-plan pro">Start Free Trial →</a>
@@ -338,7 +351,7 @@
   <!-- FOOTER -->
   <footer>
     <div class="footer-inner">
-      <div class="footer-logo"><img src="https://cdn.shopify.com/s/files/1/0598/3312/2968/files/logo-bins-Usa.png?v=1777043752" alt="Bins-USA" style="height:36px;object-fit:contain;filter:brightness(0) invert(1);" /></div>
+      <div class="footer-logo"><img src="https://cdn.shopify.com/s/files/1/0598/3312/2968/files/logo-bins-Usa.png?v=1777043752" alt="Bins-USA" style="height:44px;object-fit:contain;background:#fff;padding:8px 14px;border-radius:10px;display:block;" /></div>
       <div class="footer-links">
         <a href="#features">Features</a>
         <a href="#pricing">Pricing</a>
