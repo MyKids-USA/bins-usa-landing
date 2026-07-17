@@ -44,6 +44,8 @@
     .section-title { text-align: center; font-size: clamp(28px, 4vw, 40px); font-weight: 800; margin-bottom: 16px; }
     .section-subtitle { text-align: center; font-size: 18px; color: #64748b; max-width: 600px; margin: 0 auto 64px; }
     .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; }
+    .video-wrap { position: relative; width: 100%; max-width: 900px; margin: 0 auto; aspect-ratio: 16 / 9; border-radius: 16px; overflow: hidden; box-shadow: 0 16px 48px rgba(15,23,42,0.16); border: 1px solid #e2e8f0; }
+    .video-wrap iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
     .feature-card { background: #f8fafc; border-radius: 16px; padding: 32px; border: 1px solid #e2e8f0; transition: all 0.2s; }
     .feature-card:hover { border-color: #2563eb; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(37,99,235,0.1); }
     .feature-icon { font-size: 36px; margin-bottom: 16px; }
@@ -124,6 +126,7 @@
   <nav>
     <div class="nav-logo"><img src="https://cdn.shopify.com/s/files/1/0598/3312/2968/files/logo-bins-Usa.png?v=1777043752" alt="Bins-USA" style="height:56px;object-fit:contain;" /></div>
     <div class="nav-links">
+      <a href="#demo">Demo</a>
       <a href="#features">Features</a>
       <a href="#how">How it works</a>
       <a href="#pricing">Pricing</a>
@@ -147,6 +150,17 @@
       <div class="hero-stat"><strong>∞</strong><span>Unlimited bins</span></div>
       <div class="hero-stat"><strong>Free</strong><span>plan available</span></div>
       <div class="hero-stat"><strong>5 min</strong><span>Setup time</span></div>
+    </div>
+  </section>
+
+  <!-- DEMO VIDEO -->
+  <section class="section" id="demo">
+    <div class="section-label">Demo</div>
+    <h2 class="section-title">See Bins-USA in action</h2>
+    <p class="section-subtitle">Watch how to organize your warehouse with bins, scan products, and pick faster — in just a few minutes.</p>
+    <div class="video-wrap">
+      <iframe src="https://www.youtube-nocookie.com/embed/HrHP_wUVasU" title="Bins-USA demo" loading="lazy"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
     </div>
   </section>
 
