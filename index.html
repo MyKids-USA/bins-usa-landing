@@ -55,6 +55,8 @@
     .feature-card h3 { font-size: 18px; font-weight: 700; margin-bottom: 8px; }
     .feature-card p { font-size: 14px; color: #64748b; line-height: 1.6; }
     .feature-badge { display: inline-block; background: #faf5ff; color: #7c3aed; padding: 3px 10px; border-radius: 999px; font-size: 11px; font-weight: 600; margin-top: 12px; border: 1px solid #e9d5ff; }
+    .feature-badge.plus { background: #f0fdfa; color: #0f766e; border-color: #99f6e4; }
+    .feature-badge.basic { background: #eff6ff; color: #1d4ed8; border-color: #bfdbfe; }
 
     /* HOW IT WORKS */
     .how-section { background: #f8fafc; padding: 80px 40px; }
@@ -68,9 +70,11 @@
     .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 24px; max-width: 1280px; margin: 0 auto; }
     .pricing-card { border-radius: 16px; padding: 32px; border: 2px solid #e2e8f0; position: relative; display: flex; flex-direction: column; }
     .pricing-card.popular { border-color: #2563eb; background: #eff6ff; }
+    .pricing-card.plus { border-color: #0d9488; background: #f0fdfa; }
     .pricing-card.pro { border-color: #9333ea; background: #faf5ff; }
     .pricing-card.enterprise { border-color: #EAB308; background: #fefce8; }
     .pricing-badge { position: absolute; top: -14px; left: 50%; transform: translateX(-50%); background: #2563eb; color: #fff; padding: 4px 16px; border-radius: 999px; font-size: 12px; font-weight: 700; white-space: nowrap; }
+    .pricing-badge.plus { background: #0d9488; }
     .pricing-badge.pro { background: #9333ea; }
     .pricing-badge.enterprise { background: #EAB308; color: #1e293b; }
     .pricing-card h3 { font-size: 22px; font-weight: 800; margin-bottom: 8px; }
@@ -198,50 +202,73 @@
       <div class="feature-card">
         <div class="feature-icon">📦</div>
         <h3>Bin Management</h3>
-        <p>Create unlimited bins per location. Assign products, track quantities, and print QR code labels for every bin.</p>
+        <p>Give every product a physical home — a shelf, a box, a rack. Create hundreds of bins from a pattern instead of typing them, and print the whole rack of QR labels in one go.</p>
+        <span class="feature-badge basic">Bulk tools: Basic</span>
       </div>
       <div class="feature-card">
         <div class="feature-icon">🔍</div>
         <h3>Barcode Scanning</h3>
-        <p>Scan any SKU or barcode to instantly find which bin a product is in. Works with any barcode scanner.</p>
+        <p>Scan a code — or type part of a product name — and see which bin it is in. Works with any barcode scanner or your phone camera. If it is stored at another location, it tells you which.</p>
       </div>
       <div class="feature-card">
         <div class="feature-icon">📋</div>
         <h3>Pick Lists</h3>
-        <p>Generate detailed pick lists for every Shopify order. Scan items to mark them as picked and print for your team.</p>
+        <p>Every unfulfilled Shopify order becomes a pick list showing which bin to take each item from. Scan to check items off, print it for your team, then deduct from the bins in one press.</p>
       </div>
       <div class="feature-card">
         <div class="feature-icon">📥</div>
-        <h3>Receive Inventory</h3>
-        <p>Scan incoming products to add them to bins and automatically update Shopify inventory in real time.</p>
+        <h3>Receive &amp; Put Away</h3>
+        <p>Pick a bin once, then scan item after item straight into it. It is how bins get loaded — at setup and when a delivery arrives — and it is many times faster than adding products one at a time.</p>
       </div>
       <div class="feature-card">
         <div class="feature-icon">🔄</div>
         <h3>Cycle Count</h3>
-        <p>Count products in any bin and sync the differences directly to Shopify inventory with one click.</p>
+        <p>Count a bin and send the differences to Shopify. The app names the bins nobody has checked in a while, so counting stops being a chore with no starting point.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🧩</div>
+        <h3>Bin Numbers Inside Shopify</h3>
+        <p>Add the Bins-USA block to your Shopify order page and every order shows which bin each item is in — without leaving Shopify or opening the app.</p>
       </div>
       <div class="feature-card">
         <div class="feature-icon">📊</div>
         <h3>Reports</h3>
-        <p>View inventory value by bin with charts. Export to Excel or print. Know exactly what your warehouse is worth.</p>
+        <p>Inventory value by bin, with charts. Print it or export any report to Excel and know exactly what your warehouse is worth.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">📉</div>
+        <h3>Advanced Reports</h3>
+        <p>Inventory rotation, sales by product with margins, active bins, dead stock and a full transfer history. Spot what is not moving before it sits.</p>
+        <span class="feature-badge plus">⭐ Plus</span>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">👥</div>
+        <h3>Users &amp; Roles</h3>
+        <p>Your warehouse staff scan, pick, count and receive — without seeing costs, margins or billing. Shop-floor mode keeps a shared tablet on their screen until a manager unlocks it.</p>
+        <span class="feature-badge">⭐ Pro</span>
       </div>
       <div class="feature-card">
         <div class="feature-icon">📈</div>
         <h3>Sales Forecast</h3>
-        <p>Analyze sales velocity and get suggested order quantities. Never run out of stock again.</p>
+        <p>Analyze sales velocity and get suggested order quantities from your own history. See what is going to run out before it does.</p>
         <span class="feature-badge">⭐ Pro</span>
       </div>
       <div class="feature-card">
         <div class="feature-icon">📝</div>
         <h3>Purchase Orders</h3>
-        <p>Create purchase orders directly from your forecast. Track status from draft to received.</p>
+        <p>Raise POs straight from your forecast and track them from draft to received. Print each one in English or Spanish — work in your language, send theirs.</p>
         <span class="feature-badge">⭐ Pro</span>
       </div>
       <div class="feature-card">
         <div class="feature-icon">🏭</div>
         <h3>Vendor Management</h3>
-        <p>Manage suppliers, import products from Shopify, and track costs per vendor.</p>
+        <p>Keep supplier contacts, costs, payment terms and lead times with the products they supply. Import a vendor's whole catalogue from Shopify in one click.</p>
         <span class="feature-badge">⭐ Pro</span>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🌎</div>
+        <h3>English and Spanish</h3>
+        <p>One button switches the whole app — menus, screens, reports, the user guide and the help assistant. Included on every plan, free ones too.</p>
       </div>
     </div>
   </section>
@@ -264,8 +291,8 @@
       </div>
       <div class="step">
         <div class="step-number">3</div>
-        <h3>Assign products</h3>
-        <p>Scan or search for products and assign them to bins. Print QR labels to attach to each physical bin.</p>
+        <h3>Fill your bins</h3>
+        <p>Open Receive &amp; Put Away, pick a bin, and scan product after product straight into it. Print QR labels to attach to each physical bin.</p>
       </div>
       <div class="step">
         <div class="step-number">4</div>
@@ -287,45 +314,66 @@
         <div class="price">$0<span>/mo</span></div>
         <p class="pricing-desc">Free forever — no credit card, no time limit.</p>
         <ul class="pricing-features">
-          <li>✅ Up to 20 bins</li>
-          <li>✅ Up to 200 products</li>
-          <li>✅ Barcode scanning</li>
-          <li>✅ Basic reports</li>
+          <li>✅ Up to 20 bins and 200 products</li>
+          <li>✅ Scan to find any product's bin</li>
+          <li>✅ Pick lists from live Shopify orders</li>
+          <li>✅ Cycle counts with overdue reminders</li>
+          <li>✅ Receive &amp; put away by scanning</li>
+          <li>✅ Transfers between bins</li>
+          <li>✅ Bin labels with QR codes</li>
+          <li>✅ English and Spanish</li>
         </ul>
         <a href="https://apps.shopify.com/bins-usa" class="btn-plan" style="background:#fff;color:#2563eb;border:2px solid #2563eb;">Install Free →</a>
       </div>
       <div class="pricing-card popular">
-        <div class="pricing-badge">⭐ Most Popular</div>
         <h3>Basic</h3>
         <div class="price">$24.99<span>/mo</span></div>
         <div style="font-size:13px;color:#64748b;margin:-2px 0 14px;">or $239.90/year · save 20%</div>
-        <p class="pricing-desc">Everything you need to organize your warehouse.</p>
+        <p class="pricing-desc">Everything in Free, with no limits.</p>
         <ul class="pricing-features">
           <li>✅ Unlimited bins</li>
-          <li>✅ Barcode scanning</li>
-          <li>✅ Order picking lists</li>
-          <li>✅ Cycle count</li>
-          <li>✅ Inventory transfers</li>
-          <li>✅ Receive inventory</li>
-          <li>✅ Basic reports</li>
+          <li>✅ Unlimited products in bins</li>
+          <li>✅ Bulk-create hundreds of bins at once</li>
+          <li>✅ Print a whole rack of labels at once</li>
+          <li>✅ Multiple Shopify locations</li>
+          <li>✅ Bin numbers inside Shopify orders</li>
+          <li>✅ Export any report to Excel</li>
           <li>✅ 14-day free trial</li>
         </ul>
         <a href="https://apps.shopify.com/bins-usa" class="btn-plan basic">Start Free Trial →</a>
+      </div>
+      <div class="pricing-card plus">
+        <div class="pricing-badge plus">⭐ Best Value</div>
+        <h3>Plus</h3>
+        <div class="price">$49.99<span>/mo</span></div>
+        <div style="font-size:13px;color:#64748b;margin:-2px 0 14px;">or $499.90/year · save 17%</div>
+        <p class="pricing-desc">See what your inventory is actually doing.</p>
+        <ul class="pricing-features">
+          <li>✅ Everything in Basic</li>
+          <li>✅ Inventory rotation report</li>
+          <li>✅ Sales by product with margins</li>
+          <li>✅ Active bins and dead stock</li>
+          <li>✅ Transfer history audit trail</li>
+          <li>✅ Charts and trends on every report</li>
+          <li>✅ Cost vs retail value by bin</li>
+          <li>✅ 14-day free trial</li>
+        </ul>
+        <a href="https://apps.shopify.com/bins-usa" class="btn-plan basic" style="background:#0d9488;">Start Free Trial →</a>
       </div>
       <div class="pricing-card pro">
         <div class="pricing-badge pro">⭐ Pro</div>
         <h3>Pro</h3>
         <div class="price">$69.99<span>/mo</span></div>
         <div style="font-size:13px;color:#64748b;margin:-2px 0 14px;">or $599.90/year · save 29%</div>
-        <p class="pricing-desc">Advanced tools for growing warehouses.</p>
+        <p class="pricing-desc">For warehouses with a team.</p>
         <ul class="pricing-features">
-          <li>✅ Everything in Basic</li>
-          <li>✅ Sales forecasting</li>
-          <li>✅ Purchase orders</li>
-          <li>✅ Vendor management</li>
-          <li>✅ Advanced reports</li>
-          <li>✅ Profit & loss analysis</li>
-          <li>✅ Multi-bin product tracking</li>
+          <li>✅ Everything in Plus</li>
+          <li>✅ Users and roles for your team</li>
+          <li>✅ Warehouse staff see no costs or margins</li>
+          <li>✅ Shop-floor mode for shared tablets</li>
+          <li>✅ Sales forecast and reorder points</li>
+          <li>✅ Purchase orders, printable in English or Spanish</li>
+          <li>✅ Vendors with costs and lead times</li>
           <li>✅ 14-day free trial</li>
         </ul>
         <a href="https://apps.shopify.com/bins-usa" class="btn-plan pro">Start Free Trial →</a>
