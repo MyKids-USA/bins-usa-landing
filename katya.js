@@ -295,8 +295,16 @@
     el.callBtn = document.getElementById('katyaCall');
     // crossOrigin before src: without it the browser taints the image and WebGL
     // refuses it as a texture.
-    el.room = new Image(); el.room.crossOrigin = 'anonymous'; el.room.src = API + '/api/liveavatar/room.jpg';
-    ['katyaFace', 'katyaFace2'].forEach(function (id) { document.getElementById(id).src = API + '/api/liveavatar/katya.png'; });
+    el.room = new Image(); el.room.crossOrigin = 'anonymous';
+    // Served from this site, not the backend: a backend redeploy used to blank
+    // the room and leave the launcher a plain blue circle.
+    el.room.onerror = function () { el.room.onerror = null; el.room.src = API + '/api/liveavatar/room.jpg'; };
+    el.room.src = '/assets/room.jpg';
+    ['katyaFace', 'katyaFace2'].forEach(function (id) {
+      var img = document.getElementById(id);
+      img.onerror = function () { img.onerror = null; img.src = API + '/api/liveavatar/katya.png'; };
+      img.src = '/assets/katya.png';
+    });
 
     function texts() {
       document.getElementById('katyaSub').textContent = L('Asistente de Bins-USA', 'Bins-USA assistant');
