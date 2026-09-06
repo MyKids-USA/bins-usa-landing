@@ -4,7 +4,7 @@
   <!-- build: free-plan-v2 -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Shopify locations are not bins — Bins-USA</title>
+  <title data-es="Las ubicaciones de Shopify no son bins — Bins-USA">Shopify locations are not bins — Bins-USA</title>
   <!-- Have I Been Pwned domain ownership: proves bins-usa.com is ours so breach
        notifications for this domain reach us. Removing it un-verifies the domain. -->
   <meta name="hibp-verify" content="dweb_a3cx516stk4rloobrm09oz3s" />
@@ -117,9 +117,6 @@
     .footer-links { display: flex; gap: 24px; }
     .footer-links a { color: #94a3b8; font-size: 14px; text-decoration: none; transition: color 0.2s; }
     .footer-links a:hover { color: #fff; }
-    .footer-blog { max-width: 1200px; margin-left: auto; margin-right: auto; }
-    .footer-blog a { color: #94a3b8; font-size: 14px; text-decoration: none; line-height: 1.45; transition: color 0.2s; }
-    .footer-blog a:hover { color: #fff; }
     .footer-copy { color: #64748b; font-size: 13px; width: 100%; text-align: center; margin-top: 24px; border-top: 1px solid #334155; padding-top: 24px; }
 
     @media (max-width: 768px) {
@@ -185,40 +182,40 @@
   <main id="maincontent" tabindex="-1">
   <article class="section" style="max-width:760px;margin:0 auto">
     <p style="color:#64748b;font-size:13px;margin-bottom:6px">2026-09-06</p>
-    <h1 style="font-size:32px;font-weight:800;line-height:1.25;margin-bottom:20px">Shopify locations are not bins</h1>
+    <h1 style="font-size:32px;font-weight:800;line-height:1.25;margin-bottom:20px" data-es="Las ubicaciones de Shopify no son bins">Shopify locations are not bins</h1>
         <figure class="post-hero" style="margin:0 0 26px">
           <img src="/assets/blog/warehouse-stacked.jpg" alt="Many pallet positions stacked inside a single building" data-es-alt="Muchas posiciones de pallet apiladas dentro de un mismo edificio"
                loading="lazy" decoding="async"
                style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:12px;display:block" />
         </figure>
     <div style="font-size:16px;line-height:1.75">
-<p>Shopify's Locations feature tells you how much of a product you have and which building it's in. That's useful. If you run one warehouse or a warehouse plus a storefront, Locations answers "do we have it, and where in the world is it." It does not answer "where in the building is it." Those are two different questions, and only one of them gets a picker to the product in under a minute.</p>
+<p data-es="La función de Ubicaciones de Shopify le dice cuánto tiene de un producto y en qué edificio está. Eso sirve. Si maneja una bodega, o una bodega más una tienda, Ubicaciones responde «¿lo tenemos, y en qué parte del mundo está?». Lo que no responde es «¿en qué parte del edificio está?». Son dos preguntas distintas, y solo una de ellas lleva a un seleccionador hasta el producto en menos de un minuto.">Shopify's Locations feature tells you how much of a product you have and which building it's in. That's useful. If you run one warehouse or a warehouse plus a storefront, Locations answers "do we have it, and where in the world is it." It does not answer "where in the building is it." Those are two different questions, and only one of them gets a picker to the product in under a minute.</p>
 
-<h2>What Shopify actually tracks</h2>
-<p>A Shopify location is a big, coarse container: a warehouse, a store, a 3PL. Inventory quantities are tied to that location. You can see that 340 units of a SKU sit at "Main Warehouse." You cannot see, inside Shopify, that 200 of those units are on Rack A, shelf 3, and the other 140 are in a bin near receiving because nobody had time to consolidate them last Tuesday. Shopify was not built to go below the building level, and it doesn't pretend to. That's not a criticism of the platform — it's just the edge of what the feature is for.</p>
+<h2 data-es="Qué rastrea Shopify en realidad">What Shopify actually tracks</h2>
+<p data-es="Una ubicación de Shopify es un contenedor grande y grueso: una bodega, una tienda, un 3PL. Las cantidades de inventario están ligadas a esa ubicación. Usted puede ver que hay 340 unidades de un SKU en «Bodega Principal». Lo que no puede ver dentro de Shopify es que 200 de esas unidades están en el Rack A, estante 3, y las otras 140 en un bin cerca del área de recibo porque el martes pasado nadie tuvo tiempo de consolidarlas. Shopify no fue hecho para bajar del nivel del edificio, y tampoco pretende hacerlo. Eso no es una crítica a la plataforma: es simplemente el límite de para qué sirve la función.">A Shopify location is a big, coarse container: a warehouse, a store, a 3PL. Inventory quantities are tied to that location. You can see that 340 units of a SKU sit at "Main Warehouse." You cannot see, inside Shopify, that 200 of those units are on Rack A, shelf 3, and the other 140 are in a bin near receiving because nobody had time to consolidate them last Tuesday. Shopify was not built to go below the building level, and it doesn't pretend to. That's not a criticism of the platform — it's just the edge of what the feature is for.</p>
 
-<h2>Why quantity without position is half an answer</h2>
-<p>Think about what actually happens when an order comes in. Someone has to physically walk to the product and pick it. If your system tells you the quantity but not the position, that walk becomes a search: check the usual spot, ask around, check the overflow shelf, check if it got moved during the last reorganization. Multiply that by every order, every day, every new hire who doesn't have the layout memorized yet. Quantity tells you the order can be fulfilled in theory. Position is what makes it happen in practice.</p>
-<p>This gap is invisible when a warehouse is small enough that one or two people carry the whole layout in their heads. It becomes very visible the moment you add a second person, a second shift, or enough SKUs that nobody's memory is reliable anymore. At that point, "we know where things are" quietly turns into "Dave knows where things are," which is a staffing risk, not an inventory system.</p>
+<h2 data-es="Por qué la cantidad sin la posición es media respuesta">Why quantity without position is half an answer</h2>
+<p data-es="Piense en lo que pasa de verdad cuando entra una orden. Alguien tiene que caminar físicamente hasta el producto y seleccionarlo. Si su sistema le da la cantidad pero no la posición, esa caminata se convierte en una búsqueda: revisar el lugar de siempre, preguntar por ahí, revisar el estante de sobrante, ver si lo movieron en el último reacomodo. Multiplíquelo por cada orden, cada día, cada empleado nuevo que todavía no se sabe la distribución de memoria. La cantidad le dice que la orden se puede despachar en teoría. La posición es lo que hace que ocurra en la práctica.">Think about what actually happens when an order comes in. Someone has to physically walk to the product and pick it. If your system tells you the quantity but not the position, that walk becomes a search: check the usual spot, ask around, check the overflow shelf, check if it got moved during the last reorganization. Multiply that by every order, every day, every new hire who doesn't have the layout memorized yet. Quantity tells you the order can be fulfilled in theory. Position is what makes it happen in practice.</p>
+<p data-es="Este hueco es invisible cuando la bodega es lo bastante pequeña como para que una o dos personas lleven toda la distribución en la cabeza. Se vuelve muy visible en el momento en que agrega una segunda persona, un segundo turno, o suficientes SKUs como para que la memoria de nadie sea confiable. En ese punto, «sabemos dónde están las cosas» se convierte calladamente en «Dave sabe dónde están las cosas», que es un riesgo de personal, no un sistema de inventario.">This gap is invisible when a warehouse is small enough that one or two people carry the whole layout in their heads. It becomes very visible the moment you add a second person, a second shift, or enough SKUs that nobody's memory is reliable anymore. At that point, "we know where things are" quietly turns into "Dave knows where things are," which is a staffing risk, not an inventory system.</p>
 
-<h2>The signs you've outgrown memory-based storage</h2>
+<h2 data-es="Las señales de que ya se le quedó chica la memoria">The signs you've outgrown memory-based storage</h2>
 <ul>
-<li>New employees take weeks to get fast at picking, because the layout isn't written down anywhere they can check it.</li>
-<li>The same SKU ends up in two or three different spots because whoever put stock away didn't know where the existing stock was.</li>
-<li>Cycle counts take longer than they should because counting means searching first, counting second.</li>
-<li>Nobody wants to take a vacation during a busy stretch, because the internal map of the warehouse leaves with them.</li>
-<li>You've started keeping a spreadsheet of "where things are" next to Shopify, and it's already out of date.</li>
+<li data-es="Los empleados nuevos tardan semanas en volverse rápidos seleccionando, porque la distribución no está escrita en ningún lado que puedan consultar.">New employees take weeks to get fast at picking, because the layout isn't written down anywhere they can check it.</li>
+<li data-es="El mismo SKU termina en dos o tres lugares distintos porque quien guardó la mercancía no sabía dónde estaba la que ya había.">The same SKU ends up in two or three different spots because whoever put stock away didn't know where the existing stock was.</li>
+<li data-es="Los conteos cíclicos toman más de lo que deberían porque contar significa primero buscar y después contar.">Cycle counts take longer than they should because counting means searching first, counting second.</li>
+<li data-es="Nadie quiere tomar vacaciones en temporada alta, porque el mapa interno de la bodega se va con esa persona.">Nobody wants to take a vacation during a busy stretch, because the internal map of the warehouse leaves with them.</li>
+<li data-es="Ya empezó a llevar una hoja de cálculo de «dónde está cada cosa» junto a Shopify, y ya está desactualizada.">You've started keeping a spreadsheet of "where things are" next to Shopify, and it's already out of date.</li>
 </ul>
-<p>If two or more of these sound familiar, the problem isn't your product count or your order volume — it's that you have inventory data and location data living in two different places, one of them being nowhere formal at all.</p>
+<p data-es="Si dos o más de estas le suenan, el problema no es su cantidad de productos ni su volumen de órdenes: es que tiene los datos de inventario y los datos de ubicación viviendo en dos lugares distintos, y uno de los dos no es ningún lugar formal.">If two or more of these sound familiar, the problem isn't your product count or your order volume — it's that you have inventory data and location data living in two different places, one of them being nowhere formal at all.</p>
 
-<h2>What a bin actually adds</h2>
-<p>A bin is just a named, specific spot — a shelf, a box, a section of a rack — that a SKU is assigned to and that stays associated with it in your system. Once that assignment exists, "where is it" stops being a question anyone has to answer from memory. A pick list can tell a picker to go to Bin C-14 instead of just naming the product and letting them figure out the rest. A receiving worker can put stock away and record the bin at the same time, instead of putting it wherever there's space and hoping someone remembers. A cycle count can be done bin by bin instead of hunting SKU by SKU.</p>
-<p>This is the layer Shopify doesn't have, and it's the layer that matters once you're managing real physical space with real people walking around in it. Bins-USA sits on top of Shopify to add exactly this: bin assignments, scanning, and pick lists that reference actual shelf locations, not just the warehouse as a whole. It doesn't change what Shopify tracks at the location level — it fills in what happens once you're inside that location.</p>
+<h2 data-es="Qué agrega un bin en realidad">What a bin actually adds</h2>
+<p data-es="Un bin no es más que un lugar específico y con nombre — un estante, una caja, una sección de un rack — al que se le asigna un SKU y que queda asociado a él en su sistema. Una vez que esa asignación existe, «¿dónde está?» deja de ser una pregunta que alguien tenga que responder de memoria. Una lista de selección puede mandar al seleccionador al Bin C-14 en vez de solo nombrar el producto y dejarlo que resuelva el resto. Quien recibe puede guardar la mercancía y registrar el bin al mismo tiempo, en vez de ponerla donde haya espacio y confiar en que alguien se acuerde. Un conteo cíclico se puede hacer bin por bin en vez de andar cazando SKU por SKU.">A bin is just a named, specific spot — a shelf, a box, a section of a rack — that a SKU is assigned to and that stays associated with it in your system. Once that assignment exists, "where is it" stops being a question anyone has to answer from memory. A pick list can tell a picker to go to Bin C-14 instead of just naming the product and letting them figure out the rest. A receiving worker can put stock away and record the bin at the same time, instead of putting it wherever there's space and hoping someone remembers. A cycle count can be done bin by bin instead of hunting SKU by SKU.</p>
+<p data-es="Esta es la capa que Shopify no tiene, y es la capa que importa cuando ya administra espacio físico real con personas reales caminando dentro. Bins-USA se monta sobre Shopify para agregar exactamente eso: asignación de bins, escaneo y listas de selección que hacen referencia a ubicaciones reales de estante, no solo a la bodega como un todo. No cambia lo que Shopify rastrea a nivel de ubicación: llena lo que pasa una vez que usted está dentro de esa ubicación.">This is the layer Shopify doesn't have, and it's the layer that matters once you're managing real physical space with real people walking around in it. Bins-USA sits on top of Shopify to add exactly this: bin assignments, scanning, and pick lists that reference actual shelf locations, not just the warehouse as a whole. It doesn't change what Shopify tracks at the location level — it fills in what happens once you're inside that location.</p>
 
-<h2>You don't need a system to start</h2>
-<p>You can get most of the benefit with a notebook and some labels, if you're disciplined about it. Assign every product a specific spot. Write it down somewhere everyone can check. Update it the moment something moves, not "later." The value isn't in the software — it's in the discipline of always knowing where something lives instead of always having to look. Software just makes that discipline easier to keep once your SKU count or headcount makes a notebook unreliable.</p>
+<h2 data-es="No necesita un sistema para empezar">You don't need a system to start</h2>
+<p data-es="Puede conseguir casi todo el beneficio con una libreta y unas etiquetas, si es disciplinado. Asígnele a cada producto un lugar específico. Anótelo donde todos puedan consultarlo. Actualícelo en el momento en que algo se mueve, no «después». El valor no está en el software: está en la disciplina de siempre saber dónde vive algo en vez de siempre tener que buscarlo. El software solo hace más fácil mantener esa disciplina cuando su cantidad de SKUs o de personal vuelve poco confiable una libreta.">You can get most of the benefit with a notebook and some labels, if you're disciplined about it. Assign every product a specific spot. Write it down somewhere everyone can check. Update it the moment something moves, not "later." The value isn't in the software — it's in the discipline of always knowing where something lives instead of always having to look. Software just makes that discipline easier to keep once your SKU count or headcount makes a notebook unreliable.</p>
 
-<p>Shopify will always tell you what you have. Whether you also know exactly where it sits is a separate problem, and it's worth solving on its own terms — with a spreadsheet, a label maker, or a system built for it.</p>
+<p data-es="Shopify siempre le va a decir qué tiene. Si además sabe exactamente dónde está es otro problema, y vale la pena resolverlo por su cuenta — con una hoja de cálculo, una etiquetadora, o un sistema hecho para eso.">Shopify will always tell you what you have. Whether you also know exactly where it sits is a separate problem, and it's worth solving on its own terms — with a spreadsheet, a label maker, or a system built for it.</p>
     </div>
     <p style="margin-top:32px"><a href="/blog/" data-es="← Todos los artículos">← All posts</a></p>
   </article>
@@ -234,28 +231,14 @@
         <a href="/features.html" data-es="Funciones">Features</a>
         <a href="/pricing.html" data-es="Precios">Pricing</a>
         <a href="/faq.html" data-es="Preguntas">FAQ</a>
+        <a href="/blog/" data-es="Blog">Blog</a>
         <a href="/accessibility.html" data-es="Accesibilidad">Accessibility</a>
         <a href="mailto:support@bins-usa.com" data-es="Soporte">Support</a>
         <a href="/contact.html" data-es="Contacto">Contact</a>
         <a href="/privacy.html" data-es="Privacidad">Privacy</a>
         <a href="/terms.html" data-es="Términos">Terms</a>
       </div>
-    </div>
-      <div class="footer-blog" style="margin-top:26px;padding-top:22px;border-top:1px solid rgba(255,255,255,.12)">
-        <div data-es="Del blog" style="font-size:12px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;opacity:.65;margin-bottom:12px">From the blog</div>
-        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:8px 28px">
-          <a href="/blog/bin-naming-conventions.html">Bin naming that still makes sense at 400 bins</a>
-          <a href="/blog/cycle-counting-small-warehouse.html">Cycle counting without closing for a day</a>
-          <a href="/blog/dead-stock.html">Finding the stock that is not moving</a>
-          <a href="/blog/how-to-organize-a-shopify-warehouse.html">How to organise a small Shopify warehouse</a>
-          <a href="/blog/pick-list-mistakes.html">Five things that slow down picking</a>
-          <a href="/blog/receiving-a-pallet.html">Receiving a pallet without losing an afternoon</a>
-          <a href="/blog/shopify-inventory-locations-vs-bins.html">Shopify locations are not bins</a>
-          <a href="/blog/warehouse-staff-access.html">What your warehouse staff should not see</a>
-          <a href="/blog/" data-es="Ver todo el blog →" style="font-weight:700">See the whole blog →</a>
-        </div>
-      </div>
-    <div class="footer-copy" data-es="© 2026 Bins-USA. Todos los derechos reservados. Hecho con ❤️ desde Kissimmee, Florida - USA, para comerciantes de Shopify.">© 2026 Bins-USA. All rights reserved. Made with ❤️ from Kissimmee, Florida - USA, for Shopify merchants.</div>
+    </div>    <div class="footer-copy" data-es="© 2026 Bins-USA. Todos los derechos reservados. Hecho con ❤️ desde Kissimmee, Florida - USA, para comerciantes de Shopify.">© 2026 Bins-USA. All rights reserved. Made with ❤️ from Kissimmee, Florida - USA, for Shopify merchants.</div>
   </footer>
   <!-- Language toggle.
        The English copy stays in the HTML and the Spanish rides along in data-es, so

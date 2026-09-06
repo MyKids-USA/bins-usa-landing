@@ -95,20 +95,48 @@ RULES
 - 700-900 words. A short intro, then 3-5 sections with h2 headings, then a couple of closing lines.
 - Output HTML fragments only: <p>, <h2>, <ul>, <li>, <strong>. No <html>, <head>, <body>, no markdown, no title (the title is supplied separately).`;
 
-async function write(title, brief) {
+const SYSTEM_ES = `Traduces al español entradas del blog de Bins-USA, escritas para comerciantes de Shopify que manejan una bodega pequeña o mediana.
+
+REGLAS
+- Español neutro latinoamericano. Usted, no tú.
+- Ortografía completa: todas las tildes, las eñes y los signos de apertura (¿ ¡).
+- Conserva los términos que la app usa en inglés y que la gente de bodega dice así: bin, SKU, pick list se traduce como «lista de selección», picking como «selección».
+- Conserva exactamente las etiquetas HTML que vengan dentro del texto (<strong>, <em>).
+- No agregues, no quites y no resumas. Una línea de entrada, una línea de salida.
+- No inventes funciones ni precios de Bins-USA.`;
+
+/* One call per post: the blocks go in numbered, the Spanish comes back numbered, so a
+   dropped or merged line is caught by the count instead of silently shifting the text. */
+async function translate(blocks) {
+  const numbered = blocks.map((b, i) => `${i + 1}. ${b}`).join('\n');
+  const out = await ask({
+    system: SYSTEM_ES, max_tokens: 4000,
+    user: `Traduce cada línea numerada. Devuelve exactamente ${blocks.length} líneas, con el mismo número al inicio y nada más.\n\n${numbered}`,
+  });
+  const es = out.split('\n').map((l) => l.trim()).filter(Boolean)
+    .map((l) => l.replace(/^\d+\.\s*/, ''));
+  if (es.length !== blocks.length) throw new Error(`translate: ${blocks.length} in, ${es.length} out`);
+  return es;
+}
+
+const esc = (t) => t.replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+
+async function ask({ system, user, max_tokens }) {
   const key = process.env.ANTHROPIC_API_KEY;
   if (!key) throw new Error('ANTHROPIC_API_KEY is not set');
   const r = await fetch('https://api.anthropic.com/v1/messages', {
     method: 'POST',
     headers: { 'content-type': 'application/json', 'x-api-key': key, 'anthropic-version': '2023-06-01' },
-    body: JSON.stringify({
-      model: MODEL, max_tokens: 2500, system: SYSTEM,
-      messages: [{ role: 'user', content: `Title: ${title}\n\nWhat it should cover: ${brief}\n\nWrite the post body.` }],
-    }),
+    body: JSON.stringify({ model: MODEL, max_tokens, system, messages: [{ role: 'user', content: user }] }),
   });
   if (!r.ok) throw new Error(`anthropic ${r.status}: ${(await r.text()).slice(0, 200)}`);
   const d = await r.json();
   return (d.content || []).filter((c) => c.type === 'text').map((c) => c.text).join('').trim();
+}
+
+async function write(title, brief) {
+  return ask({ system: SYSTEM, max_tokens: 2500,
+    user: `Title: ${title}\n\nWhat it should cover: ${brief}\n\nWrite the post body.` });
 }
 
 /* The shell comes from a real page, so the blog cannot drift from the site: change the
@@ -123,9 +151,9 @@ function shell() {
   };
 }
 
-function render({ title, body, date, slug, i }) {
+function render({ title, titleEs, body, date, slug, i }) {
   const s = shell();
-  const head = s.head.replace(/<title>[^<]*<\/title>/, `<title>${title} — Bins-USA</title>`);
+  const head = s.head.replace(/<title>[^<]*<\/title>/, `<title data-es="${esc(titleEs)} — Bins-USA">${title} — Bins-USA</title>`);
   return `${head}<body>
   <a class="skip-link" href="#maincontent" data-es="Ir al contenido">Skip to content</a>
 
@@ -134,7 +162,7 @@ ${s.nav}
   <main id="maincontent" tabindex="-1">
   <article class="section" style="max-width:760px;margin:0 auto">
     <p style="color:#64748b;font-size:13px;margin-bottom:6px">${date}</p>
-    <h1 style="font-size:32px;font-weight:800;line-height:1.25;margin-bottom:20px">${title}</h1>
+    <h1 data-es="${esc(titleEs)}" style="font-size:32px;font-weight:800;line-height:1.25;margin-bottom:20px">${title}</h1>
 ${figure(slug, i)}
     <div style="font-size:16px;line-height:1.75">
 ${body}
@@ -159,8 +187,8 @@ function index(posts) {
   const items = posts.map((p) => `      <a class="feature-card" href="/blog/${p.slug}.html" style="text-decoration:none;color:inherit;display:block">
 ${thumb(p.slug, p.i)}
         <p style="color:#64748b;font-size:12px;margin-bottom:6px">${p.date}</p>
-        <h3>${p.title}</h3>
-        <p>${p.brief}</p>
+        <h3${p.titleEs ? ` data-es="${esc(p.titleEs)}"` : ''}>${p.title}</h3>
+        <p${p.briefEs ? ` data-es="${esc(p.briefEs)}"` : ''}>${p.brief}</p>
       </a>`).join('\n');
   return `${head}<body>
   <a class="skip-link" href="#maincontent" data-es="Ir al contenido">Skip to content</a>
@@ -205,6 +233,7 @@ ${items}
 const only = process.argv.includes('--one');
 const today = new Date().toISOString().slice(0, 10);
 let written = 0;
+const briefs = {};
 
 for (const [i, [slug, title, brief]] of TOPICS.entries()) {
   const file = join(BLOG, `${slug}.html`);
@@ -212,7 +241,14 @@ for (const [i, [slug, title, brief]] of TOPICS.entries()) {
   process.stdout.write(`  write  ${slug} … `);
   try {
     const body = await write(title, brief);
-    writeFileSync(file, render({ title, body, date: today, slug, i }));
+    const blocks = [...body.matchAll(/<(p|h2|h3|li)>([\s\S]*?)<\/\1>/g)];
+    const es = await translate([title, brief, ...blocks.map((m) => m[2].trim())]);
+    const [titleEs, briefEs, ...bodyEs] = es;
+    let k = 0;
+    const bodyBilingual = body.replace(/<(p|h2|h3|li)>([\s\S]*?)<\/\1>/g,
+      (m, tag, inner) => `<${tag} data-es="${esc(bodyEs[k++])}">${inner}</${tag}>`);
+    writeFileSync(file, render({ title, titleEs, body: bodyBilingual, date: today, slug, i }));
+    briefs[slug] = briefEs;
     console.log(`${body.length} chars`);
     written += 1;
     if (only) break;
@@ -222,8 +258,16 @@ for (const [i, [slug, title, brief]] of TOPICS.entries()) {
   }
 }
 
+function esOf(slug) {
+  const f = join(BLOG, `${slug}.html`);
+  if (!existsSync(f)) return null;
+  const m = readFileSync(f, 'utf8').match(/<h1[^>]*data-es="([^"]*)"/);
+  return m ? m[1].replace(/&quot;/g, '"').replace(/&amp;/g, '&') : null;
+}
+
 const have = TOPICS.map((t, i) => [t, i]).filter(([[slug]]) => existsSync(join(BLOG, `${slug}.html`)))
-  .map(([[slug, title, brief], i]) => ({ slug, title, brief, date: today, i }));
+  .map(([[slug, title, brief], i]) => ({ slug, title, brief, date: today, i,
+     titleEs: esOf(slug), briefEs: briefs[slug] || null }));
 writeFileSync(join(BLOG, 'index.html'), index(have));
 writeFileSync(join(BLOG, 'feed.xml'), feed(have));
 console.log(`\n  ${written} written, ${have.length} posts on the index`);
