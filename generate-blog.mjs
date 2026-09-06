@@ -34,52 +34,37 @@ const TOPICS = [
   ['warehouse-staff-access', 'What your warehouse staff should not see', 'Costs, margins and payouts on a shared tablet, and how to give someone the picking screen and nothing else.'],
 ];
 
-/* Photos from the binsusa.com blog (Unsplash, commercial use — see assets/blog/CREDITS.txt).
-   Real warehouses, not app screenshots: this blog is read by people who have not installed
-   anything yet. Paired so no two neighbours in the index share a photo; a slug with no entry
-   falls back to the rotation, so a new topic is never published without a picture. */
-const PHOTOS = [
-  ['warehouse-racking.jpg', 'A tidy warehouse aisle with numbered bays and labelled shelves',
-   'Un pasillo de bodega ordenado, con bahías numeradas y estantes etiquetados'],
-  ['warehouse-stacked.jpg', 'High racking with bay labels on the uprights',
-   'Racks altos con las etiquetas de bahía en los postes'],
-  ['warehouse-aisle.jpg', 'A picker on a ladder working a narrow aisle of labelled shelves',
-   'Un seleccionador en una escalera en un pasillo estrecho de estantes etiquetados'],
-  ['warehouse-pallets.jpg', 'Wrapped pallets on the floor by the dock door, waiting to be received',
-   'Pallets envueltos en el piso junto al portón, esperando ser recibidos'],
-];
-const PHOTO_FOR = {
-  'how-to-organize-a-shopify-warehouse': PHOTOS[0],
-  'bin-naming-conventions': PHOTOS[1],
-  'pick-list-mistakes': PHOTOS[2],
-  'cycle-counting-small-warehouse': ['warehouse-racking.jpg',
-    'Shelves of boxes in a bright warehouse aisle, ready to be counted',
-    'Estantes con cajas en un pasillo iluminado, listos para contarse'],
-  'shopify-inventory-locations-vs-bins': ['warehouse-stacked.jpg',
-    'Many pallet positions stacked inside a single building',
-    'Muchas posiciones de pallet apiladas dentro de un mismo edificio'],
-  'receiving-a-pallet': PHOTOS[3],
-  'dead-stock': ['warehouse-aisle.jpg',
-    'A quiet warehouse aisle where stock has not moved in a long time',
-    'Un pasillo silencioso donde la mercancía lleva mucho sin moverse'],
-  'warehouse-staff-access': ['warehouse-pallets.jpg',
-    'A warehouse floor where the team works the stock, not the books',
-    'Una bodega donde el equipo trabaja la mercancía, no los libros'],
-};
-function photoFor(slug, i) { return PHOTO_FOR[slug] || PHOTOS[i % PHOTOS.length]; }
+/* The photo bank lives in blog-photos.json — 51 warehouse photos, no app screenshots:
+   this blog is read by people who have not installed anything yet. Four came from the
+   binsusa.com blog (Unsplash); the rest from Wikimedia Commons, and almost all of those
+   are CC BY or CC BY-SA, which is why every hero renders a credit line. Assignment is by
+   topic index, so the eight topics that exist today keep the photo picked for their
+   subject and topic 9 onward never repeats a photo until the 51st post. TOPICS is
+   append-only for exactly this reason — renumbering it reshuffles every published hero. */
+const PHOTOS = JSON.parse(readFileSync(join(HERE, 'blog-photos.json'), 'utf8'));
+const photoFor = (i) => PHOTOS[i % PHOTOS.length];
 
-function figure(slug, i) {
-  const [f, alt, altEs] = photoFor(slug, i);
+const esc = (t) => String(t).replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+
+function credit(ph) {
+  if (!ph.source) return `Photo: ${esc(ph.credit)}`;
+  return `Photo: <a href="${esc(ph.source)}" rel="nofollow noopener" style="color:inherit">`
+       + `${esc(ph.credit)}</a> · ${esc(ph.license)}`;
+}
+
+function figure(i) {
+  const ph = photoFor(i);
   return `        <figure class="post-hero" style="margin:0 0 26px">
-          <img src="/assets/blog/${f}" alt="${alt}" data-es-alt="${altEs}"
+          <img src="/assets/blog/${ph.file}" alt="${esc(ph.alt)}" data-es-alt="${esc(ph.altEs)}"
                loading="lazy" decoding="async"
                style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:12px;display:block" />
+          <figcaption style="color:#94a3b8;font-size:11px;margin-top:6px">${credit(ph)}</figcaption>
         </figure>`;
 }
 
-function thumb(slug, i) {
-  const [f, alt, altEs] = photoFor(slug, i);
-  return `        <img src="/assets/blog/${f}" alt="${alt}" data-es-alt="${altEs}" loading="lazy" decoding="async"
+function thumb(i) {
+  const ph = photoFor(i);
+  return `        <img src="/assets/blog/${ph.file}" alt="${esc(ph.alt)}" data-es-alt="${esc(ph.altEs)}" loading="lazy" decoding="async"
              style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:10px;border:1px solid #e2e8f0;margin-bottom:14px;display:block" />`;
 }
 
@@ -119,7 +104,6 @@ async function translate(blocks) {
   return es;
 }
 
-const esc = (t) => t.replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 
 async function ask({ system, user, max_tokens }) {
   const key = process.env.ANTHROPIC_API_KEY;
@@ -163,7 +147,7 @@ ${s.nav}
   <article class="section" style="max-width:760px;margin:0 auto">
     <p style="color:#64748b;font-size:13px;margin-bottom:6px">${date}</p>
     <h1 data-es="${esc(titleEs)}" style="font-size:32px;font-weight:800;line-height:1.25;margin-bottom:20px">${title}</h1>
-${figure(slug, i)}
+${figure(i)}
     <div style="font-size:16px;line-height:1.75">
 ${body}
     </div>
@@ -185,7 +169,7 @@ function index(posts) {
   const s = shell();
   const head = s.head.replace(/<title>[^<]*<\/title>/, '<title>Blog — Bins-USA</title>');
   const items = posts.map((p) => `      <a class="feature-card" href="/blog/${p.slug}.html" style="text-decoration:none;color:inherit;display:block">
-${thumb(p.slug, p.i)}
+${thumb(p.i)}
         <p style="color:#64748b;font-size:12px;margin-bottom:6px">${p.date}</p>
         <h3${p.titleEs ? ` data-es="${esc(p.titleEs)}"` : ''}>${p.title}</h3>
         <p${p.briefEs ? ` data-es="${esc(p.briefEs)}"` : ''}>${p.brief}</p>
