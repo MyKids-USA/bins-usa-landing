@@ -4,7 +4,7 @@
   <!-- build: free-plan-v2 -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>FAQ — Bins-USA</title>
+  <title>Contact — Bins-USA</title>
   <!-- Have I Been Pwned domain ownership: proves bins-usa.com is ours so breach
        notifications for this domain reach us. Removing it un-verifies the domain. -->
   <meta name="hibp-verify" content="dweb_a3cx516stk4rloobrm09oz3s" />
@@ -179,38 +179,90 @@
   </nav>
 
   <main id="maincontent" tabindex="-1">
-<section class="faq-section" id="faq">
-    <div class="section-label" style="text-align:center" data-es="Preguntas">FAQ</div>
-    <h2 class="section-title" style="text-align:center;margin-bottom:48px" data-es="Preguntas frecuentes">Frequently asked questions</h2>
-    <div class="faq-grid">
-      <div class="faq-item">
-        <h4 data-es="¿Necesito equipo especial?">Do I need any special hardware?</h4>
-        <p data-es="No. Bins-USA funciona con cualquier lector de códigos estándar, o puede escribir los SKU a mano. No hace falta equipo especial.">No. Bins-USA works with any standard barcode scanner or you can type SKUs manually. No special hardware required.</p>
+  <section class="section" style="max-width:720px;margin:0 auto">
+    <div class="section-label" data-es="Contacto">Contact</div>
+    <h2 class="section-title" data-es="¿Hablamos?">Get in touch</h2>
+    <p class="section-subtitle" data-es="Escríbanos y le respondemos en menos de 24 horas, de lunes a viernes.">Send us a message and we will reply within 24 hours, Monday to Friday.</p>
+
+    <form id="contactForm" style="display:grid;gap:14px;margin-top:8px">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px" class="cf-row">
+        <label style="display:block">
+          <span style="display:block;font-size:13px;font-weight:600;margin-bottom:5px" data-es="Su nombre *">Your name *</span>
+          <input name="name" required maxlength="200" style="width:100%;border:1px solid #e2e8f0;border-radius:9px;padding:10px 12px;font-size:14px;font-family:inherit;box-sizing:border-box"/>
+        </label>
+        <label style="display:block">
+          <span style="display:block;font-size:13px;font-weight:600;margin-bottom:5px" data-es="Correo *">Email *</span>
+          <input name="email" type="email" required maxlength="200" style="width:100%;border:1px solid #e2e8f0;border-radius:9px;padding:10px 12px;font-size:14px;font-family:inherit;box-sizing:border-box"/>
+        </label>
       </div>
-      <div class="faq-item">
-        <h4 data-es="¿Funciona con varias ubicaciones de Shopify?">Does it work with multiple Shopify locations?</h4>
-        <p data-es="Sí. Bins-USA admite varias ubicaciones de Shopify. Cada una tiene su propio conjunto de bins, independiente de las demás.">Yes. Bins-USA supports multiple Shopify locations. Each location has its own independent set of bins.</p>
+      <label style="display:block">
+        <span style="display:block;font-size:13px;font-weight:600;margin-bottom:5px" data-es="Su tienda de Shopify (opcional)">Your Shopify store (optional)</span>
+        <input name="shop" maxlength="200" placeholder="mystore.myshopify.com" style="width:100%;border:1px solid #e2e8f0;border-radius:9px;padding:10px 12px;font-size:14px;font-family:inherit;box-sizing:border-box"/>
+      </label>
+      <label style="display:block">
+        <span style="display:block;font-size:13px;font-weight:600;margin-bottom:5px" data-es="Asunto">Subject</span>
+        <input name="subject" maxlength="200" style="width:100%;border:1px solid #e2e8f0;border-radius:9px;padding:10px 12px;font-size:14px;font-family:inherit;box-sizing:border-box"/>
+      </label>
+      <label style="display:block">
+        <span style="display:block;font-size:13px;font-weight:600;margin-bottom:5px" data-es="Mensaje *">Message *</span>
+        <textarea name="message" required rows="6" maxlength="5000" style="width:100%;border:1px solid #e2e8f0;border-radius:9px;padding:10px 12px;font-size:14px;font-family:inherit;box-sizing:border-box;resize:vertical"></textarea>
+      </label>
+
+      <!-- Hidden from people by position, not by type="hidden": some bots skip hidden
+           inputs but fill everything they can see in the markup. Left empty by anyone
+           using a browser; a filled value means a script. -->
+      <div style="position:absolute;left:-9999px" aria-hidden="true">
+        <label>Website<input name="website" tabindex="-1" autocomplete="off"/></label>
       </div>
-      <div class="faq-item">
-        <h4 data-es="¿Puedo cancelar cuando quiera?">Can I cancel anytime?</h4>
-        <p data-es="Sí. Cancele cuando quiera desde la app. Su suscripción sigue activa hasta el final del período ya facturado.">Yes. Cancel anytime directly from the app. Your subscription remains active until the end of the billing period.</p>
-      </div>
-      <div class="faq-item">
-        <h4 data-es="¿Hay plan anual?">Is there an annual plan?</h4>
-        <p data-es="¡Sí! Basic anual cuesta $239.90/año (ahorra $59.98), Plus anual $499.90/año (ahorra $99.98) y Pro anual $599.90/año (ahorra $239.98).">Yes! Basic annual is $239.90/year (save $59.98) and Pro annual is $599.90/year (save $239.98).</p>
-      </div>
-      <div class="faq-item">
-        <h4 data-es="¿Qué pasa con mis datos si cancelo?">What happens to my data if I cancel?</h4>
-        <p data-es="Sus datos de bins e inventario se conservan 90 días tras cancelar. Vuelva a suscribirse cuando quiera y se restaura todo.">Your bin and inventory data is retained for 90 days after cancellation. Resubscribe anytime to restore everything.</p>
-      </div>
-      <div class="faq-item">
-        <h4 data-es="¿Cuánto toma la configuración?">How long does setup take?</h4>
-        <p data-es="La mayoría está funcionando en menos de 5 minutos. Instale la app, cree su primer bin y empiece a escanear.">Most users are up and running in under 5 minutes. Install the app, create your first bin, and start scanning.</p>
-      </div>
-    </div>
-  </section>  <section class="section" style="text-align:center;padding-top:20px">
-    <a href="https://apps.shopify.com/bins-usa" class="btn-plan basic" style="display:inline-block;padding:14px 28px;max-width:340px" data-es="🛍️ Instalar en Shopify — Es gratis →">🛍️ Install on Shopify — It's Free →</a>
+
+      <div id="cfError" style="display:none;background:#fef2f2;border:1px solid #fecaca;color:#991b1b;border-radius:9px;padding:10px 12px;font-size:14px"></div>
+      <div id="cfOk" style="display:none;background:#f0fdf4;border:1px solid #bbf7d0;color:#166534;border-radius:9px;padding:12px 14px;font-size:14px"></div>
+
+      <button type="submit" id="cfSend" class="btn-plan basic" style="border:none;cursor:pointer;font-family:inherit" data-es="Enviar mensaje">Send message</button>
+      <p style="font-size:12px;color:#94a3b8;margin:0" data-es="También puede escribirnos directamente a sales@bins-usa.com">You can also email us directly at sales@bins-usa.com</p>
+    </form>
   </section>
+
+  <script>
+  (function () {
+    var f = document.getElementById('contactForm');
+    if (!f) return;
+    // When the form was rendered. A message written in under three seconds was not
+    // written by a person.
+    var startedAt = Date.now();
+    var es = function () { return document.documentElement.lang === 'es'; };
+    f.addEventListener('submit', async function (e) {
+      e.preventDefault();
+      var btn = document.getElementById('cfSend');
+      var err = document.getElementById('cfError');
+      var ok = document.getElementById('cfOk');
+      err.style.display = 'none';
+      btn.disabled = true;
+      btn.textContent = es() ? 'Enviando…' : 'Sending…';
+      var d = Object.fromEntries(new FormData(f).entries());
+      d.started_at = startedAt;
+      try {
+        var r = await fetch('https://bins-usa-backend.onrender.com/api/contact', {
+          method: 'POST',
+          headers: { 'content-type': 'application/json', 'x-bins-lang': es() ? 'es' : 'en' },
+          body: JSON.stringify(d)
+        });
+        var j = await r.json();
+        if (!r.ok) throw new Error(j.error || 'error');
+        f.style.display = 'none';
+        ok.textContent = es()
+          ? '✅ ¡Gracias! Recibimos su mensaje y le responderemos a ' + d.email + ' en menos de 24 horas.'
+          : '✅ Thank you! We have your message and will reply to ' + d.email + ' within 24 hours.';
+        ok.style.display = 'block';
+      } catch (ex) {
+        err.textContent = ex.message || (es() ? 'No se pudo enviar. Escríbanos a sales@bins-usa.com.' : 'Could not send. Email us at sales@bins-usa.com.');
+        err.style.display = 'block';
+        btn.disabled = false;
+        btn.textContent = es() ? 'Enviar mensaje' : 'Send message';
+      }
+    });
+  })();
+  </script>
   </main>
 
   <footer>
@@ -264,6 +316,7 @@
     });
   })();
   </script>
+  <script src="/katya.js" defer></script>
   <script src="/katya.js" defer></script>
   <script src="/katya.js" defer></script>
 </body>
