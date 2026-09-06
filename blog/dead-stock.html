@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- build: free-plan-v2 -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Finding the stock that is not moving — Bins-USA</title>
+  <!-- Have I Been Pwned domain ownership: proves bins-usa.com is ours so breach
+       notifications for this domain reach us. Removing it un-verifies the domain. -->
+  <meta name="hibp-verify" content="dweb_a3cx516stk4rloobrm09oz3s" />
+  <meta name="description" content="Organize your Shopify warehouse with bins, scan products, generate pick lists, and track inventory — all in one app." />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/png" href="https://cdn.shopify.com/s/files/1/0598/3312/2968/files/favicon_3502c043-d157-46db-b9b0-b9425a5402d8.png?v=1777043751" />
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Inter', sans-serif; color: #1e293b; background: #fff; }
+
+    /* NAV */
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: #fff; border-bottom: 2px solid #e2e8f0; box-shadow: 0 2px 0 0 #EAB308; padding: 0 40px; height: 64px; display: flex; align-items: center; justify-content: space-between; }
+    .nav-logo { display: flex; align-items: center; gap: 10px; font-size: 22px; font-weight: 800; color: #1e293b; }
+    .nav-logo span { color: #EAB308; }
+    .nav-links { display: flex; gap: 32px; }
+    .nav-links a { text-decoration: none; color: #64748b; font-size: 14px; font-weight: 500; transition: color 0.2s; }
+    .nav-links a:hover { color: #1e293b; }
+    .nav-cta { background: #2563eb; color: #fff; padding: 10px 20px; border-radius: 8px; font-size: 14px; font-weight: 600; text-decoration: none; transition: background 0.2s; }
+    .nav-cta:hover { background: #1d4ed8; }
+
+    /* HERO */
+    .hero { padding: 140px 40px 80px; text-align: center; background: linear-gradient(180deg, #f8fafc 0%, #fff 100%); }
+    .hero-badge { display: inline-block; background: #fef9c3; color: #854d0e; padding: 6px 16px; border-radius: 999px; font-size: 13px; font-weight: 600; margin-bottom: 24px; border: 1px solid #fde047; }
+    .hero h1 { font-size: clamp(36px, 6vw, 64px); font-weight: 800; line-height: 1.1; margin-bottom: 24px; }
+    .hero h1 span { color: #2563eb; }
+    .hero p { font-size: 20px; color: #64748b; max-width: 600px; margin: 0 auto 40px; line-height: 1.6; }
+    .hero-buttons { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+    .btn-primary { background: #2563eb; color: #fff; padding: 16px 32px; border-radius: 10px; font-size: 16px; font-weight: 700; text-decoration: none; transition: all 0.2s; display: flex; align-items: center; gap: 8px; }
+    .btn-primary:hover { background: #1d4ed8; transform: translateY(-1px); }
+    .btn-secondary { background: #fff; color: #1e293b; padding: 16px 32px; border-radius: 10px; font-size: 16px; font-weight: 600; text-decoration: none; border: 2px solid #e2e8f0; transition: all 0.2s; }
+    .btn-secondary:hover { border-color: #2563eb; color: #2563eb; }
+    .hero-stats { display: flex; gap: 48px; justify-content: center; margin-top: 64px; flex-wrap: wrap; }
+    .hero-stat { text-align: center; }
+    .hero-stat strong { display: block; font-size: 32px; font-weight: 800; color: #1e293b; }
+    .hero-stat span { font-size: 14px; color: #64748b; }
+
+    /* FEATURES */
+    .section { padding: 80px 40px; max-width: 1200px; margin: 0 auto; }
+    .section-label { text-align: center; font-size: 13px; font-weight: 600; color: #2563eb; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 12px; }
+    .section-title { text-align: center; font-size: clamp(28px, 4vw, 40px); font-weight: 800; margin-bottom: 16px; }
+    .section-subtitle { text-align: center; font-size: 18px; color: #64748b; max-width: 600px; margin: 0 auto 64px; }
+    .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; }
+    .video-wrap { position: relative; width: 100%; max-width: 900px; margin: 0 auto; aspect-ratio: 16 / 9; border-radius: 16px; overflow: hidden; box-shadow: 0 16px 48px rgba(15,23,42,0.16); border: 1px solid #e2e8f0; }
+    .video-wrap iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+    .feature-card { background: #f8fafc; border-radius: 16px; padding: 32px; border: 1px solid #e2e8f0; transition: all 0.2s; }
+    .feature-card:hover { border-color: #2563eb; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(37,99,235,0.1); }
+    .feature-icon { font-size: 36px; margin-bottom: 16px; }
+    .feature-card h3 { font-size: 18px; font-weight: 700; margin-bottom: 8px; }
+    .feature-card p { font-size: 14px; color: #64748b; line-height: 1.6; }
+    .feature-badge { display: inline-block; background: #faf5ff; color: #7c3aed; padding: 3px 10px; border-radius: 999px; font-size: 11px; font-weight: 600; margin-top: 12px; border: 1px solid #e9d5ff; }
+    .feature-badge.plus { background: #f0fdfa; color: #0f766e; border-color: #99f6e4; }
+    .feature-badge.basic { background: #eff6ff; color: #1d4ed8; border-color: #bfdbfe; }
+
+    /* HOW IT WORKS */
+    .how-section { background: #f8fafc; padding: 80px 40px; }
+    .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 32px; max-width: 1200px; margin: 0 auto; }
+    .step { text-align: center; }
+    .step-number { width: 56px; height: 56px; background: #2563eb; color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 22px; font-weight: 800; margin: 0 auto 20px; }
+    .step h3 { font-size: 18px; font-weight: 700; margin-bottom: 8px; }
+    .step p { font-size: 14px; color: #64748b; line-height: 1.6; }
+
+    /* PRICING */
+    /* Five plans on one row on a desktop. auto-fit with a 250px floor dropped WMS Cloud
+       to a second line, which read as an afterthought rather than the top of the range.
+       Fixed five columns, a wider container and tighter padding keep them level; the
+       media queries below step down to 3, then 2, then 1 as the screen narrows. */
+    .pricing-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 18px; max-width: 1600px; margin: 0 auto; align-items: stretch; }
+    .pricing-card { border-radius: 16px; padding: 28px 22px; border: 2px solid #e2e8f0; position: relative; display: flex; flex-direction: column; }
+    @media (max-width: 1560px) { .pricing-grid { grid-template-columns: repeat(3, 1fr); max-width: 1100px; } }
+    @media (max-width: 1000px) { .pricing-grid { grid-template-columns: repeat(2, 1fr); max-width: 760px; } }
+    @media (max-width: 700px)  { .pricing-grid { grid-template-columns: 1fr; max-width: 420px; } }
+    .pricing-card.popular { border-color: #2563eb; background: #eff6ff; }
+    .pricing-card.plus { border-color: #0d9488; background: #f0fdfa; }
+    .pricing-card.pro { border-color: #9333ea; background: #faf5ff; }
+    .pricing-card.enterprise { border-color: #EAB308; background: #fefce8; }
+    .pricing-badge { position: absolute; top: -14px; left: 50%; transform: translateX(-50%); background: #2563eb; color: #fff; padding: 4px 16px; border-radius: 999px; font-size: 12px; font-weight: 700; white-space: nowrap; }
+    .pricing-badge.plus { background: #0d9488; }
+    .pricing-badge.pro { background: #9333ea; }
+    .pricing-badge.enterprise { background: #EAB308; color: #1e293b; }
+    .pricing-card h3 { font-size: 20px; font-weight: 800; margin-bottom: 8px; }
+    /* Fixed heights per zone so the feature lists all start on the same line. Without
+       them WMS Cloud (no price) and Free (no annual line) shift everything up. */
+    .price { font-size: 42px; font-weight: 800; margin: 16px 0 4px; min-height: 56px; }
+    .price span { font-size: 16px; font-weight: 500; color: #64748b; }
+    .price-note { font-size: 13px; color: #64748b; margin: -2px 0 14px; min-height: 18px; }
+    .pricing-desc { font-size: 13px; color: #64748b; margin-bottom: 20px; line-height: 1.45; min-height: 56px; }
+    .pricing-features { list-style: none; margin-bottom: 24px; flex: 1; }
+    .pricing-features li { font-size: 13px; padding: 5px 0; line-height: 1.4; border-bottom: 1px solid rgba(0,0,0,0.05); display: flex; align-items: center; gap: 8px; }
+    .pricing-features li:last-child { border-bottom: none; }
+    .btn-plan { display: block; text-align: center; padding: 14px; border-radius: 10px; font-size: 15px; font-weight: 700; text-decoration: none; transition: all 0.2s; margin-top: auto; }
+    .btn-plan.basic { background: #2563eb; color: #fff; }
+    .btn-plan.basic:hover { background: #1d4ed8; }
+    .btn-plan.pro { background: #9333ea; color: #fff; }
+    .btn-plan.pro:hover { background: #7c3aed; }
+    .btn-plan.enterprise { background: #EAB308; color: #1e293b; }
+    .btn-plan.enterprise:hover { background: #ca8a04; }
+
+    /* FAQ */
+    .faq-section { background: #f8fafc; padding: 80px 40px; }
+    .faq-grid { max-width: 800px; margin: 0 auto; display: flex; flex-direction: column; gap: 16px; }
+    .faq-item { background: #fff; border-radius: 12px; padding: 24px; border: 1px solid #e2e8f0; }
+    .faq-item h4 { font-size: 16px; font-weight: 700; margin-bottom: 8px; }
+    .faq-item p { font-size: 14px; color: #64748b; line-height: 1.6; }
+
+    /* FOOTER */
+    footer { background: #1e293b; color: #fff; padding: 48px 40px; }
+    .footer-inner { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 24px; }
+    .footer-logo { font-size: 20px; font-weight: 800; }
+    .footer-logo span { color: #EAB308; }
+    .footer-links { display: flex; gap: 24px; }
+    .footer-links a { color: #94a3b8; font-size: 14px; text-decoration: none; transition: color 0.2s; }
+    .footer-links a:hover { color: #fff; }
+    .footer-copy { color: #64748b; font-size: 13px; width: 100%; text-align: center; margin-top: 24px; border-top: 1px solid #334155; padding-top: 24px; }
+
+    @media (max-width: 768px) {
+      nav { padding: 0 20px; }
+      .nav-links { display: none; }
+      .hero { padding: 100px 20px 60px; }
+      .section { padding: 60px 20px; }
+      .how-section, .faq-section { padding: 60px 20px; }
+      footer { padding: 40px 20px; }
+    }
+
+    /* ── Accessibility (WCAG 2.2 AA) ── */
+    .skip-link { position: absolute; left: -9999px; top: 0; z-index: 100000; background: #2563eb; color: #fff; padding: 10px 16px; border-radius: 0 0 8px 0; font: 700 14px/1 'Inter', system-ui, sans-serif; text-decoration: none; }
+    .skip-link:focus { left: 0; }
+    a:focus-visible, button:focus-visible, [tabindex]:focus-visible, iframe:focus-visible { outline: 3px solid #1e3a8a; outline-offset: 2px; border-radius: 4px; }
+    .a11y-contrast { filter: contrast(1.25); }
+    .a11y-links a { text-decoration: underline !important; }
+    .a11y-reduce *, .a11y-reduce *::before, .a11y-reduce *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; scroll-behavior: auto !important; }
+    @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; } }
+    #a11y-btn { position: fixed; left: 20px; bottom: 20px; z-index: 99990; width: 52px; height: 52px; border-radius: 50%; border: none; cursor: pointer; background: #1e3a8a; color: #fff; font-size: 26px; box-shadow: 0 10px 30px rgba(15,23,42,.35); }
+    #a11y-panel { position: fixed; left: 20px; bottom: 84px; z-index: 99991; width: 288px; max-width: calc(100vw - 40px); background: #fff; border: 1px solid #e2e8f0; border-radius: 16px; box-shadow: 0 24px 60px rgba(0,0,0,.3); padding: 16px; color: #0f172a; font-size: 14px; }
+    #a11y-panel h2 { font-size: 16px; margin: 0 0 12px; }
+    .a11y-row { display: flex; justify-content: space-between; align-items: center; width: 100%; padding: 11px 13px; margin-bottom: 8px; border: 1px solid #e2e8f0; border-radius: 10px; background: #fff; cursor: pointer; font-size: 14px; font-weight: 700; color: #1e293b; }
+    .a11y-row[aria-pressed=true] { border-color: #2563eb; background: #eff6ff; }
+    .a11y-size { flex: 1; padding: 10px; border: 1px solid #e2e8f0; border-radius: 10px; background: #fff; font-size: 16px; font-weight: 800; cursor: pointer; }
+    .a11y-reset { width: 100%; margin-top: 6px; padding: 10px; border: 1px solid #cbd5e1; border-radius: 10px; background: #fff; font-weight: 700; color: #475569; cursor: pointer; }
+    .a11y-statement { max-width: 760px; margin: 0 auto; padding: 0 20px 40px; color: #64748b; font-size: 13.5px; line-height: 1.6; text-align: center; }
+    .a11y-statement h2 { color: #1e293b; font-size: 18px; margin-bottom: 8px; }
+    .a11y-statement a { color: #2563eb; }
+  </style>
+<!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-716NJK0VCG"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-716NJK0VCG');
+  </script>
+</head><body>
+  <a class="skip-link" href="#maincontent" data-es="Ir al contenido">Skip to content</a>
+
+  <!-- NAV -->
+  <nav>
+    <div class="nav-logo"><img src="https://cdn.shopify.com/s/files/1/0598/3312/2968/files/logo-bins-Usa.png?v=1777043752" alt="Bins-USA" style="height:56px;object-fit:contain;" /></div>
+    <div class="nav-links">
+      <a href="/demo.html" data-es="Demo">Demo</a>
+      <a href="/features.html" data-es="Funciones">Features</a>
+      <a href="/how-it-works.html" data-es="Cómo funciona">How it works</a>
+      <a href="/pricing.html" data-es="Precios">Pricing</a>
+      <a href="/faq.html" data-es="Preguntas">FAQ</a>
+    </div>
+    <div style="display:flex;align-items:center;gap:12px">
+      <div id="langToggle" role="group" aria-label="Language / Idioma"
+           style="display:inline-flex;border:1px solid #e2e8f0;border-radius:8px;overflow:hidden;background:#fff">
+        <button type="button" data-lang="en" style="padding:6px 12px;border:none;cursor:pointer;font-size:13px;font-weight:700">English</button>
+        <button type="button" data-lang="es" style="padding:6px 12px;border:none;cursor:pointer;font-size:13px;font-weight:700">Español</button>
+      </div>
+      <a href="https://apps.shopify.com/bins-usa" class="nav-cta" data-es="Instalar gratis →">Install Free →</a>
+    </div>
+  </nav>
+
+  <main id="maincontent" tabindex="-1">
+  <article class="section" style="max-width:760px;margin:0 auto">
+    <p style="color:#64748b;font-size:13px;margin-bottom:6px">2026-09-06</p>
+    <h1 style="font-size:32px;font-weight:800;line-height:1.25;margin-bottom:20px">Finding the stock that is not moving</h1>
+    <div style="font-size:16px;line-height:1.75">
+<p>Every warehouse has stock that just sits there. It's not damaged, not returned, not miscounted — it's just quietly taking up a shelf while nobody looks at it. The trouble is that dead stock doesn't announce itself. It looks exactly like good stock until you go check the last time it sold.</p>
+
+<h2>Why dead stock hides so well</h2>
+<p>Slow-moving inventory blends in because your eyes are drawn to the busy parts of the warehouse — the bins you're in and out of every day. The stuff that isn't moving is, by definition, the stuff nobody visits. You could walk past the same box for six months and never notice, because noticing it requires actively looking for absence, not presence.</p>
+<p>It also hides in the numbers. Your total inventory value looks fine on paper. Your sell-through rate for the catalog as a whole looks fine too, because a handful of fast movers can cover for a long tail of slow ones. Dead stock is a problem that averages out of view.</p>
+
+<h2>What 90 days of no movement actually costs</h2>
+<p>Ninety days is a reasonable line to draw for most small retail and wholesale operations — long enough that seasonal lulls don't trip a false alarm, short enough that you catch problems before they compound. Once something crosses that line, here's what it's actually costing you, even if no line item on your P&L says so directly:</p>
+<ul>
+<li><strong>Space.</strong> A bin or shelf slot holding dead stock is a slot you can't use for something that would actually sell. If you're paying for square footage, that space has a cost whether it's earning or not.</li>
+<li><strong>Cash.</strong> Money spent on inventory that isn't selling is money that isn't available for inventory that would. It's tied up, not gone, but tied up cash still isn't cash you can use.</li>
+<li><strong>Labor.</strong> Every cycle count, every reorganization, every time someone has to move a shelf to get at something behind it — dead stock adds friction to tasks that have nothing to do with it.</li>
+<li><strong>Decisions.</strong> Stale inventory numbers skew your reorder decisions. If a system or a person is looking at total units on hand without accounting for what's actually selling, you risk reordering fresh stock while old stock of the same or a similar item sits untouched.</li>
+</ul>
+<p>None of this is dramatic on its own. It's the kind of cost that's easy to shrug off in any given week, but it adds up across a year, and across every slow-moving SKU you're carrying without realizing it.</p>
+
+<h2>How to actually find it</h2>
+<p>You don't need a fancy system to start. You need a habit and a place to look.</p>
+<p>If you're doing this manually, pull a report of last-sold dates for every SKU and sort by oldest. Anything with no sale in 90 days goes on a list. Then physically check a sample of that list against the shelf — sometimes "no sale" means the item is genuinely dead, and sometimes it means it was miscounted, mislabeled, or sitting in a bin nobody scans.</p>
+<p>If you're using a system that tracks bin locations and movement, this gets a lot faster, because you can pull last-activity by bin instead of relying on memory or a walkthrough. This is a place where Bins-USA earns its keep — since every pick, receive, and transfer is logged against a specific bin, you can see at a glance which locations haven't been touched in months, without having to guess or walk the floor. That turns "we should probably audit this sometime" into a report you can actually run.</p>
+
+<h2>What to do once you've found it</h2>
+<p>Finding dead stock is only useful if you follow it with a decision. A few realistic options:</p>
+<ul>
+<li><strong>Discount it and move it.</strong> A markdown that clears the bin is usually better than a bin that sits full for another quarter.</li>
+<li><strong>Bundle it.</strong> Slow movers sometimes sell fine when paired with something that does move, especially if the bundle price feels like a deal.</li>
+<li><strong>Return it to the vendor.</strong> If you have a return or restocking agreement, this is often the cleanest option, even at a partial loss.</li>
+<li><strong>Write it off.</strong> Sometimes the honest answer is that the stock isn't coming back to life, and the bin space is worth more than the hope of a sale.</li>
+</ul>
+<p>Whatever you choose, do it on a schedule — monthly or quarterly — rather than only when you happen to notice a full shelf that shouldn't be full.</p>
+
+<p>Dead stock isn't a moral failing or a sign you bought wrong. It's a normal byproduct of running a warehouse with more than a few SKUs. The only mistake is not checking for it.</p>
+    </div>
+    <p style="margin-top:32px"><a href="/blog/" data-es="← Todos los artículos">← All posts</a></p>
+  </article>
+  <section class="section" style="text-align:center;padding-top:0">
+    <a href="https://apps.shopify.com/bins-usa" class="btn-plan basic" style="display:inline-block;padding:14px 28px;max-width:340px" data-es="🛍️ Instalar en Shopify — Es gratis →">🛍️ Install on Shopify — It's Free →</a>
+  </section>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-logo"><img src="https://cdn.shopify.com/s/files/1/0598/3312/2968/files/logo-bins-Usa.png?v=1777043752" alt="Bins-USA" style="height:44px;object-fit:contain;background:#fff;padding:8px 14px;border-radius:10px;display:block;" /></div>
+      <div class="footer-links">
+        <a href="/features.html" data-es="Funciones">Features</a>
+        <a href="/pricing.html" data-es="Precios">Pricing</a>
+        <a href="/faq.html" data-es="Preguntas">FAQ</a>
+        <a href="/accessibility.html" data-es="Accesibilidad">Accessibility</a>
+        <a href="mailto:support@bins-usa.com" data-es="Soporte">Support</a>
+        <a href="mailto:sales@bins-usa.com" data-es="Contacto">Contact</a>
+        <a href="/privacy.html" data-es="Privacidad">Privacy</a>
+        <a href="/terms.html" data-es="Términos">Terms</a>
+      </div>
+    </div>
+    <div class="footer-copy" data-es="© 2026 Bins-USA. Todos los derechos reservados. Hecho con ❤️ para comerciantes de Shopify.">© 2026 Bins-USA. All rights reserved. Made with ❤️ for Shopify merchants.</div>
+  </footer>
+  <!-- Language toggle.
+       The English copy stays in the HTML and the Spanish rides along in data-es, so
+       search engines index a real page in both and there is no second file to keep in
+       sync. The first English render is stored on the element the first time we switch,
+       which means nothing has to be duplicated up front. -->
+  <script>
+  (function () {
+    var KEY = 'binsusa_lang';
+    function apply(lang) {
+      document.querySelectorAll('[data-es]').forEach(function (el) {
+        if (el.dataset.en === undefined) el.dataset.en = el.innerHTML;
+        el.innerHTML = (lang === 'es') ? el.dataset.es : el.dataset.en;
+      });
+      document.documentElement.lang = (lang === 'es') ? 'es' : 'en';
+      document.querySelectorAll('#langToggle button').forEach(function (b) {
+        var on = b.dataset.lang === lang;
+        b.style.background = on ? '#2563eb' : '#fff';
+        b.style.color = on ? '#fff' : '#475569';
+        b.setAttribute('aria-pressed', on ? 'true' : 'false');
+      });
+      try { localStorage.setItem(KEY, lang); } catch (e) {}
+    }
+    var saved = null;
+    try { saved = localStorage.getItem(KEY); } catch (e) {}
+    // No saved choice: follow the browser. A visitor reading Spanish should not have to
+    // find a button to be spoken to in their language.
+    var start = saved || ((navigator.language || 'en').toLowerCase().indexOf('es') === 0 ? 'es' : 'en');
+    document.addEventListener('DOMContentLoaded', function () {
+      document.querySelectorAll('#langToggle button').forEach(function (b) {
+        b.addEventListener('click', function () { apply(b.dataset.lang); });
+      });
+      apply(start);
+    });
+  })();
+  </script>
+  <script src="/katya.js" defer></script>
+  <script src="/katya.js" defer></script>
+  <script src="/katya.js" defer></script>
+</body>
+</html>

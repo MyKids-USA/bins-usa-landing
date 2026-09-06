@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- build: free-plan-v2 -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bin naming that still makes sense at 400 bins — Bins-USA</title>
+  <!-- Have I Been Pwned domain ownership: proves bins-usa.com is ours so breach
+       notifications for this domain reach us. Removing it un-verifies the domain. -->
+  <meta name="hibp-verify" content="dweb_a3cx516stk4rloobrm09oz3s" />
+  <meta name="description" content="Organize your Shopify warehouse with bins, scan products, generate pick lists, and track inventory — all in one app." />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/png" href="https://cdn.shopify.com/s/files/1/0598/3312/2968/files/favicon_3502c043-d157-46db-b9b0-b9425a5402d8.png?v=1777043751" />
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Inter', sans-serif; color: #1e293b; background: #fff; }
+
+    /* NAV */
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: #fff; border-bottom: 2px solid #e2e8f0; box-shadow: 0 2px 0 0 #EAB308; padding: 0 40px; height: 64px; display: flex; align-items: center; justify-content: space-between; }
+    .nav-logo { display: flex; align-items: center; gap: 10px; font-size: 22px; font-weight: 800; color: #1e293b; }
+    .nav-logo span { color: #EAB308; }
+    .nav-links { display: flex; gap: 32px; }
+    .nav-links a { text-decoration: none; color: #64748b; font-size: 14px; font-weight: 500; transition: color 0.2s; }
+    .nav-links a:hover { color: #1e293b; }
+    .nav-cta { background: #2563eb; color: #fff; padding: 10px 20px; border-radius: 8px; font-size: 14px; font-weight: 600; text-decoration: none; transition: background 0.2s; }
+    .nav-cta:hover { background: #1d4ed8; }
+
+    /* HERO */
+    .hero { padding: 140px 40px 80px; text-align: center; background: linear-gradient(180deg, #f8fafc 0%, #fff 100%); }
+    .hero-badge { display: inline-block; background: #fef9c3; color: #854d0e; padding: 6px 16px; border-radius: 999px; font-size: 13px; font-weight: 600; margin-bottom: 24px; border: 1px solid #fde047; }
+    .hero h1 { font-size: clamp(36px, 6vw, 64px); font-weight: 800; line-height: 1.1; margin-bottom: 24px; }
+    .hero h1 span { color: #2563eb; }
+    .hero p { font-size: 20px; color: #64748b; max-width: 600px; margin: 0 auto 40px; line-height: 1.6; }
+    .hero-buttons { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+    .btn-primary { background: #2563eb; color: #fff; padding: 16px 32px; border-radius: 10px; font-size: 16px; font-weight: 700; text-decoration: none; transition: all 0.2s; display: flex; align-items: center; gap: 8px; }
+    .btn-primary:hover { background: #1d4ed8; transform: translateY(-1px); }
+    .btn-secondary { background: #fff; color: #1e293b; padding: 16px 32px; border-radius: 10px; font-size: 16px; font-weight: 600; text-decoration: none; border: 2px solid #e2e8f0; transition: all 0.2s; }
+    .btn-secondary:hover { border-color: #2563eb; color: #2563eb; }
+    .hero-stats { display: flex; gap: 48px; justify-content: center; margin-top: 64px; flex-wrap: wrap; }
+    .hero-stat { text-align: center; }
+    .hero-stat strong { display: block; font-size: 32px; font-weight: 800; color: #1e293b; }
+    .hero-stat span { font-size: 14px; color: #64748b; }
+
+    /* FEATURES */
+    .section { padding: 80px 40px; max-width: 1200px; margin: 0 auto; }
+    .section-label { text-align: center; font-size: 13px; font-weight: 600; color: #2563eb; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 12px; }
+    .section-title { text-align: center; font-size: clamp(28px, 4vw, 40px); font-weight: 800; margin-bottom: 16px; }
+    .section-subtitle { text-align: center; font-size: 18px; color: #64748b; max-width: 600px; margin: 0 auto 64px; }
+    .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; }
+    .video-wrap { position: relative; width: 100%; max-width: 900px; margin: 0 auto; aspect-ratio: 16 / 9; border-radius: 16px; overflow: hidden; box-shadow: 0 16px 48px rgba(15,23,42,0.16); border: 1px solid #e2e8f0; }
+    .video-wrap iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+    .feature-card { background: #f8fafc; border-radius: 16px; padding: 32px; border: 1px solid #e2e8f0; transition: all 0.2s; }
+    .feature-card:hover { border-color: #2563eb; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(37,99,235,0.1); }
+    .feature-icon { font-size: 36px; margin-bottom: 16px; }
+    .feature-card h3 { font-size: 18px; font-weight: 700; margin-bottom: 8px; }
+    .feature-card p { font-size: 14px; color: #64748b; line-height: 1.6; }
+    .feature-badge { display: inline-block; background: #faf5ff; color: #7c3aed; padding: 3px 10px; border-radius: 999px; font-size: 11px; font-weight: 600; margin-top: 12px; border: 1px solid #e9d5ff; }
+    .feature-badge.plus { background: #f0fdfa; color: #0f766e; border-color: #99f6e4; }
+    .feature-badge.basic { background: #eff6ff; color: #1d4ed8; border-color: #bfdbfe; }
+
+    /* HOW IT WORKS */
+    .how-section { background: #f8fafc; padding: 80px 40px; }
+    .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 32px; max-width: 1200px; margin: 0 auto; }
+    .step { text-align: center; }
+    .step-number { width: 56px; height: 56px; background: #2563eb; color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 22px; font-weight: 800; margin: 0 auto 20px; }
+    .step h3 { font-size: 18px; font-weight: 700; margin-bottom: 8px; }
+    .step p { font-size: 14px; color: #64748b; line-height: 1.6; }
+
+    /* PRICING */
+    /* Five plans on one row on a desktop. auto-fit with a 250px floor dropped WMS Cloud
+       to a second line, which read as an afterthought rather than the top of the range.
+       Fixed five columns, a wider container and tighter padding keep them level; the
+       media queries below step down to 3, then 2, then 1 as the screen narrows. */
+    .pricing-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 18px; max-width: 1600px; margin: 0 auto; align-items: stretch; }
+    .pricing-card { border-radius: 16px; padding: 28px 22px; border: 2px solid #e2e8f0; position: relative; display: flex; flex-direction: column; }
+    @media (max-width: 1560px) { .pricing-grid { grid-template-columns: repeat(3, 1fr); max-width: 1100px; } }
+    @media (max-width: 1000px) { .pricing-grid { grid-template-columns: repeat(2, 1fr); max-width: 760px; } }
+    @media (max-width: 700px)  { .pricing-grid { grid-template-columns: 1fr; max-width: 420px; } }
+    .pricing-card.popular { border-color: #2563eb; background: #eff6ff; }
+    .pricing-card.plus { border-color: #0d9488; background: #f0fdfa; }
+    .pricing-card.pro { border-color: #9333ea; background: #faf5ff; }
+    .pricing-card.enterprise { border-color: #EAB308; background: #fefce8; }
+    .pricing-badge { position: absolute; top: -14px; left: 50%; transform: translateX(-50%); background: #2563eb; color: #fff; padding: 4px 16px; border-radius: 999px; font-size: 12px; font-weight: 700; white-space: nowrap; }
+    .pricing-badge.plus { background: #0d9488; }
+    .pricing-badge.pro { background: #9333ea; }
+    .pricing-badge.enterprise { background: #EAB308; color: #1e293b; }
+    .pricing-card h3 { font-size: 20px; font-weight: 800; margin-bottom: 8px; }
+    /* Fixed heights per zone so the feature lists all start on the same line. Without
+       them WMS Cloud (no price) and Free (no annual line) shift everything up. */
+    .price { font-size: 42px; font-weight: 800; margin: 16px 0 4px; min-height: 56px; }
+    .price span { font-size: 16px; font-weight: 500; color: #64748b; }
+    .price-note { font-size: 13px; color: #64748b; margin: -2px 0 14px; min-height: 18px; }
+    .pricing-desc { font-size: 13px; color: #64748b; margin-bottom: 20px; line-height: 1.45; min-height: 56px; }
+    .pricing-features { list-style: none; margin-bottom: 24px; flex: 1; }
+    .pricing-features li { font-size: 13px; padding: 5px 0; line-height: 1.4; border-bottom: 1px solid rgba(0,0,0,0.05); display: flex; align-items: center; gap: 8px; }
+    .pricing-features li:last-child { border-bottom: none; }
+    .btn-plan { display: block; text-align: center; padding: 14px; border-radius: 10px; font-size: 15px; font-weight: 700; text-decoration: none; transition: all 0.2s; margin-top: auto; }
+    .btn-plan.basic { background: #2563eb; color: #fff; }
+    .btn-plan.basic:hover { background: #1d4ed8; }
+    .btn-plan.pro { background: #9333ea; color: #fff; }
+    .btn-plan.pro:hover { background: #7c3aed; }
+    .btn-plan.enterprise { background: #EAB308; color: #1e293b; }
+    .btn-plan.enterprise:hover { background: #ca8a04; }
+
+    /* FAQ */
+    .faq-section { background: #f8fafc; padding: 80px 40px; }
+    .faq-grid { max-width: 800px; margin: 0 auto; display: flex; flex-direction: column; gap: 16px; }
+    .faq-item { background: #fff; border-radius: 12px; padding: 24px; border: 1px solid #e2e8f0; }
+    .faq-item h4 { font-size: 16px; font-weight: 700; margin-bottom: 8px; }
+    .faq-item p { font-size: 14px; color: #64748b; line-height: 1.6; }
+
+    /* FOOTER */
+    footer { background: #1e293b; color: #fff; padding: 48px 40px; }
+    .footer-inner { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 24px; }
+    .footer-logo { font-size: 20px; font-weight: 800; }
+    .footer-logo span { color: #EAB308; }
+    .footer-links { display: flex; gap: 24px; }
+    .footer-links a { color: #94a3b8; font-size: 14px; text-decoration: none; transition: color 0.2s; }
+    .footer-links a:hover { color: #fff; }
+    .footer-copy { color: #64748b; font-size: 13px; width: 100%; text-align: center; margin-top: 24px; border-top: 1px solid #334155; padding-top: 24px; }
+
+    @media (max-width: 768px) {
+      nav { padding: 0 20px; }
+      .nav-links { display: none; }
+      .hero { padding: 100px 20px 60px; }
+      .section { padding: 60px 20px; }
+      .how-section, .faq-section { padding: 60px 20px; }
+      footer { padding: 40px 20px; }
+    }
+
+    /* ── Accessibility (WCAG 2.2 AA) ── */
+    .skip-link { position: absolute; left: -9999px; top: 0; z-index: 100000; background: #2563eb; color: #fff; padding: 10px 16px; border-radius: 0 0 8px 0; font: 700 14px/1 'Inter', system-ui, sans-serif; text-decoration: none; }
+    .skip-link:focus { left: 0; }
+    a:focus-visible, button:focus-visible, [tabindex]:focus-visible, iframe:focus-visible { outline: 3px solid #1e3a8a; outline-offset: 2px; border-radius: 4px; }
+    .a11y-contrast { filter: contrast(1.25); }
+    .a11y-links a { text-decoration: underline !important; }
+    .a11y-reduce *, .a11y-reduce *::before, .a11y-reduce *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; scroll-behavior: auto !important; }
+    @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; } }
+    #a11y-btn { position: fixed; left: 20px; bottom: 20px; z-index: 99990; width: 52px; height: 52px; border-radius: 50%; border: none; cursor: pointer; background: #1e3a8a; color: #fff; font-size: 26px; box-shadow: 0 10px 30px rgba(15,23,42,.35); }
+    #a11y-panel { position: fixed; left: 20px; bottom: 84px; z-index: 99991; width: 288px; max-width: calc(100vw - 40px); background: #fff; border: 1px solid #e2e8f0; border-radius: 16px; box-shadow: 0 24px 60px rgba(0,0,0,.3); padding: 16px; color: #0f172a; font-size: 14px; }
+    #a11y-panel h2 { font-size: 16px; margin: 0 0 12px; }
+    .a11y-row { display: flex; justify-content: space-between; align-items: center; width: 100%; padding: 11px 13px; margin-bottom: 8px; border: 1px solid #e2e8f0; border-radius: 10px; background: #fff; cursor: pointer; font-size: 14px; font-weight: 700; color: #1e293b; }
+    .a11y-row[aria-pressed=true] { border-color: #2563eb; background: #eff6ff; }
+    .a11y-size { flex: 1; padding: 10px; border: 1px solid #e2e8f0; border-radius: 10px; background: #fff; font-size: 16px; font-weight: 800; cursor: pointer; }
+    .a11y-reset { width: 100%; margin-top: 6px; padding: 10px; border: 1px solid #cbd5e1; border-radius: 10px; background: #fff; font-weight: 700; color: #475569; cursor: pointer; }
+    .a11y-statement { max-width: 760px; margin: 0 auto; padding: 0 20px 40px; color: #64748b; font-size: 13.5px; line-height: 1.6; text-align: center; }
+    .a11y-statement h2 { color: #1e293b; font-size: 18px; margin-bottom: 8px; }
+    .a11y-statement a { color: #2563eb; }
+  </style>
+<!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-716NJK0VCG"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-716NJK0VCG');
+  </script>
+</head><body>
+  <a class="skip-link" href="#maincontent" data-es="Ir al contenido">Skip to content</a>
+
+  <!-- NAV -->
+  <nav>
+    <div class="nav-logo"><img src="https://cdn.shopify.com/s/files/1/0598/3312/2968/files/logo-bins-Usa.png?v=1777043752" alt="Bins-USA" style="height:56px;object-fit:contain;" /></div>
+    <div class="nav-links">
+      <a href="/demo.html" data-es="Demo">Demo</a>
+      <a href="/features.html" data-es="Funciones">Features</a>
+      <a href="/how-it-works.html" data-es="Cómo funciona">How it works</a>
+      <a href="/pricing.html" data-es="Precios">Pricing</a>
+      <a href="/faq.html" data-es="Preguntas">FAQ</a>
+    </div>
+    <div style="display:flex;align-items:center;gap:12px">
+      <div id="langToggle" role="group" aria-label="Language / Idioma"
+           style="display:inline-flex;border:1px solid #e2e8f0;border-radius:8px;overflow:hidden;background:#fff">
+        <button type="button" data-lang="en" style="padding:6px 12px;border:none;cursor:pointer;font-size:13px;font-weight:700">English</button>
+        <button type="button" data-lang="es" style="padding:6px 12px;border:none;cursor:pointer;font-size:13px;font-weight:700">Español</button>
+      </div>
+      <a href="https://apps.shopify.com/bins-usa" class="nav-cta" data-es="Instalar gratis →">Install Free →</a>
+    </div>
+  </nav>
+
+  <main id="maincontent" tabindex="-1">
+  <article class="section" style="max-width:760px;margin:0 auto">
+    <p style="color:#64748b;font-size:13px;margin-bottom:6px">2026-09-06</p>
+    <h1 style="font-size:32px;font-weight:800;line-height:1.25;margin-bottom:20px">Bin naming that still makes sense at 400 bins</h1>
+    <div style="font-size:16px;line-height:1.75">
+<p>Most warehouses start with something simple: box 1, box 2, box 3. It works fine for the first month. Then you add a rack, then another aisle, and someone asks "where's box 47?" and the answer is a long pause. By the time you hit a few hundred bins, a naming scheme that isn't built to scale turns into a daily tax on everyone who picks, packs, or receives.</p>
+
+<p>The good news is that fixing this doesn't require new shelving or a big project. It requires a naming convention that describes location, not history.</p>
+
+<h2>Why sequential numbers fall apart</h2>
+<p>Sequential numbering (bin 1 through bin 400) feels easy at first because it matches the order you built things in. The problem is it encodes nothing about where a bin actually is. Bin 212 could be next to bin 213 or on the other side of the building, depending on when you added it. New hires can't guess locations from the number. Nobody can look at a pick list and mentally route a path through the warehouse, because the numbers don't correspond to physical layout.</p>
+
+<p>It also breaks the moment you rearrange anything. Add a rack in the middle of an aisle and you either renumber everything downstream or you create an ugly gap that nobody remembers the reason for. Six months later someone finds bin "212B" wedged in between 212 and 213 and has no idea why it isn't just 213.</p>
+
+<h2>A scheme that describes location</h2>
+<p>The fix almost every warehouse eventually lands on is some version of aisle-rack-shelf-position: a code that tells you where the bin is just by reading it, no lookup required.</p>
+
+<ul>
+<li><strong>Aisle</strong> — a letter or number for each physical aisle (A, B, C or 01, 02, 03).</li>
+<li><strong>Rack or bay</strong> — which rack within that aisle, numbered in a consistent direction (always left to right facing the aisle, for example).</li>
+<li><strong>Shelf or level</strong> — vertical position, usually numbered bottom to top or top to bottom, pick one and stay consistent.</li>
+<li><strong>Position</strong> — if a shelf holds multiple bins side by side, a final letter or number for left-to-right position.</li>
+</ul>
+
+<p>So a bin named <strong>A-03-02-C</strong> tells a trained employee: aisle A, third rack, second shelf, position C. No memorization needed. Someone who has been on the floor for a week can walk straight to it, and someone who has never seen your warehouse can find it faster than someone reading off a bin numbered 1,842.</p>
+
+<p>This also makes pick lists genuinely useful. If your list is sorted by bin location, and the bin names reflect physical layout, the picker walks a logical path through the building instead of zigzagging based on numeric order that has nothing to do with geography.</p>
+
+<h2>Leave room to grow</h2>
+<p>The single biggest mistake in bin naming isn't the format — it's not leaving gaps. If you number shelves 1, 2, 3, 4 with nothing in between, you can never insert a shelf without renaming everything above it. Number in increments instead: 10, 20, 30, 40. Now if you add a shelf between the first two, it becomes 15, and nothing else has to change.</p>
+
+<p>The same logic applies to aisles and racks. If you have six aisles today, don't assume you'll never add a seventh in the middle of the building because of a layout change. Leaving letter or number gaps costs nothing now and saves a full relabeling project later.</p>
+
+<p>Also decide early how you'll name overflow or temporary locations — receiving staging, a returns cart, a pallet that doesn't fit its normal bin. If these don't have a naming pattern, they become invisible: nobody records them because there's no obvious name to give them, and inventory quietly goes untracked in the gaps.</p>
+
+<h2>Keep it human-readable, not just database-friendly</h2>
+<p>It's tempting to design a scheme that's clever for a spreadsheet but useless out loud. If nobody can say a bin name to a coworker across the warehouse without spelling it out, it's too complex. Keep the pattern short, keep the delimiters consistent (always hyphens, always the same number of digits), and avoid characters that get confused when read aloud or scanned — skip the letter O and the number 0 together, skip I and 1.</p>
+
+<p>If you're printing labels for scanning, this matters even more, since a barcode scan removes ambiguity but a human still has to read the label to know they're standing at the right bin before they scan it.</p>
+
+<h2>Where this gets easier with software</h2>
+<p>A consistent naming scheme is something you can plan on paper or a spreadsheet, and plenty of small warehouses run this way for a while. Where it gets harder is keeping it accurate as bins fill, empty, split, and multiply — and making sure everyone on the floor is looking at the same location data instead of a printout from three weeks ago.</p>
+
+<p>That's the part Bins-USA is built for: bins tied to actual inventory counts, scanning to confirm someone's at the right location, and pick lists that follow your real layout instead of an arbitrary list order. The naming scheme is still yours to design — the app just keeps it enforced and current instead of something written on a whiteboard that goes stale.</p>
+
+<p>Get the naming right first, on paper if you have to. Everything else — scanning, counts, pick routes — works better once the bins themselves make sense.</p>
+    </div>
+    <p style="margin-top:32px"><a href="/blog/" data-es="← Todos los artículos">← All posts</a></p>
+  </article>
+  <section class="section" style="text-align:center;padding-top:0">
+    <a href="https://apps.shopify.com/bins-usa" class="btn-plan basic" style="display:inline-block;padding:14px 28px;max-width:340px" data-es="🛍️ Instalar en Shopify — Es gratis →">🛍️ Install on Shopify — It's Free →</a>
+  </section>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-logo"><img src="https://cdn.shopify.com/s/files/1/0598/3312/2968/files/logo-bins-Usa.png?v=1777043752" alt="Bins-USA" style="height:44px;object-fit:contain;background:#fff;padding:8px 14px;border-radius:10px;display:block;" /></div>
+      <div class="footer-links">
+        <a href="/features.html" data-es="Funciones">Features</a>
+        <a href="/pricing.html" data-es="Precios">Pricing</a>
+        <a href="/faq.html" data-es="Preguntas">FAQ</a>
+        <a href="/accessibility.html" data-es="Accesibilidad">Accessibility</a>
+        <a href="mailto:support@bins-usa.com" data-es="Soporte">Support</a>
+        <a href="mailto:sales@bins-usa.com" data-es="Contacto">Contact</a>
+        <a href="/privacy.html" data-es="Privacidad">Privacy</a>
+        <a href="/terms.html" data-es="Términos">Terms</a>
+      </div>
+    </div>
+    <div class="footer-copy" data-es="© 2026 Bins-USA. Todos los derechos reservados. Hecho con ❤️ para comerciantes de Shopify.">© 2026 Bins-USA. All rights reserved. Made with ❤️ for Shopify merchants.</div>
+  </footer>
+  <!-- Language toggle.
+       The English copy stays in the HTML and the Spanish rides along in data-es, so
+       search engines index a real page in both and there is no second file to keep in
+       sync. The first English render is stored on the element the first time we switch,
+       which means nothing has to be duplicated up front. -->
+  <script>
+  (function () {
+    var KEY = 'binsusa_lang';
+    function apply(lang) {
+      document.querySelectorAll('[data-es]').forEach(function (el) {
+        if (el.dataset.en === undefined) el.dataset.en = el.innerHTML;
+        el.innerHTML = (lang === 'es') ? el.dataset.es : el.dataset.en;
+      });
+      document.documentElement.lang = (lang === 'es') ? 'es' : 'en';
+      document.querySelectorAll('#langToggle button').forEach(function (b) {
+        var on = b.dataset.lang === lang;
+        b.style.background = on ? '#2563eb' : '#fff';
+        b.style.color = on ? '#fff' : '#475569';
+        b.setAttribute('aria-pressed', on ? 'true' : 'false');
+      });
+      try { localStorage.setItem(KEY, lang); } catch (e) {}
+    }
+    var saved = null;
+    try { saved = localStorage.getItem(KEY); } catch (e) {}
+    // No saved choice: follow the browser. A visitor reading Spanish should not have to
+    // find a button to be spoken to in their language.
+    var start = saved || ((navigator.language || 'en').toLowerCase().indexOf('es') === 0 ? 'es' : 'en');
+    document.addEventListener('DOMContentLoaded', function () {
+      document.querySelectorAll('#langToggle button').forEach(function (b) {
+        b.addEventListener('click', function () { apply(b.dataset.lang); });
+      });
+      apply(start);
+    });
+  })();
+  </script>
+  <script src="/katya.js" defer></script>
+  <script src="/katya.js" defer></script>
+  <script src="/katya.js" defer></script>
+</body>
+</html>

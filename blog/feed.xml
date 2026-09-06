@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"><channel>
+  <title>Bins-USA Blog</title>
+  <link>https://bins-usa.com/blog/</link>
+  <description>Practical ideas for organising a Shopify warehouse.</description>
+    <item>
+      <title>How to organise a small Shopify warehouse</title>
+      <link>https://bins-usa.com/blog/how-to-organize-a-shopify-warehouse.html</link>
+      <guid>https://bins-usa.com/blog/how-to-organize-a-shopify-warehouse.html</guid>
+      <description>Somebody with a spare room or a unit, boxes on the floor, and no system. What to name shelves, how granular to go, and when bins start paying off.</description>
+    </item>
+    <item>
+      <title>Bin naming that still makes sense at 400 bins</title>
+      <link>https://bins-usa.com/blog/bin-naming-conventions.html</link>
+      <guid>https://bins-usa.com/blog/bin-naming-conventions.html</guid>
+      <description>Aisle-rack-shelf schemes, why sequential numbers fall apart, and how to leave room to grow.</description>
+    </item>
+    <item>
+      <title>Five things that slow down picking</title>
+      <link>https://bins-usa.com/blog/pick-list-mistakes.html</link>
+      <guid>https://bins-usa.com/blog/pick-list-mistakes.html</guid>
+      <description>Walking order, one product in several bins, no barcode, batching, and printing the list too late.</description>
+    </item>
+    <item>
+      <title>Cycle counting without closing for a day</title>
+      <link>https://bins-usa.com/blog/cycle-counting-small-warehouse.html</link>
+      <guid>https://bins-usa.com/blog/cycle-counting-small-warehouse.html</guid>
+      <description>Counting a few bins a week instead of everything at once, which bins to start with, and what to do with the differences.</description>
+    </item>
+    <item>
+      <title>Shopify locations are not bins</title>
+      <link>https://bins-usa.com/blog/shopify-inventory-locations-vs-bins.html</link>
+      <guid>https://bins-usa.com/blog/shopify-inventory-locations-vs-bins.html</guid>
+      <description>What Shopify tracks, what it does not, and why quantity without position is only half an inventory.</description>
+    </item>
+    <item>
+      <title>Receiving a pallet without losing an afternoon</title>
+      <link>https://bins-usa.com/blog/receiving-a-pallet.html</link>
+      <guid>https://bins-usa.com/blog/receiving-a-pallet.html</guid>
+      <description>Scanning into a bin as you unload, when to label, and why the fast path is one bin at a time.</description>
+    </item>
+    <item>
+      <title>Finding the stock that is not moving</title>
+      <link>https://bins-usa.com/blog/dead-stock.html</link>
+      <guid>https://bins-usa.com/blog/dead-stock.html</guid>
+      <description>How dead stock hides in a warehouse, what 90 days of no movement really costs, and what to do about it.</description>
+    </item>
+    <item>
+      <title>What your warehouse staff should not see</title>
+      <link>https://bins-usa.com/blog/warehouse-staff-access.html</link>
+      <guid>https://bins-usa.com/blog/warehouse-staff-access.html</guid>
+      <description>Costs, margins and payouts on a shared tablet, and how to give someone the picking screen and nothing else.</description>
+    </item>
+</channel></rss>
