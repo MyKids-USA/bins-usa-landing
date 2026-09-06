@@ -275,7 +275,14 @@
       '</div>',
       '<button id="katyaLauncher" type="button" style="position:fixed;right:20px;bottom:20px;z-index:9999;border:none;border-radius:999px;padding:0;width:60px;height:60px;cursor:pointer;background:#2563eb;box-shadow:0 8px 24px rgba(37,99,235,.35);overflow:hidden">',
       '  <img id="katyaFace2" alt="" style="width:100%;height:100%;object-fit:cover"/>',
-      '</button>'
+      '</button>',
+      // The bubble. Seven seconds is long enough that it does not interrupt someone
+      // still reading the hero, and short enough to catch them before they leave.
+      '<div id="katyaBubble" role="status" style="display:none;position:fixed;right:92px;bottom:30px;z-index:9999;max-width:250px;background:#fff;border:1px solid #e2e8f0;border-radius:14px;padding:12px 34px 12px 14px;box-shadow:0 10px 30px rgba(0,0,0,.16);font-size:14px;line-height:1.45;color:#1e293b;opacity:0;transform:translateY(6px);transition:opacity .35s,transform .35s">',
+      '  <span id="katyaBubbleText"></span>',
+      '  <button id="katyaBubbleX" type="button" aria-label="Close" style="position:absolute;top:6px;right:8px;border:none;background:none;font-size:16px;line-height:1;cursor:pointer;color:#94a3b8">&times;</button>',
+      '  <span style="position:absolute;right:-7px;bottom:16px;width:12px;height:12px;background:#fff;border-right:1px solid #e2e8f0;border-bottom:1px solid #e2e8f0;transform:rotate(-45deg)"></span>',
+      '</div>'
     ].join('');
     document.body.appendChild(wrap);
 
@@ -300,6 +307,7 @@
     new MutationObserver(texts).observe(document.documentElement, { attributes: true, attributeFilter: ['lang'] });
 
     function open() {
+      hideBubble(true);
       el.panel.style.display = 'flex';
       document.getElementById('katyaLauncher').style.display = 'none';
       if (!el.log.children.length) {
@@ -318,6 +326,51 @@
     document.getElementById('katyaSend').addEventListener('click', send);
     el.input.addEventListener('keydown', function (e) { if (e.key === 'Enter') send(); });
     el.callBtn.addEventListener('click', startLive);
+
+    // Show it once, after seven seconds, and never again in this browser once it has
+    // been dismissed or the chat has been opened. A bubble that returns on every page
+    // is the thing people close without reading.
+    var bubble = document.getElementById('katyaBubble');
+    var bubbleTimer = null;
+    function hideBubble(remember) {
+      // open() is defined above this line and calls us; `bubble` is a var, so it is
+      // hoisted as undefined rather than assigned. Guard instead of relying on the
+      // order in which these run.
+      if (!bubble) return;
+      clearTimeout(bubbleTimer);
+      bubble.style.opacity = '0';
+      bubble.style.transform = 'translateY(6px)';
+      setTimeout(function () { bubble.style.display = 'none'; }, 350);
+      if (remember) { try { localStorage.setItem('bins_katya_bubble', 'seen'); } catch (e) {} }
+    }
+    function bubbleText() {
+      document.getElementById('katyaBubbleText').textContent =
+        L('¿Tiene preguntas sobre Bins-USA? Con gusto le ayudo. 👋',
+          'Questions about Bins-USA? I am happy to help. 👋');
+    }
+    var seen = false;
+    try { seen = localStorage.getItem('bins_katya_bubble') === 'seen'; } catch (e) {}
+    if (!seen) {
+      bubbleTimer = setTimeout(function () {
+        if (el.panel.style.display === 'flex') return;   // already talking to her
+        bubbleText();
+        bubble.style.display = 'block';
+        requestAnimationFrame(function () {
+          bubble.style.opacity = '1';
+          bubble.style.transform = 'translateY(0)';
+        });
+      }, 7000);
+    }
+    document.getElementById('katyaBubbleX').addEventListener('click', function (e) {
+      e.stopPropagation();
+      hideBubble(true);
+    });
+    // Clicking the bubble is the same as clicking her.
+    bubble.addEventListener('click', function () { hideBubble(true); open(); });
+    // Language can change while it is on screen.
+    new MutationObserver(function () {
+      if (bubble.style.display === 'block') bubbleText();
+    }).observe(document.documentElement, { attributes: true, attributeFilter: ['lang'] });
 
     window.addEventListener('resize', place);
     window.addEventListener('scroll', place, { passive: true });
