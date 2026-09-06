@@ -5,6 +5,12 @@
  * every one of them marks a LiveAvatar defect that fails silently.
  */
 (function () {
+  // One widget per page. A page that includes this file twice used to draw a second
+  // launcher on top of the first; getElementById handed both instances the same
+  // <img>, so the one on top stayed empty and showed as a bare blue circle.
+  if (window.__katyaLoaded) return;
+  window.__katyaLoaded = true;
+
   var API = 'https://bins-usa-backend.onrender.com';
   var SDK_URL = 'https://unpkg.com/@heygen/liveavatar-web-sdk@0.0.18/dist/index.umd.js';
   var lang = function () { return (document.documentElement.lang === 'es') ? 'es' : 'en'; };

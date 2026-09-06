@@ -34,6 +34,57 @@ const TOPICS = [
   ['warehouse-staff-access', 'What your warehouse staff should not see', 'Costs, margins and payouts on a shared tablet, and how to give someone the picking screen and nothing else.'],
 ];
 
+/* Art from the binsusa.com gallery. The five screenshots are the WMS Cloud app, so their
+   captions say so; the two banner designs exist in English and Spanish and swap with the
+   site's language toggle. A slug that is not listed falls back to a banner, so a new topic
+   is never published without an image. */
+const CDN = 'https://cdn.shopify.com/s/files/1/0598/3312/2968/files';
+const BANNERS = [
+  [`${CDN}/banner-1_1.png?v=1780978103`, `${CDN}/bins-usa_1.png?v=1781926971`,
+   'Bin-based inventory management.', 'Gestión de inventario basada en bins.'],
+  [`${CDN}/banner-2_2.png?v=1780978103`, `${CDN}/bins-usa_2.png?v=1781926914`,
+   'Scan it in once and the count is right.', 'Escanéalo una vez y la cuenta queda bien.'],
+];
+const IMAGES = {
+  'bin-naming-conventions': [`${CDN}/SCREENSHOT-4.png?v=1780978150`, null,
+    'Inventory value grouped by bin — the names carry the location: BIN 200, BIN 160, BIN 089.',
+    'Valor de inventario por bin — el nombre lleva la ubicación: BIN 200, BIN 160, BIN 089.'],
+  'cycle-counting-small-warehouse': [`${CDN}/SCREENSHOT-3_1.png?v=1780978150`, null,
+    'Stock and bins side by side: what to count, and where it sits.',
+    'Stock y bins uno al lado del otro: qué contar y dónde está.'],
+  'dead-stock': [`${CDN}/SCREENSHOT-1_1.png?v=1780978150`, null,
+    'The operations dashboard: what moved, what did not, and what needs attention.',
+    'El panel de operaciones: qué se movió, qué no, y qué necesita atención.'],
+  'how-to-organize-a-shopify-warehouse': BANNERS[0],
+  'pick-list-mistakes': [`${CDN}/SCREENSHOT-2_1.png?v=1780978150`, null,
+    'Pick lists grouped by order, with the pick status on every line.',
+    'Listas de selección por orden, con el estado de selección en cada línea.'],
+  'receiving-a-pallet': BANNERS[1],
+  'shopify-inventory-locations-vs-bins': [`${CDN}/SCREENSHOT-3_1.png?v=1780978150`, null,
+    'One product, several bins, inside a single Shopify location.',
+    'Un producto, varios bins, dentro de una sola ubicación de Shopify.'],
+  'warehouse-staff-access': [`${CDN}/SCREENSHOT-5.png?v=1780978150`, null,
+    'Purchase order history — cost and spend, the numbers the floor does not need.',
+    'Historial de órdenes de compra — costo y gasto, los números que la bodega no necesita.'],
+};
+function artFor(slug, i) { return IMAGES[slug] || BANNERS[i % BANNERS.length]; }
+function esSrc(es) { return es ? ` data-es-src="${es}"` : ''; }
+
+function figure(slug, i) {
+  const [src, es, cap, capEs] = artFor(slug, i);
+  return `        <figure class="post-hero" style="margin:0 0 26px">
+          <img src="${src}"${esSrc(es)} alt="" loading="lazy" decoding="async"
+               style="width:100%;height:auto;border-radius:12px;border:1px solid #e2e8f0;display:block" />
+          <figcaption data-es="${capEs}" style="color:#64748b;font-size:13px;margin-top:8px;line-height:1.5">${cap}</figcaption>
+        </figure>`;
+}
+
+function thumb(slug, i) {
+  const [src, es] = artFor(slug, i);
+  return `        <img src="${src}"${esSrc(es)} alt="" loading="lazy" decoding="async"
+             style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:10px;border:1px solid #e2e8f0;margin-bottom:14px;display:block" />`;
+}
+
 const SYSTEM = `You write for the Bins-USA blog. Bins-USA is a Shopify app that records WHERE each product is stored in a warehouse — a shelf, a box, a rack, called a bin.
 
 Write for a Shopify merchant who runs a small or mid-size warehouse. They are practical, busy, and have heard enough marketing.
@@ -74,7 +125,7 @@ function shell() {
   };
 }
 
-function render({ title, body, date, slug }) {
+function render({ title, body, date, slug, i }) {
   const s = shell();
   const head = s.head.replace(/<title>[^<]*<\/title>/, `<title>${title} — Bins-USA</title>`);
   return `${head}<body>
@@ -86,6 +137,7 @@ ${s.nav}
   <article class="section" style="max-width:760px;margin:0 auto">
     <p style="color:#64748b;font-size:13px;margin-bottom:6px">${date}</p>
     <h1 style="font-size:32px;font-weight:800;line-height:1.25;margin-bottom:20px">${title}</h1>
+${figure(slug, i)}
     <div style="font-size:16px;line-height:1.75">
 ${body}
     </div>
@@ -97,7 +149,7 @@ ${body}
   </main>
 
 ${s.foot}
-${s.script}  <script src="/katya.js" defer></script>
+${s.script}
 </body>
 </html>
 `;
@@ -107,6 +159,7 @@ function index(posts) {
   const s = shell();
   const head = s.head.replace(/<title>[^<]*<\/title>/, '<title>Blog — Bins-USA</title>');
   const items = posts.map((p) => `      <a class="feature-card" href="/blog/${p.slug}.html" style="text-decoration:none;color:inherit;display:block">
+${thumb(p.slug, p.i)}
         <p style="color:#64748b;font-size:12px;margin-bottom:6px">${p.date}</p>
         <h3>${p.title}</h3>
         <p>${p.brief}</p>
@@ -128,7 +181,7 @@ ${items}
   </main>
 
 ${s.foot}
-${s.script}  <script src="/katya.js" defer></script>
+${s.script}
 </body>
 </html>
 `;
@@ -155,13 +208,13 @@ const only = process.argv.includes('--one');
 const today = new Date().toISOString().slice(0, 10);
 let written = 0;
 
-for (const [slug, title, brief] of TOPICS) {
+for (const [i, [slug, title, brief]] of TOPICS.entries()) {
   const file = join(BLOG, `${slug}.html`);
   if (existsSync(file)) { console.log(`  skip   ${slug}`); continue; }
   process.stdout.write(`  write  ${slug} … `);
   try {
     const body = await write(title, brief);
-    writeFileSync(file, render({ title, body, date: today, slug }));
+    writeFileSync(file, render({ title, body, date: today, slug, i }));
     console.log(`${body.length} chars`);
     written += 1;
     if (only) break;
@@ -171,8 +224,8 @@ for (const [slug, title, brief] of TOPICS) {
   }
 }
 
-const have = TOPICS.filter(([slug]) => existsSync(join(BLOG, `${slug}.html`)))
-  .map(([slug, title, brief]) => ({ slug, title, brief, date: today }));
+const have = TOPICS.map((t, i) => [t, i]).filter(([[slug]]) => existsSync(join(BLOG, `${slug}.html`)))
+  .map(([[slug, title, brief], i]) => ({ slug, title, brief, date: today, i }));
 writeFileSync(join(BLOG, 'index.html'), index(have));
 writeFileSync(join(BLOG, 'feed.xml'), feed(have));
 console.log(`\n  ${written} written, ${have.length} posts on the index`);
