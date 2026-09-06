@@ -187,9 +187,9 @@
     <p style="color:#64748b;font-size:13px;margin-bottom:6px">2026-09-06</p>
     <h1 style="font-size:32px;font-weight:800;line-height:1.25;margin-bottom:20px">Receiving a pallet without losing an afternoon</h1>
         <figure class="post-hero" style="margin:0 0 26px">
-          <img src="https://cdn.shopify.com/s/files/1/0598/3312/2968/files/banner-2_2.png?v=1780978103" data-es-src="https://cdn.shopify.com/s/files/1/0598/3312/2968/files/bins-usa_2.png?v=1781926914" alt="" loading="lazy" decoding="async"
-               style="width:100%;height:auto;border-radius:12px;border:1px solid #e2e8f0;display:block" />
-          <figcaption data-es="Escanéalo una vez y la cuenta queda bien." style="color:#64748b;font-size:13px;margin-top:8px;line-height:1.5">Scan it in once and the count is right.</figcaption>
+          <img src="/assets/blog/warehouse-pallets.jpg" alt="Wrapped pallets on the floor by the dock door, waiting to be received" data-es-alt="Pallets envueltos en el piso junto al portón, esperando ser recibidos"
+               loading="lazy" decoding="async"
+               style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:12px;display:block" />
         </figure>
     <div style="font-size:16px;line-height:1.75">
 <p>A pallet shows up, the driver wants a signature, and you've got a stack of boxes that need to become inventory in your system before anyone can sell them. It's tempting to unload the whole thing first, stack it in the aisle, and deal with the counting later. That's usually how an afternoon disappears.</p>
@@ -272,6 +272,10 @@
       document.querySelectorAll('[data-es-src]').forEach(function (el) {
         if (el.dataset.enSrc === undefined) el.dataset.enSrc = el.getAttribute('src');
         el.setAttribute('src', (lang === 'es') ? el.dataset.esSrc : el.dataset.enSrc);
+      });
+      document.querySelectorAll('[data-es-alt]').forEach(function (el) {
+        if (el.dataset.enAlt === undefined) el.dataset.enAlt = el.getAttribute('alt') || '';
+        el.setAttribute('alt', (lang === 'es') ? el.dataset.esAlt : el.dataset.enAlt);
       });
       document.documentElement.lang = (lang === 'es') ? 'es' : 'en';
       document.querySelectorAll('#langToggle button').forEach(function (b) {

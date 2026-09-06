@@ -34,54 +34,52 @@ const TOPICS = [
   ['warehouse-staff-access', 'What your warehouse staff should not see', 'Costs, margins and payouts on a shared tablet, and how to give someone the picking screen and nothing else.'],
 ];
 
-/* Art from the binsusa.com gallery. The five screenshots are the WMS Cloud app, so their
-   captions say so; the two banner designs exist in English and Spanish and swap with the
-   site's language toggle. A slug that is not listed falls back to a banner, so a new topic
-   is never published without an image. */
-const CDN = 'https://cdn.shopify.com/s/files/1/0598/3312/2968/files';
-const BANNERS = [
-  [`${CDN}/banner-1_1.png?v=1780978103`, `${CDN}/bins-usa_1.png?v=1781926971`,
-   'Bin-based inventory management.', 'Gestión de inventario basada en bins.'],
-  [`${CDN}/banner-2_2.png?v=1780978103`, `${CDN}/bins-usa_2.png?v=1781926914`,
-   'Scan it in once and the count is right.', 'Escanéalo una vez y la cuenta queda bien.'],
+/* Photos from the binsusa.com blog (Unsplash, commercial use — see assets/blog/CREDITS.txt).
+   Real warehouses, not app screenshots: this blog is read by people who have not installed
+   anything yet. Paired so no two neighbours in the index share a photo; a slug with no entry
+   falls back to the rotation, so a new topic is never published without a picture. */
+const PHOTOS = [
+  ['warehouse-racking.jpg', 'A tidy warehouse aisle with numbered bays and labelled shelves',
+   'Un pasillo de bodega ordenado, con bahías numeradas y estantes etiquetados'],
+  ['warehouse-stacked.jpg', 'High racking with bay labels on the uprights',
+   'Racks altos con las etiquetas de bahía en los postes'],
+  ['warehouse-aisle.jpg', 'A picker on a ladder working a narrow aisle of labelled shelves',
+   'Un seleccionador en una escalera en un pasillo estrecho de estantes etiquetados'],
+  ['warehouse-pallets.jpg', 'Wrapped pallets on the floor by the dock door, waiting to be received',
+   'Pallets envueltos en el piso junto al portón, esperando ser recibidos'],
 ];
-const IMAGES = {
-  'bin-naming-conventions': [`${CDN}/SCREENSHOT-4.png?v=1780978150`, null,
-    'Inventory value grouped by bin — the names carry the location: BIN 200, BIN 160, BIN 089.',
-    'Valor de inventario por bin — el nombre lleva la ubicación: BIN 200, BIN 160, BIN 089.'],
-  'cycle-counting-small-warehouse': [`${CDN}/SCREENSHOT-3_1.png?v=1780978150`, null,
-    'Stock and bins side by side: what to count, and where it sits.',
-    'Stock y bins uno al lado del otro: qué contar y dónde está.'],
-  'dead-stock': [`${CDN}/SCREENSHOT-1_1.png?v=1780978150`, null,
-    'The operations dashboard: what moved, what did not, and what needs attention.',
-    'El panel de operaciones: qué se movió, qué no, y qué necesita atención.'],
-  'how-to-organize-a-shopify-warehouse': BANNERS[0],
-  'pick-list-mistakes': [`${CDN}/SCREENSHOT-2_1.png?v=1780978150`, null,
-    'Pick lists grouped by order, with the pick status on every line.',
-    'Listas de selección por orden, con el estado de selección en cada línea.'],
-  'receiving-a-pallet': BANNERS[1],
-  'shopify-inventory-locations-vs-bins': [`${CDN}/SCREENSHOT-3_1.png?v=1780978150`, null,
-    'One product, several bins, inside a single Shopify location.',
-    'Un producto, varios bins, dentro de una sola ubicación de Shopify.'],
-  'warehouse-staff-access': [`${CDN}/SCREENSHOT-5.png?v=1780978150`, null,
-    'Purchase order history — cost and spend, the numbers the floor does not need.',
-    'Historial de órdenes de compra — costo y gasto, los números que la bodega no necesita.'],
+const PHOTO_FOR = {
+  'how-to-organize-a-shopify-warehouse': PHOTOS[0],
+  'bin-naming-conventions': PHOTOS[1],
+  'pick-list-mistakes': PHOTOS[2],
+  'cycle-counting-small-warehouse': ['warehouse-racking.jpg',
+    'Shelves of boxes in a bright warehouse aisle, ready to be counted',
+    'Estantes con cajas en un pasillo iluminado, listos para contarse'],
+  'shopify-inventory-locations-vs-bins': ['warehouse-stacked.jpg',
+    'Many pallet positions stacked inside a single building',
+    'Muchas posiciones de pallet apiladas dentro de un mismo edificio'],
+  'receiving-a-pallet': PHOTOS[3],
+  'dead-stock': ['warehouse-aisle.jpg',
+    'A quiet warehouse aisle where stock has not moved in a long time',
+    'Un pasillo silencioso donde la mercancía lleva mucho sin moverse'],
+  'warehouse-staff-access': ['warehouse-pallets.jpg',
+    'A warehouse floor where the team works the stock, not the books',
+    'Una bodega donde el equipo trabaja la mercancía, no los libros'],
 };
-function artFor(slug, i) { return IMAGES[slug] || BANNERS[i % BANNERS.length]; }
-function esSrc(es) { return es ? ` data-es-src="${es}"` : ''; }
+function photoFor(slug, i) { return PHOTO_FOR[slug] || PHOTOS[i % PHOTOS.length]; }
 
 function figure(slug, i) {
-  const [src, es, cap, capEs] = artFor(slug, i);
+  const [f, alt, altEs] = photoFor(slug, i);
   return `        <figure class="post-hero" style="margin:0 0 26px">
-          <img src="${src}"${esSrc(es)} alt="" loading="lazy" decoding="async"
-               style="width:100%;height:auto;border-radius:12px;border:1px solid #e2e8f0;display:block" />
-          <figcaption data-es="${capEs}" style="color:#64748b;font-size:13px;margin-top:8px;line-height:1.5">${cap}</figcaption>
+          <img src="/assets/blog/${f}" alt="${alt}" data-es-alt="${altEs}"
+               loading="lazy" decoding="async"
+               style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:12px;display:block" />
         </figure>`;
 }
 
 function thumb(slug, i) {
-  const [src, es] = artFor(slug, i);
-  return `        <img src="${src}"${esSrc(es)} alt="" loading="lazy" decoding="async"
+  const [f, alt, altEs] = photoFor(slug, i);
+  return `        <img src="/assets/blog/${f}" alt="${alt}" data-es-alt="${altEs}" loading="lazy" decoding="async"
              style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:10px;border:1px solid #e2e8f0;margin-bottom:14px;display:block" />`;
 }
 

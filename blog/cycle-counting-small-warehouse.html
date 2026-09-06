@@ -187,9 +187,9 @@
     <p style="color:#64748b;font-size:13px;margin-bottom:6px">2026-09-06</p>
     <h1 style="font-size:32px;font-weight:800;line-height:1.25;margin-bottom:20px">Cycle counting without closing for a day</h1>
         <figure class="post-hero" style="margin:0 0 26px">
-          <img src="https://cdn.shopify.com/s/files/1/0598/3312/2968/files/SCREENSHOT-3_1.png?v=1780978150" alt="" loading="lazy" decoding="async"
-               style="width:100%;height:auto;border-radius:12px;border:1px solid #e2e8f0;display:block" />
-          <figcaption data-es="Stock y bins uno al lado del otro: qué contar y dónde está." style="color:#64748b;font-size:13px;margin-top:8px;line-height:1.5">Stock and bins side by side: what to count, and where it sits.</figcaption>
+          <img src="/assets/blog/warehouse-racking.jpg" alt="Shelves of boxes in a bright warehouse aisle, ready to be counted" data-es-alt="Estantes con cajas en un pasillo iluminado, listos para contarse"
+               loading="lazy" decoding="async"
+               style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:12px;display:block" />
         </figure>
     <div style="font-size:16px;line-height:1.75">
 <p>Full physical inventory counts are miserable. You shut the warehouse down, pull everyone off picking and receiving, and spend a day or two counting things that were probably fine to begin with. Then three weeks later the counts are already drifting again because nobody's checking anything in between. Cycle counting is the alternative: you count a small number of bins on a regular schedule, all year, and you never have to close the doors.</p>
@@ -277,6 +277,10 @@
       document.querySelectorAll('[data-es-src]').forEach(function (el) {
         if (el.dataset.enSrc === undefined) el.dataset.enSrc = el.getAttribute('src');
         el.setAttribute('src', (lang === 'es') ? el.dataset.esSrc : el.dataset.enSrc);
+      });
+      document.querySelectorAll('[data-es-alt]').forEach(function (el) {
+        if (el.dataset.enAlt === undefined) el.dataset.enAlt = el.getAttribute('alt') || '';
+        el.setAttribute('alt', (lang === 'es') ? el.dataset.esAlt : el.dataset.enAlt);
       });
       document.documentElement.lang = (lang === 'es') ? 'es' : 'en';
       document.querySelectorAll('#langToggle button').forEach(function (b) {

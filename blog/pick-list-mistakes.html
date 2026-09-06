@@ -187,9 +187,9 @@
     <p style="color:#64748b;font-size:13px;margin-bottom:6px">2026-09-06</p>
     <h1 style="font-size:32px;font-weight:800;line-height:1.25;margin-bottom:20px">Five things that slow down picking</h1>
         <figure class="post-hero" style="margin:0 0 26px">
-          <img src="https://cdn.shopify.com/s/files/1/0598/3312/2968/files/SCREENSHOT-2_1.png?v=1780978150" alt="" loading="lazy" decoding="async"
-               style="width:100%;height:auto;border-radius:12px;border:1px solid #e2e8f0;display:block" />
-          <figcaption data-es="Listas de selección por orden, con el estado de selección en cada línea." style="color:#64748b;font-size:13px;margin-top:8px;line-height:1.5">Pick lists grouped by order, with the pick status on every line.</figcaption>
+          <img src="/assets/blog/warehouse-aisle.jpg" alt="A picker on a ladder working a narrow aisle of labelled shelves" data-es-alt="Un seleccionador en una escalera en un pasillo estrecho de estantes etiquetados"
+               loading="lazy" decoding="async"
+               style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:12px;display:block" />
         </figure>
     <div style="font-size:16px;line-height:1.75">
 <p>Picking feels like it should be simple: get the order, walk to the product, put it in a box. But if picking is slow in your warehouse, it's almost never because your pickers are slow. It's because the layout, the paperwork, or the process is working against them. Here are five things that quietly add minutes to every pick, and what to do about each one.</p>
@@ -271,6 +271,10 @@
       document.querySelectorAll('[data-es-src]').forEach(function (el) {
         if (el.dataset.enSrc === undefined) el.dataset.enSrc = el.getAttribute('src');
         el.setAttribute('src', (lang === 'es') ? el.dataset.esSrc : el.dataset.enSrc);
+      });
+      document.querySelectorAll('[data-es-alt]').forEach(function (el) {
+        if (el.dataset.enAlt === undefined) el.dataset.enAlt = el.getAttribute('alt') || '';
+        el.setAttribute('alt', (lang === 'es') ? el.dataset.esAlt : el.dataset.enAlt);
       });
       document.documentElement.lang = (lang === 'es') ? 'es' : 'en';
       document.querySelectorAll('#langToggle button').forEach(function (b) {

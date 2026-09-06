@@ -187,9 +187,9 @@
     <p style="color:#64748b;font-size:13px;margin-bottom:6px">2026-09-06</p>
     <h1 style="font-size:32px;font-weight:800;line-height:1.25;margin-bottom:20px">What your warehouse staff should not see</h1>
         <figure class="post-hero" style="margin:0 0 26px">
-          <img src="https://cdn.shopify.com/s/files/1/0598/3312/2968/files/SCREENSHOT-5.png?v=1780978150" alt="" loading="lazy" decoding="async"
-               style="width:100%;height:auto;border-radius:12px;border:1px solid #e2e8f0;display:block" />
-          <figcaption data-es="Historial de órdenes de compra — costo y gasto, los números que la bodega no necesita." style="color:#64748b;font-size:13px;margin-top:8px;line-height:1.5">Purchase order history — cost and spend, the numbers the floor does not need.</figcaption>
+          <img src="/assets/blog/warehouse-pallets.jpg" alt="A warehouse floor where the team works the stock, not the books" data-es-alt="Una bodega donde el equipo trabaja la mercancía, no los libros"
+               loading="lazy" decoding="async"
+               style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:12px;display:block" />
         </figure>
     <div style="font-size:16px;line-height:1.75">
 <p>A shared tablet on the warehouse floor is convenient. Anyone can grab it, look up a pick list, mark an order shipped, and move on. But that same convenience means anyone can also grab it and see whatever the last person left open — including screens that were never meant for a warehouse floor at all.</p>
@@ -282,6 +282,10 @@
       document.querySelectorAll('[data-es-src]').forEach(function (el) {
         if (el.dataset.enSrc === undefined) el.dataset.enSrc = el.getAttribute('src');
         el.setAttribute('src', (lang === 'es') ? el.dataset.esSrc : el.dataset.enSrc);
+      });
+      document.querySelectorAll('[data-es-alt]').forEach(function (el) {
+        if (el.dataset.enAlt === undefined) el.dataset.enAlt = el.getAttribute('alt') || '';
+        el.setAttribute('alt', (lang === 'es') ? el.dataset.esAlt : el.dataset.enAlt);
       });
       document.documentElement.lang = (lang === 'es') ? 'es' : 'en';
       document.querySelectorAll('#langToggle button').forEach(function (b) {

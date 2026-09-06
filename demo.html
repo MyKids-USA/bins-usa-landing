@@ -244,6 +244,10 @@
         if (el.dataset.enSrc === undefined) el.dataset.enSrc = el.getAttribute('src');
         el.setAttribute('src', (lang === 'es') ? el.dataset.esSrc : el.dataset.enSrc);
       });
+      document.querySelectorAll('[data-es-alt]').forEach(function (el) {
+        if (el.dataset.enAlt === undefined) el.dataset.enAlt = el.getAttribute('alt') || '';
+        el.setAttribute('alt', (lang === 'es') ? el.dataset.esAlt : el.dataset.enAlt);
+      });
       document.documentElement.lang = (lang === 'es') ? 'es' : 'en';
       document.querySelectorAll('#langToggle button').forEach(function (b) {
         var on = b.dataset.lang === lang;

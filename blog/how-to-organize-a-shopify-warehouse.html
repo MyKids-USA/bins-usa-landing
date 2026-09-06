@@ -187,9 +187,9 @@
     <p style="color:#64748b;font-size:13px;margin-bottom:6px">2026-09-06</p>
     <h1 style="font-size:32px;font-weight:800;line-height:1.25;margin-bottom:20px">How to organise a small Shopify warehouse</h1>
         <figure class="post-hero" style="margin:0 0 26px">
-          <img src="https://cdn.shopify.com/s/files/1/0598/3312/2968/files/banner-1_1.png?v=1780978103" data-es-src="https://cdn.shopify.com/s/files/1/0598/3312/2968/files/bins-usa_1.png?v=1781926971" alt="" loading="lazy" decoding="async"
-               style="width:100%;height:auto;border-radius:12px;border:1px solid #e2e8f0;display:block" />
-          <figcaption data-es="Gestión de inventario basada en bins." style="color:#64748b;font-size:13px;margin-top:8px;line-height:1.5">Bin-based inventory management.</figcaption>
+          <img src="/assets/blog/warehouse-racking.jpg" alt="A tidy warehouse aisle with numbered bays and labelled shelves" data-es-alt="Un pasillo de bodega ordenado, con bahías numeradas y estantes etiquetados"
+               loading="lazy" decoding="async"
+               style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:12px;display:block" />
         </figure>
     <div style="font-size:16px;line-height:1.75">
 <p>Most small warehouses don't start as warehouses. They start as a spare room, then a garage, then a rented unit, and somewhere in that growth the "system" quietly disappears. You still remember where things are because you put them there yourself. The trouble starts when you can't remember anymore, or when someone else has to find something and can't.</p>
@@ -294,6 +294,10 @@
       document.querySelectorAll('[data-es-src]').forEach(function (el) {
         if (el.dataset.enSrc === undefined) el.dataset.enSrc = el.getAttribute('src');
         el.setAttribute('src', (lang === 'es') ? el.dataset.esSrc : el.dataset.enSrc);
+      });
+      document.querySelectorAll('[data-es-alt]').forEach(function (el) {
+        if (el.dataset.enAlt === undefined) el.dataset.enAlt = el.getAttribute('alt') || '';
+        el.setAttribute('alt', (lang === 'es') ? el.dataset.esAlt : el.dataset.enAlt);
       });
       document.documentElement.lang = (lang === 'es') ? 'es' : 'en';
       document.querySelectorAll('#langToggle button').forEach(function (b) {
