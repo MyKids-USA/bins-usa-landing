@@ -4,7 +4,7 @@
   <!-- build: free-plan-v2 -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Pricing — Bins-USA</title>
+  <title>Support — Bins-USA</title>
   <!-- Have I Been Pwned domain ownership: proves bins-usa.com is ours so breach
        notifications for this domain reach us. Removing it un-verifies the domain. -->
   <meta name="hibp-verify" content="dweb_a3cx516stk4rloobrm09oz3s" />
@@ -180,104 +180,214 @@
   </nav>
 
   <main id="maincontent" tabindex="-1">
-<section class="section" id="pricing">
-    <div class="section-label" data-es="Precios">Pricing</div>
-    <h2 class="section-title" data-es="Precios claros y sin sorpresas">Simple, transparent pricing</h2>
-    <p class="section-subtitle" data-es="Empiece gratis por 14 días. Sin tarjeta de crédito. Cancele cuando quiera.">Start free for 14 days. No credit card required. Cancel anytime.</p>
-    <div class="pricing-grid">
-      <div class="pricing-card">
-        <div class="pricing-badge" style="background:#64748b;" data-es="🎁 Free">🎁 Free</div>
-        <h3 data-es="Free">Free</h3>
-        <div class="price">$0<span data-es="/mes">/mo</span></div>
-        <div class="price-note"></div>
-        <p class="pricing-desc" data-es="Gratis para siempre — sin tarjeta, sin límite de tiempo.">Free forever — no credit card, no time limit.</p>
-        <ul class="pricing-features">
-          <li data-es="✅ Hasta 20 bins y 200 productos">✅ Up to 20 bins and 200 products</li>
-          <li data-es="✅ Escanee y sepa en qué bin está">✅ Scan to find any product's bin</li>
-          <li data-es="✅ Listas de selección de sus órdenes">✅ Pick lists from live Shopify orders</li>
-          <li data-es="✅ Conteos cíclicos con avisos de atraso">✅ Cycle counts with overdue reminders</li>
-          <li data-es="✅ Reciba y guarde escaneando">✅ Receive &amp; put away by scanning</li>
-          <li data-es="✅ Transferencias entre bins">✅ Transfers between bins</li>
-          <li data-es="✅ Etiquetas de bin con código QR">✅ Bin labels with QR codes</li>
-          <li data-es="✅ En español e inglés">✅ English and Spanish</li>
-        </ul>
-        <a href="https://apps.shopify.com/bins-usa" class="btn-plan" style="background:#fff;color:#2563eb;border:2px solid #2563eb;" data-es="Instalar gratis →">Install Free →</a>
+  <section class="section" style="max-width:760px;margin:0 auto">
+    <div class="section-label" data-es="Soporte">Support</div>
+    <h2 class="section-title" data-es="¿Necesita ayuda?">Need a hand?</h2>
+    <p class="section-subtitle" data-es="Cuéntenos qué está pasando y qué tan urgente es. Entre más detalle nos dé, más rápido lo resolvemos.">Tell us what is happening and how urgent it is. The more detail you give us, the faster we can fix it.</p>
+
+    <form id="supportForm" style="display:grid;gap:16px;margin-top:8px">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px" class="cf-row">
+        <label style="display:block">
+          <span style="display:block;font-size:13px;font-weight:600;margin-bottom:5px" data-es="Su nombre *">Your name *</span>
+          <input name="name" required maxlength="200" style="width:100%;border:1px solid #e2e8f0;border-radius:9px;padding:10px 12px;font-size:14px;font-family:inherit;box-sizing:border-box"/>
+        </label>
+        <label style="display:block">
+          <span style="display:block;font-size:13px;font-weight:600;margin-bottom:5px" data-es="Correo *">Email *</span>
+          <input name="email" type="email" required maxlength="200" style="width:100%;border:1px solid #e2e8f0;border-radius:9px;padding:10px 12px;font-size:14px;font-family:inherit;box-sizing:border-box"/>
+        </label>
       </div>
-      <div class="pricing-card popular">
-        <h3 data-es="Basic">Basic</h3>
-        <div class="price">$24.99<span data-es="/mes">/mo</span></div>
-        <div class="price-note" data-es="o $239.90/año · ahorre 20%">or $239.90/year · save 20%</div>
-        <p class="pricing-desc" data-es="Todo lo de Free, sin límites.">Everything in Free, with no limits.</p>
-        <ul class="pricing-features">
-          <li data-es="✅ Bins ilimitados">✅ Unlimited bins</li>
-          <li data-es="✅ Productos ilimitados en los bins">✅ Unlimited products in bins</li>
-          <li data-es="✅ Cree cientos de bins de una sola vez">✅ Bulk-create hundreds of bins at once</li>
-          <li data-es="✅ Imprima las etiquetas de todo un rack">✅ Print a whole rack of labels at once</li>
-          <li data-es="✅ Varias ubicaciones de Shopify">✅ Multiple Shopify locations</li>
-          <li data-es="✅ El bin dentro de las órdenes de Shopify">✅ Bin numbers inside Shopify orders</li>
-          <li data-es="✅ Exporte cualquier reporte a Excel">✅ Export any report to Excel</li>
-          <li data-es="✅ Prueba gratis de 14 días">✅ 14-day free trial</li>
-        </ul>
-        <a href="https://apps.shopify.com/bins-usa" class="btn-plan basic" data-es="Empezar prueba gratis →">Start Free Trial →</a>
+
+      <label style="display:block">
+        <span style="display:block;font-size:13px;font-weight:600;margin-bottom:5px" data-es="Su tienda de Shopify (opcional)">Your Shopify store (optional)</span>
+        <input name="shop" maxlength="200" placeholder="mystore.myshopify.com" style="width:100%;border:1px solid #e2e8f0;border-radius:9px;padding:10px 12px;font-size:14px;font-family:inherit;box-sizing:border-box"/>
+        <span style="display:block;font-size:12px;color:#94a3b8;margin-top:4px" data-es="Nos ayuda a encontrar su cuenta más rápido.">It helps us find your account faster.</span>
+      </label>
+
+      <div>
+        <span style="display:block;font-size:12px;font-weight:700;color:#64748b;text-transform:uppercase;letter-spacing:.05em;margin-bottom:6px" data-es="¿De qué se trata? *">What is it about? *</span>
+        <select name="category" required style="width:100%;border:1px solid #e2e8f0;border-radius:9px;padding:10px 12px;font-size:14px;font-family:inherit;box-sizing:border-box;background:#fff">
+          <option value="" data-es="Elija una categoría…">Select a category…</option>
+          <option value="Bins / Locations" data-es="📍 Bins y ubicaciones">📍 Bins &amp; locations</option>
+          <option value="Scanning" data-es="🔍 Escaneo de productos">🔍 Product scanning</option>
+          <option value="Pick lists" data-es="📋 Listas de selección">📋 Pick lists</option>
+          <option value="Cycle count" data-es="🔢 Conteo cíclico">🔢 Cycle counting</option>
+          <option value="Receiving" data-es="📥 Recepción de mercancía">📥 Receiving</option>
+          <option value="Transfers" data-es="↔️ Transferencias">↔️ Transfers</option>
+          <option value="Labels / Printing" data-es="🏷️ Etiquetas e impresión">🏷️ Labels &amp; printing</option>
+          <option value="Purchase orders" data-es="🧾 Órdenes de compra y proveedores">🧾 Purchase orders &amp; vendors</option>
+          <option value="Reports" data-es="📊 Reportes">📊 Reports</option>
+          <option value="Users and roles" data-es="👥 Usuarios y roles">👥 Users &amp; roles</option>
+          <option value="Install / Shopify" data-es="🔌 Instalación y Shopify">🔌 Install &amp; Shopify</option>
+          <option value="Billing / Plan" data-es="💳 Facturación y plan">💳 Billing &amp; plan</option>
+          <option value="Bug / Error" data-es="🐛 Error o falla">🐛 Bug or error</option>
+          <option value="Feature request" data-es="💡 Sugerencia">💡 Feature request</option>
+          <option value="Other" data-es="❓ Otro">❓ Other</option>
+        </select>
       </div>
-      <div class="pricing-card plus">
-        <div class="pricing-badge plus" data-es="⭐ Mejor valor">⭐ Best Value</div>
-        <h3 data-es="Plus">Plus</h3>
-        <div class="price">$49.99<span data-es="/mes">/mo</span></div>
-        <div class="price-note" data-es="o $499.90/año · ahorre 17%">or $499.90/year · save 17%</div>
-        <p class="pricing-desc" data-es="Vea qué está haciendo realmente su inventario.">See what your inventory is actually doing.</p>
-        <ul class="pricing-features">
-          <li data-es="✅ Todo lo de Basic">✅ Everything in Basic</li>
-          <li data-es="✅ Reporte de rotación de inventario">✅ Inventory rotation report</li>
-          <li data-es="✅ Ventas por producto con márgenes">✅ Sales by product with margins</li>
-          <li data-es="✅ Bins activos y mercancía sin movimiento">✅ Active bins and dead stock</li>
-          <li data-es="✅ Historial completo de transferencias">✅ Transfer history audit trail</li>
-          <li data-es="✅ Gráficas y tendencias en cada reporte">✅ Charts and trends on every report</li>
-          <li data-es="✅ Valor de costo y de venta por bin">✅ Cost vs retail value by bin</li>
-          <li data-es="✅ Prueba gratis de 14 días">✅ 14-day free trial</li>
-        </ul>
-        <a href="https://apps.shopify.com/bins-usa" class="btn-plan basic" style="background:#0d9488;" data-es="Empezar prueba gratis →">Start Free Trial →</a>
+
+      <div>
+        <span style="display:block;font-size:12px;font-weight:700;color:#64748b;text-transform:uppercase;letter-spacing:.05em;margin-bottom:8px" data-es="¿Qué tan urgente es? *">How urgent is it? *</span>
+        <div id="sevGrid" style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
+          <label class="sev" style="display:flex;align-items:flex-start;gap:10px;padding:12px 14px;border:1px solid #e2e8f0;border-radius:10px;cursor:pointer;background:#fff">
+            <input type="radio" name="severity" value="Critical" required style="margin-top:3px"/>
+            <span>
+              <span style="display:block;font-weight:700;font-size:14px" data-es="🔴 Crítico">🔴 Critical</span>
+              <span style="display:block;font-size:12px;color:#64748b;line-height:1.4" data-es="No puedo trabajar, la operación está detenida">I cannot work, the operation is stopped</span>
+            </span>
+          </label>
+          <label class="sev" style="display:flex;align-items:flex-start;gap:10px;padding:12px 14px;border:1px solid #e2e8f0;border-radius:10px;cursor:pointer;background:#fff">
+            <input type="radio" name="severity" value="High" style="margin-top:3px"/>
+            <span>
+              <span style="display:block;font-weight:700;font-size:14px" data-es="🟠 Alto">🟠 High</span>
+              <span style="display:block;font-size:12px;color:#64748b;line-height:1.4" data-es="Una función importante no sirve y no hay cómo rodearla">An important feature is broken with no way around it</span>
+            </span>
+          </label>
+          <label class="sev" style="display:flex;align-items:flex-start;gap:10px;padding:12px 14px;border:1px solid #e2e8f0;border-radius:10px;cursor:pointer;background:#fff">
+            <input type="radio" name="severity" value="Medium" style="margin-top:3px"/>
+            <span>
+              <span style="display:block;font-weight:700;font-size:14px" data-es="🟡 Medio">🟡 Medium</span>
+              <span style="display:block;font-size:12px;color:#64748b;line-height:1.4" data-es="Hay un problema pero puedo seguir trabajando">There is a problem but I can keep working</span>
+            </span>
+          </label>
+          <label class="sev" style="display:flex;align-items:flex-start;gap:10px;padding:12px 14px;border:1px solid #e2e8f0;border-radius:10px;cursor:pointer;background:#fff">
+            <input type="radio" name="severity" value="Low" style="margin-top:3px"/>
+            <span>
+              <span style="display:block;font-weight:700;font-size:14px" data-es="🟢 Bajo">🟢 Low</span>
+              <span style="display:block;font-size:12px;color:#64748b;line-height:1.4" data-es="Algo menor o una consulta general">Something minor, or a general question</span>
+            </span>
+          </label>
+        </div>
       </div>
-      <div class="pricing-card pro">
-        <div class="pricing-badge pro" data-es="⭐ Pro">⭐ Pro</div>
-        <h3 data-es="Pro">Pro</h3>
-        <div class="price">$69.99<span data-es="/mes">/mo</span></div>
-        <div class="price-note" data-es="o $599.90/año · ahorre 29%">or $599.90/year · save 29%</div>
-        <p class="pricing-desc" data-es="Para bodegas con equipo.">For warehouses with a team.</p>
-        <ul class="pricing-features">
-          <li data-es="✅ Todo lo de Plus">✅ Everything in Plus</li>
-          <li data-es="✅ Usuarios y roles para su equipo">✅ Users and roles for your team</li>
-          <li data-es="✅ Su bodega no ve costos ni márgenes">✅ Warehouse staff see no costs or margins</li>
-          <li data-es="✅ Modo bodega para tablets compartidas">✅ Shop-floor mode for shared tablets</li>
-          <li data-es="✅ Pronóstico de ventas y reposición">✅ Sales forecast and reorder points</li>
-          <li data-es="✅ Órdenes de compra en español o inglés">✅ Purchase orders, printable in English or Spanish</li>
-          <li data-es="✅ Proveedores con costos y tiempos">✅ Vendors with costs and lead times</li>
-          <li data-es="✅ Prueba gratis de 14 días">✅ 14-day free trial</li>
-        </ul>
-        <a href="https://apps.shopify.com/bins-usa" class="btn-plan pro" data-es="Empezar prueba gratis →">Start Free Trial →</a>
+
+      <label style="display:block">
+        <span style="display:block;font-size:13px;font-weight:600;margin-bottom:5px" data-es="¿Qué está pasando? *">What is happening? *</span>
+        <textarea name="description" required rows="5" maxlength="4000" data-es-ph="Ejemplo: al escanear un producto en el bin A-03 la app dice «no encontrado», pero el producto sí está en Shopify."
+          placeholder="Example: scanning a product into bin A-03 says &quot;not found&quot;, but the product does exist in Shopify."
+          style="width:100%;border:1px solid #e2e8f0;border-radius:9px;padding:10px 12px;font-size:14px;font-family:inherit;box-sizing:border-box;resize:vertical"></textarea>
+        <span id="sfCount" style="display:block;font-size:12px;color:#f59e0b;margin-top:4px">0 / 10</span>
+      </label>
+
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px" class="cf-row">
+        <label style="display:block">
+          <span style="display:block;font-size:13px;font-weight:600;margin-bottom:5px" data-es="¿Cuándo empezó? <span style='color:#94a3b8;font-weight:400'>(opcional)</span>">When did it start? <span style="color:#94a3b8;font-weight:400">(optional)</span></span>
+          <input name="when_started" maxlength="200" data-es-ph="Hoy, ayer, después de la última actualización…" placeholder="Today, yesterday, after the last update…" style="width:100%;border:1px solid #e2e8f0;border-radius:9px;padding:10px 12px;font-size:14px;font-family:inherit;box-sizing:border-box"/>
+        </label>
+        <label style="display:block">
+          <span style="display:block;font-size:13px;font-weight:600;margin-bottom:5px" data-es="¿Qué ya intentó? <span style='color:#94a3b8;font-weight:400'>(opcional)</span>">What have you tried? <span style="color:#94a3b8;font-weight:400">(optional)</span></span>
+          <input name="steps_tried" maxlength="500" data-es-ph="Recargar la página, volver a instalar…" placeholder="Reloaded the page, reinstalled…" style="width:100%;border:1px solid #e2e8f0;border-radius:9px;padding:10px 12px;font-size:14px;font-family:inherit;box-sizing:border-box"/>
+        </label>
       </div>
-      <div class="pricing-card enterprise">
-        <div class="pricing-badge enterprise" data-es="☁️ WMS Cloud">☁️ WMS Cloud</div>
-        <h3 data-es="WMS Cloud">WMS Cloud</h3>
-        <div class="price" style="font-size:26px;line-height:56px" data-es="A medida">Custom</div>
-        <div class="price-note" data-es="según canales y volumen">based on channels and volume</div>
-        <p class="pricing-desc" data-es="La plataforma completa multicanal — conecte todas sus tiendas y despache con cualquier transportista.">The full multi-channel cloud platform — connect every store and ship with any carrier.</p>
-        <ul class="pricing-features">
-          <li data-es="✅ Todas las herramientas de bodega (bins, recolección, recepción, conteo)">✅ All warehouse tools (bins, picking, receiving, cycle count)</li>
-          <li data-es="✅ Multicanal: Shopify, Amazon, eBay, Walmart, TikTok Shop, WooCommerce, Faire y más">✅ Multi-channel: Shopify, Amazon, eBay, Walmart, TikTok Shop, WooCommerce, Faire &amp; more</li>
-          <li data-es="✅ Envíos con varios transportistas (EasyPost, Shippo, USPS)">✅ Multi-carrier shipping (EasyPost, Shippo, USPS)</li>
-          <li data-es="✅ Órdenes, etiquetas y almacenes ilimitados">✅ Unlimited orders, labels &amp; warehouses</li>
-          <li data-es="✅ Solicitudes de recolección y envíos de varios paquetes">✅ Pickup requests &amp; multi-package shipping</li>
-          <li data-es="✅ API REST, EDI y opciones de marca blanca">✅ REST API, EDI &amp; white-label options</li>
-          <li data-es="✅ Bilingüe (español / inglés) · accesible WCAG 2.2 AA">✅ Bilingual (English / Spanish) · WCAG 2.2 AA accessible</li>
-          <li data-es="✅ Prueba gratis de 14 días">✅ 14-day free trial</li>
-        </ul>
-        <a href="https://binsusa.com/pricing" class="btn-plan enterprise" data-es="Empezar prueba gratis →">Start Free Trial →</a>
+
+      <!-- Hidden from people by position, not by type="hidden": some bots skip hidden
+           inputs but fill everything they can see in the markup. -->
+      <div style="position:absolute;left:-9999px" aria-hidden="true">
+        <label>Website<input name="website" tabindex="-1" autocomplete="off"/></label>
       </div>
-    </div>
-  </section>  <section class="section" style="text-align:center;padding-top:20px">
-    <a href="https://apps.shopify.com/bins-usa" class="btn-plan basic" style="display:inline-block;padding:14px 28px;max-width:340px" data-es="🛍️ Instalar en Shopify — Es gratis →">🛍️ Install on Shopify — It's Free →</a>
+
+      <div id="sfError" style="display:none;background:#fef2f2;border:1px solid #fecaca;color:#991b1b;border-radius:9px;padding:10px 12px;font-size:14px"></div>
+      <div id="sfOk" style="display:none;background:#f0fdf4;border:1px solid #bbf7d0;color:#166534;border-radius:9px;padding:14px 16px;font-size:14px;line-height:1.5"></div>
+
+      <button type="submit" id="sfSend" class="btn-plan basic" style="border:none;cursor:pointer;font-family:inherit" data-es="Enviar a soporte">Send to support</button>
+      <p style="font-size:12px;color:#94a3b8;margin:0" data-es="Le respondemos en menos de 24 horas, de lunes a viernes. Si prefiere, escríbanos a sales@bins-usa.com">We reply within 24 hours, Monday to Friday. If you prefer, email us at sales@bins-usa.com</p>
+    </form>
   </section>
+
+  <script>
+  (function () {
+    var f = document.getElementById('supportForm');
+    if (!f) return;
+    var startedAt = Date.now();
+    var es = function () { return document.documentElement.lang === 'es'; };
+
+    // Placeholders are attributes, so the language toggle (which swaps innerHTML)
+    // cannot reach them. Swap them here on the same event the toggle uses.
+    function placeholders() {
+      f.querySelectorAll('[data-es-ph]').forEach(function (el) {
+        if (el.dataset.enPh === undefined) el.dataset.enPh = el.getAttribute('placeholder') || '';
+        el.setAttribute('placeholder', es() ? el.dataset.esPh : el.dataset.enPh);
+      });
+    }
+    placeholders();
+    new MutationObserver(placeholders).observe(document.documentElement, { attributes: true, attributeFilter: ['lang'] });
+
+    // Selected urgency reads as selected, not just as a checked radio.
+    f.querySelectorAll('#sevGrid input[name="severity"]').forEach(function (r) {
+      r.addEventListener('change', function () {
+        f.querySelectorAll('#sevGrid .sev').forEach(function (l) {
+          var on = l.querySelector('input').checked;
+          l.style.border = on ? '2px solid #2563eb' : '1px solid #e2e8f0';
+          l.style.background = on ? '#eff6ff' : '#fff';
+          l.style.padding = on ? '11px 13px' : '12px 14px';
+        });
+      });
+    });
+
+    var desc = f.querySelector('[name="description"]');
+    var count = document.getElementById('sfCount');
+    desc.addEventListener('input', function () {
+      count.textContent = desc.value.length + ' / 10';
+      count.style.color = desc.value.length < 10 ? '#f59e0b' : '#10b981';
+    });
+
+    f.addEventListener('submit', async function (e) {
+      e.preventDefault();
+      var btn = document.getElementById('sfSend');
+      var err = document.getElementById('sfError');
+      var ok = document.getElementById('sfOk');
+      err.style.display = 'none';
+      var d = Object.fromEntries(new FormData(f).entries());
+
+      if (!d.description || d.description.length < 10) {
+        err.textContent = es() ? 'Cuéntenos un poco más: al menos 10 caracteres.'
+                               : 'Tell us a little more — at least 10 characters.';
+        err.style.display = 'block';
+        desc.focus();
+        return;
+      }
+
+      btn.disabled = true;
+      btn.textContent = es() ? 'Enviando…' : 'Sending…';
+
+      // The support inbox is email, so urgency has to be readable in the subject line
+      // to be triaged without opening anything.
+      var SEV = { Critical: '🔴', High: '🟠', Medium: '🟡', Low: '🟢' };
+      var partes = [d.description];
+      if (d.when_started) partes.push((es() ? 'Empezó: ' : 'Started: ') + d.when_started);
+      if (d.steps_tried) partes.push((es() ? 'Ya intentó: ' : 'Already tried: ') + d.steps_tried);
+      partes.push((es() ? 'Urgencia: ' : 'Urgency: ') + d.severity);
+
+      var payload = {
+        name: d.name, email: d.email, shop: d.shop, website: d.website,
+        started_at: startedAt,
+        category: d.category,
+        subject: (SEV[d.severity] || '') + ' ' + d.severity.toUpperCase() + ' — ' + d.category,
+        message: partes.join('\n\n')
+      };
+
+      try {
+        var r = await fetch('https://bins-usa-backend.onrender.com/api/contact/contact', {
+          method: 'POST',
+          headers: { 'content-type': 'application/json', 'x-bins-lang': es() ? 'es' : 'en' },
+          body: JSON.stringify(payload)
+        });
+        var j = await r.json();
+        if (!r.ok) throw new Error(j.error || 'error');
+        f.style.display = 'none';
+        ok.innerHTML = es()
+          ? '✅ <strong>Recibido.</strong><br/>Le respondemos a ' + d.email + '. Los casos 🔴 críticos los atendemos primero.'
+          : '✅ <strong>Got it.</strong><br/>We will reply to ' + d.email + '. 🔴 Critical cases are handled first.';
+        ok.style.display = 'block';
+        ok.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      } catch (ex) {
+        err.textContent = ex.message || (es() ? 'No se pudo enviar. Escríbanos a sales@bins-usa.com.'
+                                              : 'Could not send. Email us at sales@bins-usa.com.');
+        err.style.display = 'block';
+        btn.disabled = false;
+        btn.textContent = es() ? 'Enviar a soporte' : 'Send to support';
+      }
+    });
+  })();
+  </script>
   </main>
 
   <footer>
