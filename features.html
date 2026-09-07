@@ -117,6 +117,7 @@
     .footer-links { display: flex; gap: 24px; }
     .footer-links a { color: #94a3b8; font-size: 14px; text-decoration: none; transition: color 0.2s; }
     .footer-links a:hover { color: #fff; }
+    @media (max-width: 760px) { .ob-grid { grid-template-columns: 1fr !important; } }
     .footer-copy { color: #64748b; font-size: 13px; width: 100%; text-align: center; margin-top: 24px; border-top: 1px solid #334155; padding-top: 24px; }
 
     @media (max-width: 768px) {
@@ -257,7 +258,34 @@
         <p data-es="Un botón cambia toda la app — menús, pantallas, reportes, la guía del usuario y el asistente de ayuda. Incluido en todos los planes, también en el gratuito.">One button switches the whole app — menus, screens, reports, the user guide and the help assistant. Included on every plan, free ones too.</p>
       </div>
     </div>
-  </section>  <section class="section" style="text-align:center;padding-top:20px">
+  </section>
+
+  <!-- The one thing a merchant can check without installing anything: what the app puts
+       on a screen they already open every day. Worth its own section rather than a card
+       among twenty, because it is the moment the idea lands. -->
+  <section class="section" style="max-width:1040px;margin:0 auto;padding-top:0">
+    <div style="background:#f8fafc;border:1px solid #e2e8f0;border-radius:18px;padding:clamp(24px,4vw,44px);display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,4vw,48px);align-items:center" class="ob-grid">
+      <div>
+        <div class="section-label" style="text-align:left" data-es="Dentro de Shopify">Inside Shopify</div>
+        <h2 style="font-size:clamp(24px,3.4vw,34px);font-weight:800;line-height:1.2;letter-spacing:-0.02em;margin:0 0 14px" data-es="La orden le dice dónde está la mercancía">The order tells you where the goods are</h2>
+        <p style="font-size:17px;color:#475569;line-height:1.65;margin:0 0 16px" data-es="Abra cualquier orden en su admin de Shopify y el bloque de Bins-USA le muestra cada artículo con su bin y la cantidad que hay ahí. Quien va a sacar la mercancía ya sabe a qué estante caminar, sin abrir otra app ni preguntarle a nadie.">Open any order in your Shopify admin and the Bins-USA block shows each item with its bin and how much is in it. Whoever goes to pull the goods already knows which shelf to walk to — no second app, nobody to ask.</p>
+        <ul style="margin:0 0 20px;padding-left:20px;color:#475569;font-size:15px;line-height:1.85">
+          <li data-es="Se agrega una sola vez y aparece en todas las órdenes">Add it once, it stays on every order</li>
+          <li data-es="Avisa cuando un artículo todavía no tiene bin">It tells you when an item has no bin yet</li>
+          <li data-es="Lo ve cualquiera con acceso a su admin de Shopify">Anyone with your Shopify admin can see it</li>
+        </ul>
+        <a href="https://apps.shopify.com/bins-usa" class="btn-plan basic" style="display:inline-block;padding:13px 26px;max-width:280px" data-es="Instalar y probarlo →">Install and try it →</a>
+      </div>
+      <div>
+        <img src="/assets/order-block.png" loading="lazy" decoding="async"
+             alt="A Shopify order page with the Bins-USA block, showing the line item and BIN 001"
+             data-es-alt="Una página de orden de Shopify con el bloque de Bins-USA, mostrando el artículo y BIN 001"
+             style="width:100%;height:auto;border-radius:12px;border:1px solid #e2e8f0;box-shadow:0 12px 34px rgba(15,23,42,.10);display:block" />
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="text-align:center;padding-top:20px">
     <a href="https://apps.shopify.com/bins-usa" class="btn-plan basic" style="display:inline-block;padding:14px 28px;max-width:340px" data-es="🛍️ Instalar en Shopify — Es gratis →">🛍️ Install on Shopify — It's Free →</a>
   </section>
   </main>
