@@ -87,38 +87,56 @@
   // One id per browser tab for the conversation log behind the daily digest.
   // Random, kept in sessionStorage so moving between pages keeps one conversation,
   // and gone with the tab. Storage blocked: the chat works, the turn is not kept.
+  var cidBroken = false;   // a rotation that could not be saved: send no id at all
+  var cidUsed = false;     // once a turn has gone out with the id, it never changes
+  var cidCheck = Promise.resolve();
   function newConversationId() {
     var b = new Uint8Array(16);
     crypto.getRandomValues(b);
     var id = 'c_' + Array.prototype.map.call(b, function (x) { return ('0' + x.toString(16)).slice(-2); }).join('');
     // An id that cannot be kept is not used: the next message would get another
-    // one and a single chat would be stored as several.
-    try { sessionStorage.setItem('katya_cid', id); } catch (e) { return null; }
-    return sessionStorage.getItem('katya_cid') === id ? id : null;
+    // one (or the copied one again) and a single chat would be stored as several.
+    try { sessionStorage.setItem('katya_cid', id); } catch (e) { cidBroken = true; return null; }
+    if (sessionStorage.getItem('katya_cid') !== id) { cidBroken = true; return null; }
+    return id;
   }
+  // Resolves to the id for the next turn. It waits (up to a second) for the
+  // duplicate-tab check below, so a copied id is replaced before it is ever sent;
+  // after the first turn the id is fixed for this page.
   function conversationId() {
-    try {
-      return sessionStorage.getItem('katya_cid') || newConversationId();
-    } catch (e) { return null; }
+    return cidCheck.then(function () {
+      if (cidBroken) return null;
+      try {
+        var id = sessionStorage.getItem('katya_cid') || newConversationId();
+        if (id) cidUsed = true;
+        return id;
+      } catch (e) { return null; }
+    });
   }
   // "Duplicate tab" copies sessionStorage, so two live tabs can start with the
   // same id and their chats would be stored as one. On load, a page holding an id
   // asks the other pages of this site whether one of them has it; if one answers
-  // (however late — a background tab can be slow), this tab takes a fresh id. The
-  // answer names the question it answers, so only the tab that asked ever moves.
-  // A page from the same tab is already gone by then, so navigating never triggers it.
+  // before this page has sent anything, this tab takes a fresh id. The answer
+  // echoes the question's nonce, so only the asking tab ever moves. A page from the
+  // same tab is already gone by then, so navigating never triggers it.
   (function () {
     try {
       var mine = sessionStorage.getItem('katya_cid');
       var ch = new BroadcastChannel('katya_cid');
       var nonce = Math.random().toString(36).slice(2);
+      var settle = null;
       ch.onmessage = function (e) {
         var d = e.data || {}, cur = sessionStorage.getItem('katya_cid');
         if (!cur) return;
         if (d.q === cur) ch.postMessage({ a: cur, n: d.n });
-        else if (d.a && d.a === cur && d.n === nonce) { nonce = null; newConversationId(); }
+        else if (d.a && d.a === cur && d.n === nonce && !cidUsed) {
+          nonce = null; newConversationId(); if (settle) settle();
+        }
       };
-      if (mine) ch.postMessage({ q: mine, n: nonce });
+      if (mine) {
+        cidCheck = new Promise(function (res) { settle = res; setTimeout(res, 1000); });
+        ch.postMessage({ q: mine, n: nonce });
+      }
     } catch (e) {}
   })();
   // Where the chat happened and where the visitor came from, path only — the
@@ -285,7 +303,7 @@
     try {
       var r = await fetch(API + '/api/liveavatar/ask', {
         method: 'POST', headers: { 'content-type': 'application/json' },
-        body: JSON.stringify({ messages: msgs.slice(-10), lang: lang(), cid: conversationId(), page: origin().page, ref: origin().ref })
+        body: JSON.stringify({ messages: msgs.slice(-10), lang: lang(), cid: await conversationId(), page: origin().page, ref: origin().ref })
       });
       var d = await r.json();
       typing.remove();
