@@ -91,8 +91,10 @@
     var b = new Uint8Array(16);
     crypto.getRandomValues(b);
     var id = 'c_' + Array.prototype.map.call(b, function (x) { return ('0' + x.toString(16)).slice(-2); }).join('');
-    try { sessionStorage.setItem('katya_cid', id); } catch (e) {}
-    return id;
+    // An id that cannot be kept is not used: the next message would get another
+    // one and a single chat would be stored as several.
+    try { sessionStorage.setItem('katya_cid', id); } catch (e) { return null; }
+    return sessionStorage.getItem('katya_cid') === id ? id : null;
   }
   function conversationId() {
     try {
