@@ -103,21 +103,22 @@
   }
   // "Duplicate tab" copies sessionStorage, so two live tabs can start with the
   // same id and their chats would be stored as one. On load, a page holding an id
-  // asks the other pages of this site whether one of them has it; if one answers,
-  // this tab takes a fresh id. A page from the same tab is already gone by then,
-  // so moving between pages never triggers it.
+  // asks the other pages of this site whether one of them has it; if one answers
+  // (however late — a background tab can be slow), this tab takes a fresh id. The
+  // answer names the question it answers, so only the tab that asked ever moves.
+  // A page from the same tab is already gone by then, so navigating never triggers it.
   (function () {
     try {
       var mine = sessionStorage.getItem('katya_cid');
       var ch = new BroadcastChannel('katya_cid');
-      var asking = !!mine;
+      var nonce = Math.random().toString(36).slice(2);
       ch.onmessage = function (e) {
         var d = e.data || {}, cur = sessionStorage.getItem('katya_cid');
         if (!cur) return;
-        if (d.q === cur) ch.postMessage({ a: cur });
-        else if (asking && d.a === cur) { asking = false; newConversationId(); }
+        if (d.q === cur) ch.postMessage({ a: cur, n: d.n });
+        else if (d.a && d.a === cur && d.n === nonce) { nonce = null; newConversationId(); }
       };
-      if (mine) { ch.postMessage({ q: mine }); setTimeout(function () { asking = false; }, 1000); }
+      if (mine) ch.postMessage({ q: mine, n: nonce });
     } catch (e) {}
   })();
   // Where the chat happened and where the visitor came from, path only — the
