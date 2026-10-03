@@ -84,6 +84,65 @@
 
   var el = {}, session = null, gl = null, raf = 0, msgs = [], busy = false;
 
+  // One id per browser tab for the conversation log behind the daily digest.
+  // Random, kept in sessionStorage so moving between pages keeps one conversation,
+  // and gone with the tab. Storage blocked: the chat works, the turn is not kept.
+  var cidBroken = false;   // a rotation that could not be saved: send no id at all
+  var cidUsed = false;     // once a turn has gone out with the id, it never changes
+  var cidCheck = Promise.resolve();
+  function newConversationId() {
+    var b = new Uint8Array(16);
+    crypto.getRandomValues(b);
+    var id = 'c_' + Array.prototype.map.call(b, function (x) { return ('0' + x.toString(16)).slice(-2); }).join('');
+    // An id that cannot be kept is not used: the next message would get another
+    // one (or the copied one again) and a single chat would be stored as several.
+    try { sessionStorage.setItem('katya_cid', id); } catch (e) { cidBroken = true; return null; }
+    if (sessionStorage.getItem('katya_cid') !== id) { cidBroken = true; return null; }
+    return id;
+  }
+  // Resolves to the id for the next turn. It waits (up to a second) for the
+  // duplicate-tab check below, so a copied id is replaced before it is ever sent;
+  // after the first turn the id is fixed for this page.
+  function conversationId() {
+    return cidCheck.then(function () {
+      if (cidBroken) return null;
+      try {
+        var id = sessionStorage.getItem('katya_cid') || newConversationId();
+        if (id) cidUsed = true;
+        return id;
+      } catch (e) { return null; }
+    });
+  }
+  // "Duplicate tab" copies sessionStorage, so two live tabs can start with the
+  // same id and their chats would be stored as one. On load, a page holding an id
+  // asks the other pages of this site whether one of them has it; if one answers
+  // before this page has sent anything, this tab takes a fresh id. The answer
+  // echoes the question's nonce, so only the asking tab ever moves. A page from the
+  // same tab is already gone by then, so navigating never triggers it.
+  (function () {
+    try {
+      var mine = sessionStorage.getItem('katya_cid');
+      var ch = new BroadcastChannel('katya_cid');
+      var nonce = Math.random().toString(36).slice(2);
+      var settle = null;
+      ch.onmessage = function (e) {
+        var d = e.data || {}, cur = sessionStorage.getItem('katya_cid');
+        if (!cur) return;
+        if (d.q === cur) ch.postMessage({ a: cur, n: d.n });
+        else if (d.a && d.a === cur && d.n === nonce && !cidUsed) {
+          nonce = null; newConversationId(); if (settle) settle();
+        }
+      };
+      if (mine) {
+        cidCheck = new Promise(function (res) { settle = res; setTimeout(res, 1000); });
+        ch.postMessage({ q: mine, n: nonce });
+      }
+    } catch (e) {}
+  })();
+  // Where the chat happened and where the visitor came from, path only — the
+  // server drops any query string before storing it.
+  function origin() { return { page: location.pathname, ref: document.referrer || '' }; }
+
   function place() {
     if (!el.stage || !el.panel || el.stage.style.display === 'none') return;
     var r = el.panel.getBoundingClientRect();
@@ -179,7 +238,7 @@
         loadSdk(),
         fetch(API + '/api/liveavatar/session', {
           method: 'POST', headers: { 'content-type': 'application/json' },
-          body: JSON.stringify({ language: lang() })
+          body: JSON.stringify({ language: lang(), page: origin().page, ref: origin().ref })
         }).then(function (r) { return r.json(); })
       ]);
       var SDK = out[0], data = out[1];
@@ -244,7 +303,7 @@
     try {
       var r = await fetch(API + '/api/liveavatar/ask', {
         method: 'POST', headers: { 'content-type': 'application/json' },
-        body: JSON.stringify({ messages: msgs.slice(-10), lang: lang() })
+        body: JSON.stringify({ messages: msgs.slice(-10), lang: lang(), cid: await conversationId(), page: origin().page, ref: origin().ref })
       });
       var d = await r.json();
       typing.remove();
@@ -278,6 +337,7 @@
       '    <input id="katyaInput" type="text" style="flex:1;border:1px solid #e2e8f0;border-radius:9px;padding:9px 11px;font-size:14px;font-family:inherit"/>',
       '    <button id="katyaSend" type="button" style="border:none;border-radius:9px;padding:9px 14px;font-weight:700;cursor:pointer;background:#2563eb;color:#fff">→</button>',
       '  </div>',
+      '  <div id="katyaNotice" style="font-size:11px;color:#64748b;text-align:center;padding:0 12px 9px"></div>',
       '</div>',
       '<button id="katyaLauncher" type="button" style="position:fixed;right:20px;bottom:20px;z-index:9999;border:none;border-radius:999px;padding:0;width:60px;height:60px;cursor:pointer;background:#2563eb;box-shadow:0 8px 24px rgba(37,99,235,.35);overflow:hidden">',
       '  <img id="katyaFace2" alt="" style="width:100%;height:100%;object-fit:cover"/>',
@@ -315,6 +375,8 @@
     function texts() {
       document.getElementById('katyaSub').textContent = L('Asistente de Bins-USA', 'Bins-USA assistant');
       el.input.placeholder = L('Escriba su pregunta…', 'Type your question…');
+      document.getElementById('katyaNotice').textContent =
+        L('Guardamos las conversaciones para atenderle mejor.', 'Chats are saved to help us answer you better.');
       if (!session) el.callBtn.textContent = L('🎥 Hablar con Katya', '🎥 Talk to Katya');
     }
     texts();
