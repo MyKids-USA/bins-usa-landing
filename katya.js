@@ -87,18 +87,37 @@
   // One id per browser tab for the conversation log behind the daily digest.
   // Random, kept in sessionStorage so moving between pages keeps one conversation,
   // and gone with the tab. Storage blocked: the chat works, the turn is not kept.
+  function newConversationId() {
+    var b = new Uint8Array(16);
+    crypto.getRandomValues(b);
+    var id = 'c_' + Array.prototype.map.call(b, function (x) { return ('0' + x.toString(16)).slice(-2); }).join('');
+    try { sessionStorage.setItem('katya_cid', id); } catch (e) {}
+    return id;
+  }
   function conversationId() {
     try {
-      var id = sessionStorage.getItem('katya_cid');
-      if (!id) {
-        var b = new Uint8Array(16);
-        crypto.getRandomValues(b);
-        id = 'c_' + Array.prototype.map.call(b, function (x) { return ('0' + x.toString(16)).slice(-2); }).join('');
-        sessionStorage.setItem('katya_cid', id);
-      }
-      return id;
+      return sessionStorage.getItem('katya_cid') || newConversationId();
     } catch (e) { return null; }
   }
+  // "Duplicate tab" copies sessionStorage, so two live tabs can start with the
+  // same id and their chats would be stored as one. On load, a page holding an id
+  // asks the other pages of this site whether one of them has it; if one answers,
+  // this tab takes a fresh id. A page from the same tab is already gone by then,
+  // so moving between pages never triggers it.
+  (function () {
+    try {
+      var mine = sessionStorage.getItem('katya_cid');
+      var ch = new BroadcastChannel('katya_cid');
+      var asking = !!mine;
+      ch.onmessage = function (e) {
+        var d = e.data || {}, cur = sessionStorage.getItem('katya_cid');
+        if (!cur) return;
+        if (d.q === cur) ch.postMessage({ a: cur });
+        else if (asking && d.a === cur) { asking = false; newConversationId(); }
+      };
+      if (mine) { ch.postMessage({ q: mine }); setTimeout(function () { asking = false; }, 1000); }
+    } catch (e) {}
+  })();
   // Where the chat happened and where the visitor came from, path only — the
   // server drops any query string before storing it.
   function origin() { return { page: location.pathname, ref: document.referrer || '' }; }
