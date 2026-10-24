@@ -13,8 +13,17 @@
 
   var API = 'https://bins-usa-backend.onrender.com';
   var SDK_URL = 'https://unpkg.com/@heygen/liveavatar-web-sdk@0.0.18/dist/index.umd.js';
-  var lang = function () { return (document.documentElement.lang === 'es') ? 'es' : 'en'; };
-  var L = function (es, en) { return lang() === 'es' ? es : en; };
+  // The page's own language (one of sixteen). The typed chat answers in it; the video
+  // call is English or Spanish only, so it gets lang().
+  var pageLang = function () { return document.documentElement.lang || 'en'; };
+  var lang = function () { return (pageLang() === 'es') ? 'es' : 'en'; };
+  var L = function (es, en) {
+    var l = pageLang();
+    if (l === 'es') return es;
+    if (l === 'en') return en;
+    var d = window.BINS_T || {};
+    return d[en] || en;
+  };
 
   /* Their UMD hands the factory `window.events$1` for Node's EventEmitter and never
      ships one, so evaluation throws partway and leaves a global with the enums but
@@ -303,7 +312,7 @@
     try {
       var r = await fetch(API + '/api/liveavatar/ask', {
         method: 'POST', headers: { 'content-type': 'application/json' },
-        body: JSON.stringify({ messages: msgs.slice(-10), lang: lang(), cid: await conversationId(), page: origin().page, ref: origin().ref })
+        body: JSON.stringify({ messages: msgs.slice(-10), lang: pageLang(), cid: await conversationId(), page: origin().page, ref: origin().ref })
       });
       var d = await r.json();
       typing.remove();
