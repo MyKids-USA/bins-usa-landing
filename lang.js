@@ -50,7 +50,11 @@
   if (cur === 'en') {
     var saved = null;
     try { saved = localStorage.getItem(KEY); } catch (e) {}
-    var want = saved ? normalize(saved) : normalize(navigator.language);
+    // The browser's language only chooses on arrival. A visitor already moving around
+    // the site who lands on English either picked it or followed an English-only link,
+    // and with storage blocked nothing else remembers that they picked it.
+    var arriving = !document.referrer || document.referrer.indexOf(location.origin + '/') !== 0;
+    var want = saved ? normalize(saved) : (arriving ? normalize(navigator.language) : null);
     if (want && want !== 'en' && exists(want, page)) {
       location.replace(urlFor(want, page) + location.search + location.hash);
       return;

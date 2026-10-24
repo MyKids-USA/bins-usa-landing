@@ -111,9 +111,10 @@ function build(lang, page, dict) {
   // Links to pages that exist in this language stay in it; the blog and, outside
   // Spanish, the legal pages are English.
   const here = pagesFor(lang);
-  html = html.replace(/href="\/(index\.html)?(#[^"]*)?"/g, (all, i, hash) => `href="/${lang}/${hash || ''}"`);
-  html = html.replace(/href="\/([a-z-]+\.html)([#?][^"]*)?"/g, (all, p, rest) =>
-    here.includes(p) ? `href="/${lang}/${p}${rest || ''}"` : all);
+  // Either quote: the Spanish of contact.html links with href='/support.html'.
+  html = html.replace(/href=(["'])\/(index\.html)?(#[^"']*)?\1/g, (all, q, i, hash) => `href=${q}/${lang}/${hash || ''}${q}`);
+  html = html.replace(/href=(["'])\/([a-z-]+\.html)([#?][^"']*)?\1/g, (all, q, p, rest) =>
+    here.includes(p) ? `href=${q}/${lang}/${p}${rest || ''}${q}` : all);
   // The install button opens the App Store listing in the visitor's language.
   if (STORE_LOCALE[lang]) html = html.replace(/href="https:\/\/apps\.shopify\.com\/bins-usa"/g, `href="https://apps.shopify.com/bins-usa?locale=${STORE_LOCALE[lang]}"`);
 
