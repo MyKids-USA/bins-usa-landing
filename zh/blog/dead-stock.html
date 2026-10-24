@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<!-- Written by build-langs.mjs from blog/posts.json and i18n/blog by generate-blog.mjs. -->
+<html lang="zh" dir="ltr">
+<head>
+  <!-- build: free-plan-v2 -->
+  <meta charset="UTF-8" />
+  <script>window.BINS_T = {"Bins-USA — Shopify Warehouse Bin Management":"Bins-USA — Shopify 仓库库位管理","Organize your Shopify warehouse with bins, scan products, generate pick lists, and track inventory — all in one app.":"用库位整理 Shopify 仓库，扫描商品，生成拣货单，跟踪库存，一个应用全搞定。","Sending…":"发送中…","✅ Thank you! We have your message and will reply to {email} within 24 hours.":"✅ 谢谢！我们已收到您的留言，会在 24 小时内回复至 {email}。","Could not send. Email us at sales@bins-usa.com.":"发送失败。请发邮件至 sales@bins-usa.com。","Tell us a little more — at least 10 characters.":"请再多写一点：至少 10 个字符。","Started: ":"开始时间：","Already tried: ":"已尝试：","Urgency: ":"紧急程度：","✅ \u003cstrong>Got it.\u003c/strong>\u003cbr/>We will reply to {email}. 🔴 Critical cases are handled first.":"✅ \u003cstrong>已收到。\u003c/strong>\u003cbr/>我们会回复至 {email}。🔴 严重问题优先处理。","Example: scanning a product into bin A-03 says \"not found\", but the product does exist in Shopify.":"例如：把商品扫进库位 A-03 时，应用显示“未找到”，但该商品在 Shopify 中确实存在。","Today, yesterday, after the last update…":"今天、昨天、上次更新后…","Reloaded the page, reinstalled…":"刷新了页面、重新安装了…","🎥 Talk to Katya":"🎥 与 Katya 通话","Connecting…":"连接中…","⏹ End call":"⏹ 结束通话","I couldn't reach your microphone — check the permission, or type below.":"无法使用您的麦克风，请检查权限，或在下方输入。","I couldn't start the video just now. Type your question and I'll answer anyway.":"暂时无法开启视频。请输入您的问题，我照样回答。","Katya is typing…":"Katya 正在输入…","I couldn't answer just now. Email us at sales@bins-usa.com.":"暂时无法回答。请发邮件至 sales@bins-usa.com。","Bins-USA assistant":"Bins-USA 助手","Type your question…":"输入您的问题…","Chats are saved to help us answer you better.":"我们会保存对话，以便更好地为您服务。","Hi! 👋 I'm Katya. Ask me anything about Bins-USA — plans, features, or how to get started.":"您好！👋 我是 Katya。关于 Bins-USA 的方案、功能或如何开始，尽管问我。","Questions about Bins-USA? I am happy to help. 👋":"对 Bins-USA 有疑问吗？很乐意为您解答。👋","Language":"语言","A Shopify order page with the Bins-USA block, showing the line item and BIN 001":"显示 Bins-USA 模块的 Shopify 订单页面，可见商品和 BIN 001"};</script>
+  <script src="/lang.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>找出不动的库存 — Bins-USA</title>
+  <!-- Have I Been Pwned domain ownership: proves bins-usa.com is ours so breach
+       notifications for this domain reach us. Removing it un-verifies the domain. -->
+  <meta name="hibp-verify" content="dweb_a3cx516stk4rloobrm09oz3s" />
+  <meta name="description" content="呆滞库存如何藏在仓库里，90 天不动销的真实代价，以及该怎么处理。" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/png" href="https://cdn.shopify.com/s/files/1/0598/3312/2968/files/favicon_3502c043-d157-46db-b9b0-b9425a5402d8.png?v=1777043751" />
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Inter', sans-serif; color: #1e293b; background: #fff; }
+
+    /* NAV */
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: #fff; border-bottom: 2px solid #e2e8f0; box-shadow: 0 2px 0 0 #EAB308; padding: 0 40px; height: 64px; display: flex; align-items: center; justify-content: space-between; }
+    .nav-logo { display: flex; align-items: center; gap: 10px; font-size: 22px; font-weight: 800; color: #1e293b; }
+    .nav-logo span { color: #EAB308; }
+    .nav-links { display: flex; gap: 32px; }
+    .nav-links a { text-decoration: none; color: #64748b; font-size: 14px; font-weight: 500; transition: color 0.2s; }
+    .nav-links a:hover { color: #1e293b; }
+    .nav-cta { background: #2563eb; color: #fff; padding: 10px 20px; border-radius: 8px; font-size: 14px; font-weight: 600; text-decoration: none; transition: background 0.2s; }
+    .nav-cta:hover { background: #1d4ed8; }
+
+    /* HERO */
+    .hero { padding: 140px 40px 80px; text-align: center; background: linear-gradient(180deg, #f8fafc 0%, #fff 100%); }
+    .hero-badge { display: inline-block; background: #fef9c3; color: #854d0e; padding: 6px 16px; border-radius: 999px; font-size: 13px; font-weight: 600; margin-bottom: 24px; border: 1px solid #fde047; }
+    .hero h1 { font-size: clamp(36px, 6vw, 64px); font-weight: 800; line-height: 1.1; margin-bottom: 24px; }
+    .hero h1 span { color: #2563eb; }
+    .hero p { font-size: 20px; color: #64748b; max-width: 600px; margin: 0 auto 40px; line-height: 1.6; }
+    .hero-buttons { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+    .btn-primary { background: #2563eb; color: #fff; padding: 16px 32px; border-radius: 10px; font-size: 16px; font-weight: 700; text-decoration: none; transition: all 0.2s; display: flex; align-items: center; gap: 8px; }
+    .btn-primary:hover { background: #1d4ed8; transform: translateY(-1px); }
+    .btn-secondary { background: #fff; color: #1e293b; padding: 16px 32px; border-radius: 10px; font-size: 16px; font-weight: 600; text-decoration: none; border: 2px solid #e2e8f0; transition: all 0.2s; }
+    .btn-secondary:hover { border-color: #2563eb; color: #2563eb; }
+    .hero-stats { display: flex; gap: 48px; justify-content: center; margin-top: 64px; flex-wrap: wrap; }
+    .hero-stat { text-align: center; }
+    .hero-stat strong { display: block; font-size: 32px; font-weight: 800; color: #1e293b; }
+    .hero-stat span { font-size: 14px; color: #64748b; }
+
+    /* FEATURES */
+    .section { padding: 80px 40px; max-width: 1200px; margin: 0 auto; }
+    .section-label { text-align: center; font-size: 13px; font-weight: 600; color: #2563eb; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 12px; }
+    .section-title { text-align: center; font-size: clamp(28px, 4vw, 40px); font-weight: 800; margin-bottom: 16px; }
+    .section-subtitle { text-align: center; font-size: 18px; color: #64748b; max-width: 600px; margin: 0 auto 64px; }
+    .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; }
+    .video-wrap { position: relative; width: 100%; max-width: 900px; margin: 0 auto; aspect-ratio: 16 / 9; border-radius: 16px; overflow: hidden; box-shadow: 0 16px 48px rgba(15,23,42,0.16); border: 1px solid #e2e8f0; }
+    .video-wrap iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+    .feature-card { background: #f8fafc; border-radius: 16px; padding: 32px; border: 1px solid #e2e8f0; transition: all 0.2s; }
+    .feature-card:hover { border-color: #2563eb; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(37,99,235,0.1); }
+    .feature-icon { font-size: 36px; margin-bottom: 16px; }
+    .feature-card h3 { font-size: 18px; font-weight: 700; margin-bottom: 8px; }
+    .feature-card p { font-size: 14px; color: #64748b; line-height: 1.6; }
+    .feature-badge { display: inline-block; background: #faf5ff; color: #7c3aed; padding: 3px 10px; border-radius: 999px; font-size: 11px; font-weight: 600; margin-top: 12px; border: 1px solid #e9d5ff; }
+    .feature-badge.plus { background: #f0fdfa; color: #0f766e; border-color: #99f6e4; }
+    .feature-badge.basic { background: #eff6ff; color: #1d4ed8; border-color: #bfdbfe; }
+
+    /* HOW IT WORKS */
+    .how-section { background: #f8fafc; padding: 80px 40px; }
+    .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 32px; max-width: 1200px; margin: 0 auto; }
+    .step { text-align: center; }
+    .step-number { width: 56px; height: 56px; background: #2563eb; color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 22px; font-weight: 800; margin: 0 auto 20px; }
+    .step h3 { font-size: 18px; font-weight: 700; margin-bottom: 8px; }
+    .step p { font-size: 14px; color: #64748b; line-height: 1.6; }
+
+    /* PRICING */
+    /* Five plans on one row on a desktop. auto-fit with a 250px floor dropped WMS Cloud
+       to a second line, which read as an afterthought rather than the top of the range.
+       Fixed five columns, a wider container and tighter padding keep them level; the
+       media queries below step down to 3, then 2, then 1 as the screen narrows. */
+    .pricing-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 18px; max-width: 1600px; margin: 0 auto; align-items: stretch; }
+    .pricing-card { border-radius: 16px; padding: 28px 22px; border: 2px solid #e2e8f0; position: relative; display: flex; flex-direction: column; }
+    @media (max-width: 1560px) { .pricing-grid { grid-template-columns: repeat(3, 1fr); max-width: 1100px; } }
+    @media (max-width: 1000px) { .pricing-grid { grid-template-columns: repeat(2, 1fr); max-width: 760px; } }
+    @media (max-width: 700px)  { .pricing-grid { grid-template-columns: 1fr; max-width: 420px; } }
+    .pricing-card.popular { border-color: #2563eb; background: #eff6ff; }
+    .pricing-card.plus { border-color: #0d9488; background: #f0fdfa; }
+    .pricing-card.pro { border-color: #9333ea; background: #faf5ff; }
+    .pricing-card.enterprise { border-color: #EAB308; background: #fefce8; }
+    .pricing-badge { position: absolute; top: -14px; left: 50%; transform: translateX(-50%); background: #2563eb; color: #fff; padding: 4px 16px; border-radius: 999px; font-size: 12px; font-weight: 700; white-space: nowrap; }
+    .pricing-badge.plus { background: #0d9488; }
+    .pricing-badge.pro { background: #9333ea; }
+    .pricing-badge.enterprise { background: #EAB308; color: #1e293b; }
+    .pricing-card h3 { font-size: 20px; font-weight: 800; margin-bottom: 8px; }
+    /* Fixed heights per zone so the feature lists all start on the same line. Without
+       them WMS Cloud (no price) and Free (no annual line) shift everything up. */
+    .price { font-size: 42px; font-weight: 800; margin: 16px 0 4px; min-height: 56px; }
+    .price span { font-size: 16px; font-weight: 500; color: #64748b; }
+    .price-note { font-size: 13px; color: #64748b; margin: -2px 0 14px; min-height: 18px; }
+    .pricing-desc { font-size: 13px; color: #64748b; margin-bottom: 20px; line-height: 1.45; min-height: 56px; }
+    .pricing-features { list-style: none; margin-bottom: 24px; flex: 1; }
+    .pricing-features li { font-size: 13px; padding: 5px 0; line-height: 1.4; border-bottom: 1px solid rgba(0,0,0,0.05); display: flex; align-items: center; gap: 8px; }
+    .pricing-features li:last-child { border-bottom: none; }
+    .btn-plan { display: block; text-align: center; padding: 14px; border-radius: 10px; font-size: 15px; font-weight: 700; text-decoration: none; transition: all 0.2s; margin-top: auto; }
+    .btn-plan.basic { background: #2563eb; color: #fff; }
+    .btn-plan.basic:hover { background: #1d4ed8; }
+    .btn-plan.pro { background: #9333ea; color: #fff; }
+    .btn-plan.pro:hover { background: #7c3aed; }
+    .btn-plan.enterprise { background: #EAB308; color: #1e293b; }
+    .btn-plan.enterprise:hover { background: #ca8a04; }
+
+    /* FAQ */
+    .faq-section { background: #f8fafc; padding: 80px 40px; }
+    .faq-grid { max-width: 800px; margin: 0 auto; display: flex; flex-direction: column; gap: 16px; }
+    .faq-item { background: #fff; border-radius: 12px; padding: 24px; border: 1px solid #e2e8f0; }
+    .faq-item h4 { font-size: 16px; font-weight: 700; margin-bottom: 8px; }
+    .faq-item p { font-size: 14px; color: #64748b; line-height: 1.6; }
+
+    /* FOOTER */
+    footer { background: #1e293b; color: #fff; padding: 48px 40px; }
+    .footer-inner { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 24px; }
+    .footer-logo { font-size: 20px; font-weight: 800; }
+    .footer-logo span { color: #EAB308; }
+    .footer-links { display: flex; flex-wrap: wrap; gap: 12px 24px; }
+    .footer-links a { color: #94a3b8; font-size: 14px; text-decoration: none; transition: color 0.2s; }
+    .footer-links a:hover { color: #fff; }
+    @media (max-width: 760px) { .ob-grid { grid-template-columns: 1fr !important; } }
+    .footer-copy { color: #64748b; font-size: 13px; width: 100%; text-align: center; margin-top: 24px; border-top: 1px solid #334155; padding-top: 24px; }
+
+    @media (max-width: 768px) {
+      nav { padding: 0 20px; }
+      .nav-links { display: none; }
+      .hero { padding: 100px 20px 60px; }
+      .section { padding: 60px 20px; }
+      .how-section, .faq-section { padding: 60px 20px; }
+      footer { padding: 40px 20px; }
+    }
+
+    /* ── Accessibility (WCAG 2.2 AA) ── */
+    .skip-link { position: absolute; left: -9999px; top: 0; z-index: 100000; background: #2563eb; color: #fff; padding: 10px 16px; border-radius: 0 0 8px 0; font: 700 14px/1 'Inter', system-ui, sans-serif; text-decoration: none; }
+    .skip-link:focus { left: 0; }
+    a:focus-visible, button:focus-visible, [tabindex]:focus-visible, iframe:focus-visible { outline: 3px solid #1e3a8a; outline-offset: 2px; border-radius: 4px; }
+    .a11y-contrast { filter: contrast(1.25); }
+    .a11y-links a { text-decoration: underline !important; }
+    .a11y-reduce *, .a11y-reduce *::before, .a11y-reduce *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; scroll-behavior: auto !important; }
+    @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; } }
+    #a11y-btn { position: fixed; left: 20px; bottom: 20px; z-index: 99990; width: 52px; height: 52px; border-radius: 50%; border: none; cursor: pointer; background: #1e3a8a; color: #fff; font-size: 26px; box-shadow: 0 10px 30px rgba(15,23,42,.35); }
+    #a11y-panel { position: fixed; left: 20px; bottom: 84px; z-index: 99991; width: 288px; max-width: calc(100vw - 40px); background: #fff; border: 1px solid #e2e8f0; border-radius: 16px; box-shadow: 0 24px 60px rgba(0,0,0,.3); padding: 16px; color: #0f172a; font-size: 14px; }
+    #a11y-panel h2 { font-size: 16px; margin: 0 0 12px; }
+    .a11y-row { display: flex; justify-content: space-between; align-items: center; width: 100%; padding: 11px 13px; margin-bottom: 8px; border: 1px solid #e2e8f0; border-radius: 10px; background: #fff; cursor: pointer; font-size: 14px; font-weight: 700; color: #1e293b; }
+    .a11y-row[aria-pressed=true] { border-color: #2563eb; background: #eff6ff; }
+    .a11y-size { flex: 1; padding: 10px; border: 1px solid #e2e8f0; border-radius: 10px; background: #fff; font-size: 16px; font-weight: 800; cursor: pointer; }
+    .a11y-reset { width: 100%; margin-top: 6px; padding: 10px; border: 1px solid #cbd5e1; border-radius: 10px; background: #fff; font-weight: 700; color: #475569; cursor: pointer; }
+    .a11y-statement { max-width: 760px; margin: 0 auto; padding: 0 20px 40px; color: #64748b; font-size: 13.5px; line-height: 1.6; text-align: center; }
+    .a11y-statement h2 { color: #1e293b; font-size: 18px; margin-bottom: 8px; }
+    .a11y-statement a { color: #2563eb; }
+  </style>
+<!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-716NJK0VCG"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-716NJK0VCG');
+  </script>
+  <!-- hreflang:start -->
+  <link rel="alternate" hreflang="en" href="https://bins-usa.com/blog/dead-stock.html" />
+  <link rel="alternate" hreflang="es" href="https://bins-usa.com/es/blog/dead-stock.html" />
+  <link rel="alternate" hreflang="fr" href="https://bins-usa.com/fr/blog/dead-stock.html" />
+  <link rel="alternate" hreflang="pt-BR" href="https://bins-usa.com/pt-BR/blog/dead-stock.html" />
+  <link rel="alternate" hreflang="de" href="https://bins-usa.com/de/blog/dead-stock.html" />
+  <link rel="alternate" hreflang="it" href="https://bins-usa.com/it/blog/dead-stock.html" />
+  <link rel="alternate" hreflang="nl" href="https://bins-usa.com/nl/blog/dead-stock.html" />
+  <link rel="alternate" hreflang="ja" href="https://bins-usa.com/ja/blog/dead-stock.html" />
+  <link rel="alternate" hreflang="ko" href="https://bins-usa.com/ko/blog/dead-stock.html" />
+  <link rel="alternate" hreflang="zh" href="https://bins-usa.com/zh/blog/dead-stock.html" />
+  <link rel="alternate" hreflang="zh-Hant" href="https://bins-usa.com/zh-Hant/blog/dead-stock.html" />
+  <link rel="alternate" hreflang="hi" href="https://bins-usa.com/hi/blog/dead-stock.html" />
+  <link rel="alternate" hreflang="bn" href="https://bins-usa.com/bn/blog/dead-stock.html" />
+  <link rel="alternate" hreflang="ur" href="https://bins-usa.com/ur/blog/dead-stock.html" />
+  <link rel="alternate" hreflang="ar" href="https://bins-usa.com/ar/blog/dead-stock.html" />
+  <link rel="alternate" hreflang="he" href="https://bins-usa.com/he/blog/dead-stock.html" />
+  <link rel="alternate" hreflang="x-default" href="https://bins-usa.com/blog/dead-stock.html" />
+<!-- hreflang:end -->
+  <link rel="canonical" href="https://bins-usa.com/zh/blog/dead-stock.html" />
+</head><body>
+  <a class="skip-link" href="#maincontent">跳到正文</a>
+
+  <!-- NAV -->
+  <nav>
+    <div class="nav-logo"><img src="https://cdn.shopify.com/s/files/1/0598/3312/2968/files/logo-bins-Usa.png?v=1777043752" alt="Bins-USA" style="height:56px;object-fit:contain;" /></div>
+    <div class="nav-links">
+      <a href="/zh/">首页</a>
+      <a href="/zh/demo.html">演示</a>
+      <a href="/zh/features.html">功能</a>
+      <a href="/zh/how-it-works.html">使用方法</a>
+      <a href="/zh/pricing.html">价格</a>
+      <a href="/zh/faq.html">常见问题</a>
+      <a href="/zh/blog/">博客</a>
+    </div>
+    <div style="display:flex;align-items:center;gap:12px">
+      <select id="langPick" aria-label="语言"
+              style="padding:6px 10px;border:1px solid #e2e8f0;border-radius:8px;background:#fff;cursor:pointer;font-size:13px;font-weight:700;color:#1e293b;max-width:170px"></select>
+    </div>
+  </nav>
+
+  <main id="maincontent" tabindex="-1">
+  <article class="section" style="max-width:760px;margin:0 auto">
+    <p style="color:#64748b;font-size:13px;margin-bottom:6px">2026-09-06</p>
+    <h1 style="font-size:32px;font-weight:800;line-height:1.25;margin-bottom:20px">找出不动的库存</h1>
+        <figure class="post-hero" style="margin:0 0 26px">
+          <img src="/assets/blog/wh-31.jpg" alt="仓库里堆放在托盘上的周转箱"
+               loading="lazy" decoding="async"
+               style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:12px;display:block" />
+          <figcaption style="color:#94a3b8;font-size:11px;margin-top:6px"><span>图片</span>: <a href="https://commons.wikimedia.org/wiki/File:Rallye_des_Vignobles_2015_pic26.jpg" rel="nofollow noopener" style="color:inherit">Cjp24</a> · CC BY-SA 4.0</figcaption>
+        </figure>
+    <div style="font-size:16px;line-height:1.75">
+<p>每个仓库都有一些就那么放着的库存。没坏，不是退货，也没数错，只是在没人注意的时候静静地占着一个货架。麻烦在于，呆滞库存不会自己跳出来。在您去查它最后一次卖出是什么时候之前，它看起来和好库存一模一样。</p>
+
+<h2>呆滞库存为什么藏得这么好</h2>
+<p>周转慢的库存不显眼，是因为人的视线总被仓库里忙碌的地方吸引，也就是每天进进出出的那些库位。不动的东西，按定义就是没人光顾的东西。您可能半年都从同一个箱子旁边经过而毫无察觉，因为要发现它，得主动去寻找一种“缺席”，而不是一种“存在”。</p>
+<p>它也藏在数字里。库存总值在纸面上看起来没问题。整个商品目录的动销率看起来也没问题，因为少数几款快销品可以掩盖一长串慢销品。呆滞库存是一个被平均数遮住的问题。</p>
+
+<h2>90 天不动销的真实代价</h2>
+<p>对大多数小型零售和批发业务来说，90 天是一条合理的界线：足够长，季节性淡季不会引发误报；又足够短，能在问题恶化前发现它。一旦某样东西越过这条线，它实际上在让您付出以下代价，即使损益表里没有哪一行直接写出来：</p>
+<ul>
+<li><strong>空间。</strong>放着呆滞库存的库位或货架格，就是一个不能用来放真正好卖的东西的位置。如果您按面积付租金，那这块空间不管有没有在赚钱，都在花钱。</li>
+<li><strong>现金。</strong>花在卖不动的库存上的钱，就是不能用于好卖库存的钱。它没有消失，只是被占用了，但被占用的现金依然不是您能动用的现金。</li>
+<li><strong>人工。</strong>每一次循环盘点、每一次重新整理、每一次有人为了拿后面的东西而挪动货架，呆滞库存都会给那些与它毫无关系的工作增加阻力。</li>
+<li><strong>决策。</strong>过时的库存数字会扭曲补货决策。如果系统或人只看现有总件数，而不考虑真正在卖的是什么，就可能在同款或类似商品的旧库存原封未动的情况下，又订了一批新货。</li>
+</ul>
+<p>这些单独看都不算严重。在任何一周里，这类成本都很容易被一笑置之，但一年累积下来，再乘以您在不知不觉中背着的每一个慢销 SKU，就不是小数目了。</p>
+
+<h2>怎样真正把它找出来</h2>
+<p>开始时不需要复杂的系统，只需要一个习惯和一个查看的地方。</p>
+<p>如果手工做，就导出每个 SKU 的最后销售日期报表，按最早的排在前面。90 天内没有销售的，全部列进一张清单。然后到货架上实地核对清单中的一部分：有时“没有销售”说明这件商品确实卖不动了，有时则说明它被数错、标签贴错，或者放在一个没人扫描的库位里。</p>
+<p>如果您使用记录库位和移动情况的系统，这件事会快得多，因为可以按库位调出最后一次操作记录，而不必依靠记忆或巡查。这正是 Bins-USA 发挥作用的地方：每一次拣货、收货和调拨都记录在具体的库位上，所以哪些位置几个月没人动过，一眼就能看出来，不用猜，也不用满库房地走。“哪天得查一查”就变成了一份真正可以运行的报表。</p>
+
+<h2>找到之后该怎么办</h2>
+<p>找到呆滞库存，只有在随后做出决定时才有用。几个现实的选择：</p>
+<ul>
+<li><strong>打折清掉。</strong>一次能把库位清空的降价，通常好过让库位再满满地占一个季度。</li>
+<li><strong>组合销售。</strong>慢销品有时搭配一件好卖的商品就能顺利卖出，尤其是当组合价格让人觉得划算的时候。</li>
+<li><strong>退回供应商。</strong>如果您有退货或回收协议，即使有部分损失，这通常也是最干净的选择。</li>
+<li><strong>报损核销。</strong>有时诚实的答案是：这批库存不会再起死回生了，库位的空间比卖出去的希望更有价值。</li>
+</ul>
+<p>无论选择哪种，都要按计划进行，每月或每季度一次，而不是只在偶然发现一个本不该满的货架时才处理。</p>
+
+<p>呆滞库存不是道德上的失败，也不说明您进错了货。只要仓库里的 SKU 不止几个，它就是一种正常的副产品。唯一的错误，是不去检查。</p>
+    </div>
+    <p style="margin-top:32px"><a href="/zh/blog/">← 全部文章</a></p>
+  </article>
+  <section class="section" style="text-align:center;padding-top:0">
+    <a href="https://apps.shopify.com/bins-usa?locale=zh-CN" class="btn-plan basic" style="display:inline-block;padding:14px 28px;max-width:340px">🛍️ 在 Shopify 上安装 — 免费 →</a>
+  </section>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-logo"><img src="https://cdn.shopify.com/s/files/1/0598/3312/2968/files/logo-bins-Usa.png?v=1777043752" alt="Bins-USA" style="height:44px;object-fit:contain;background:#fff;padding:8px 14px;border-radius:10px;display:block;" /></div>
+      <div class="footer-links">
+        <a href="/zh/features.html">功能</a>
+        <a href="/zh/pricing.html">价格</a>
+        <a href="/zh/faq.html">常见问题</a>
+        <a href="/zh/blog/">博客</a>
+        <a href="/accessibility.html">无障碍</a>
+        <a href="/zh/support.html">支持</a>
+        <a href="/zh/contact.html">联系我们</a>
+        <a href="/privacy.html">隐私</a>
+        <a href="/terms.html">条款</a>
+      </div>
+    </div>    <div class="footer-copy">© 2026 Bins-USA. 保留所有权利。用 ❤️ 在美国佛罗里达州基西米为 Shopify 商家打造。</div>
+  </footer>
+  <script src="/katya.js" defer></script>
+</body>
+</html>

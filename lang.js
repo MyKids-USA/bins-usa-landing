@@ -18,22 +18,25 @@
     ['zh', '简体中文'], ['zh-Hant', '繁體中文'], ['hi', 'हिन्दी'], ['bn', 'বাংলা'], ['ur', 'اردو'],
     ['ar', 'العربية'], ['he', 'עברית']
   ];
-  // Pages written in every language. The legal pages exist in English and Spanish only;
-  // the blog has its own English/Spanish switch.
+  // Pages written in every language, the blog included. The legal pages exist in English
+  // and Spanish only.
   var PAGES = ['index.html', 'demo.html', 'features.html', 'how-it-works.html', 'pricing.html', 'faq.html', 'support.html', 'contact.html'];
   var SPANISH_TOO = ['privacy.html', 'terms.html', 'accessibility.html'];
   var KEY = 'binsusa_lang';
 
   var cur = document.documentElement.lang || 'en';
-  var page = location.pathname.split('/').pop() || 'index.html';
+  // A blog page is "blog/<file>", so /fr/blog/x.html and /blog/x.html are the same page.
+  var parts = location.pathname.split('/');
+  var page = (parts.pop() || 'index.html');
+  if (parts.pop() === 'blog') page = 'blog/' + page;
 
   function exists(l, p) {
-    return l === 'en' || PAGES.indexOf(p) >= 0 || (l === 'es' && SPANISH_TOO.indexOf(p) >= 0);
+    return l === 'en' || p.indexOf('blog/') === 0 || PAGES.indexOf(p) >= 0 || (l === 'es' && SPANISH_TOO.indexOf(p) >= 0);
   }
   function urlFor(l, p) {
     var base = l === 'en' ? '/' : '/' + l + '/';
     if (!exists(l, p) || p === 'index.html') return base;
-    return base + p;
+    return base + p.replace(/index\.html$/, '');
   }
   // What browsers and old saved values say, mapped onto our sixteen codes.
   function normalize(tag) {

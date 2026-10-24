@@ -3,12 +3,13 @@
 <head>
   <!-- build: free-plan-v2 -->
   <meta charset="UTF-8" />
+  <script src="/lang.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title data-es="Encontrar la mercancía que no se está moviendo — Bins-USA">Finding the stock that is not moving — Bins-USA</title>
+  <title>Finding the stock that is not moving — Bins-USA</title>
   <!-- Have I Been Pwned domain ownership: proves bins-usa.com is ours so breach
        notifications for this domain reach us. Removing it un-verifies the domain. -->
   <meta name="hibp-verify" content="dweb_a3cx516stk4rloobrm09oz3s" />
-  <meta name="description" content="Organize your Shopify warehouse with bins, scan products, generate pick lists, and track inventory — all in one app." />
+  <meta name="description" content="How dead stock hides in a warehouse, what 90 days of no movement really costs, and what to do about it." />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="icon" type="image/png" href="https://cdn.shopify.com/s/files/1/0598/3312/2968/files/favicon_3502c043-d157-46db-b9b0-b9425a5402d8.png?v=1777043751" />
   <style>
@@ -117,6 +118,7 @@
     .footer-links { display: flex; flex-wrap: wrap; gap: 12px 24px; }
     .footer-links a { color: #94a3b8; font-size: 14px; text-decoration: none; transition: color 0.2s; }
     .footer-links a:hover { color: #fff; }
+    @media (max-width: 760px) { .ob-grid { grid-template-columns: 1fr !important; } }
     .footer-copy { color: #64748b; font-size: 13px; width: 100%; text-align: center; margin-top: 24px; border-top: 1px solid #334155; padding-top: 24px; }
 
     @media (max-width: 768px) {
@@ -155,6 +157,26 @@
     gtag('js', new Date());
     gtag('config', 'G-716NJK0VCG');
   </script>
+  <!-- hreflang:start -->
+  <link rel="alternate" hreflang="en" href="https://bins-usa.com/blog/dead-stock.html" />
+  <link rel="alternate" hreflang="es" href="https://bins-usa.com/es/blog/dead-stock.html" />
+  <link rel="alternate" hreflang="fr" href="https://bins-usa.com/fr/blog/dead-stock.html" />
+  <link rel="alternate" hreflang="pt-BR" href="https://bins-usa.com/pt-BR/blog/dead-stock.html" />
+  <link rel="alternate" hreflang="de" href="https://bins-usa.com/de/blog/dead-stock.html" />
+  <link rel="alternate" hreflang="it" href="https://bins-usa.com/it/blog/dead-stock.html" />
+  <link rel="alternate" hreflang="nl" href="https://bins-usa.com/nl/blog/dead-stock.html" />
+  <link rel="alternate" hreflang="ja" href="https://bins-usa.com/ja/blog/dead-stock.html" />
+  <link rel="alternate" hreflang="ko" href="https://bins-usa.com/ko/blog/dead-stock.html" />
+  <link rel="alternate" hreflang="zh" href="https://bins-usa.com/zh/blog/dead-stock.html" />
+  <link rel="alternate" hreflang="zh-Hant" href="https://bins-usa.com/zh-Hant/blog/dead-stock.html" />
+  <link rel="alternate" hreflang="hi" href="https://bins-usa.com/hi/blog/dead-stock.html" />
+  <link rel="alternate" hreflang="bn" href="https://bins-usa.com/bn/blog/dead-stock.html" />
+  <link rel="alternate" hreflang="ur" href="https://bins-usa.com/ur/blog/dead-stock.html" />
+  <link rel="alternate" hreflang="ar" href="https://bins-usa.com/ar/blog/dead-stock.html" />
+  <link rel="alternate" hreflang="he" href="https://bins-usa.com/he/blog/dead-stock.html" />
+  <link rel="alternate" hreflang="x-default" href="https://bins-usa.com/blog/dead-stock.html" />
+<!-- hreflang:end -->
+  <link rel="canonical" href="https://bins-usa.com/blog/dead-stock.html" />
 </head><body>
   <a class="skip-link" href="#maincontent" data-es="Ir al contenido">Skip to content</a>
 
@@ -171,59 +193,56 @@
       <a href="/blog/" data-es="Blog">Blog</a>
     </div>
     <div style="display:flex;align-items:center;gap:12px">
-      <div id="langToggle" role="group" aria-label="Language / Idioma"
-           style="display:inline-flex;border:1px solid #e2e8f0;border-radius:8px;overflow:hidden;background:#fff">
-        <button type="button" data-lang="en" style="padding:6px 12px;border:none;cursor:pointer;font-size:13px;font-weight:700">English</button>
-        <button type="button" data-lang="es" style="padding:6px 12px;border:none;cursor:pointer;font-size:13px;font-weight:700">Español</button>
-      </div>
+      <select id="langPick" aria-label="Language"
+              style="padding:6px 10px;border:1px solid #e2e8f0;border-radius:8px;background:#fff;cursor:pointer;font-size:13px;font-weight:700;color:#1e293b;max-width:170px"></select>
     </div>
   </nav>
 
   <main id="maincontent" tabindex="-1">
   <article class="section" style="max-width:760px;margin:0 auto">
     <p style="color:#64748b;font-size:13px;margin-bottom:6px">2026-09-06</p>
-    <h1 style="font-size:32px;font-weight:800;line-height:1.25;margin-bottom:20px" data-es="Encontrar la mercancía que no se está moviendo">Finding the stock that is not moving</h1>
+    <h1 data-es="Encontrar la mercancía que no se está moviendo" data-bk="title" style="font-size:32px;font-weight:800;line-height:1.25;margin-bottom:20px">Finding the stock that is not moving</h1>
         <figure class="post-hero" style="margin:0 0 26px">
-          <img src="/assets/blog/wh-31.jpg" alt="Stacked totes on pallets in a warehouse" data-es-alt="Contenedores apilados sobre pallets en una bodega"
+          <img src="/assets/blog/wh-31.jpg" alt="Stacked totes on pallets in a warehouse" data-es-alt="Contenedores apilados sobre pallets en una bodega" data-bk-alt="alt"
                loading="lazy" decoding="async"
                style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:12px;display:block" />
-          <figcaption style="color:#94a3b8;font-size:11px;margin-top:6px">Photo: <a href="https://commons.wikimedia.org/wiki/File:Rallye_des_Vignobles_2015_pic26.jpg" rel="nofollow noopener" style="color:inherit">Cjp24</a> · CC BY-SA 4.0</figcaption>
+          <figcaption style="color:#94a3b8;font-size:11px;margin-top:6px"><span data-es="Foto" data-bk="ui.photo">Photo</span>: <a href="https://commons.wikimedia.org/wiki/File:Rallye_des_Vignobles_2015_pic26.jpg" rel="nofollow noopener" style="color:inherit">Cjp24</a> · CC BY-SA 4.0</figcaption>
         </figure>
     <div style="font-size:16px;line-height:1.75">
-<p data-es="Toda bodega tiene mercancía que simplemente está ahí. No está dañada, no es una devolución, no está mal contada: solo ocupa un estante en silencio mientras nadie la mira. El problema es que el stock muerto no se anuncia. Se ve exactamente igual que el stock bueno hasta que va y revisa cuándo fue la última vez que se vendió.">Every warehouse has stock that just sits there. It's not damaged, not returned, not miscounted — it's just quietly taking up a shelf while nobody looks at it. The trouble is that dead stock doesn't announce itself. It looks exactly like good stock until you go check the last time it sold.</p>
+<p data-bk="b.0" data-es="Toda bodega tiene mercancía que simplemente está ahí. No está dañada, no es una devolución, no está mal contada: solo ocupa un estante en silencio mientras nadie la mira. El problema es que el stock muerto no se anuncia. Se ve exactamente igual que el stock bueno hasta que va y revisa cuándo fue la última vez que se vendió.">Every warehouse has stock that just sits there. It's not damaged, not returned, not miscounted — it's just quietly taking up a shelf while nobody looks at it. The trouble is that dead stock doesn't announce itself. It looks exactly like good stock until you go check the last time it sold.</p>
 
-<h2 data-es="Por qué el stock muerto se esconde tan bien">Why dead stock hides so well</h2>
-<p data-es="El inventario de baja rotación se camufla porque la vista se le va a las partes movidas de la bodega — los bins que abre y cierra todos los días. Lo que no se mueve es, por definición, lo que nadie visita. Podría pasar junto a la misma caja durante seis meses sin notarla, porque notarla exige buscar activamente una ausencia, no una presencia.">Slow-moving inventory blends in because your eyes are drawn to the busy parts of the warehouse — the bins you're in and out of every day. The stuff that isn't moving is, by definition, the stuff nobody visits. You could walk past the same box for six months and never notice, because noticing it requires actively looking for absence, not presence.</p>
-<p data-es="También se esconde en los números. El valor total de su inventario se ve bien en papel. Su tasa de venta para el catálogo completo también se ve bien, porque un puñado de productos rápidos puede tapar una larga cola de lentos. El stock muerto es un problema que el promedio saca de la vista.">It also hides in the numbers. Your total inventory value looks fine on paper. Your sell-through rate for the catalog as a whole looks fine too, because a handful of fast movers can cover for a long tail of slow ones. Dead stock is a problem that averages out of view.</p>
+<h2 data-bk="b.1" data-es="Por qué el stock muerto se esconde tan bien">Why dead stock hides so well</h2>
+<p data-bk="b.2" data-es="El inventario de baja rotación se camufla porque la vista se le va a las partes movidas de la bodega — los bins que abre y cierra todos los días. Lo que no se mueve es, por definición, lo que nadie visita. Podría pasar junto a la misma caja durante seis meses sin notarla, porque notarla exige buscar activamente una ausencia, no una presencia.">Slow-moving inventory blends in because your eyes are drawn to the busy parts of the warehouse — the bins you're in and out of every day. The stuff that isn't moving is, by definition, the stuff nobody visits. You could walk past the same box for six months and never notice, because noticing it requires actively looking for absence, not presence.</p>
+<p data-bk="b.3" data-es="También se esconde en los números. El valor total de su inventario se ve bien en papel. Su tasa de venta para el catálogo completo también se ve bien, porque un puñado de productos rápidos puede tapar una larga cola de lentos. El stock muerto es un problema que el promedio saca de la vista.">It also hides in the numbers. Your total inventory value looks fine on paper. Your sell-through rate for the catalog as a whole looks fine too, because a handful of fast movers can cover for a long tail of slow ones. Dead stock is a problem that averages out of view.</p>
 
-<h2 data-es="Lo que de verdad cuestan 90 días sin movimiento">What 90 days of no movement actually costs</h2>
-<p data-es="Noventa días es una raya razonable para casi toda operación pequeña de retail o mayoreo: bastante para que una baja de temporada no dispare una falsa alarma, y bastante corta para atrapar el problema antes de que se acumule. Una vez que algo cruza esa raya, esto es lo que le está costando, aunque ninguna línea de su estado de resultados lo diga directamente:">Ninety days is a reasonable line to draw for most small retail and wholesale operations — long enough that seasonal lulls don't trip a false alarm, short enough that you catch problems before they compound. Once something crosses that line, here's what it's actually costing you, even if no line item on your P&L says so directly:</p>
+<h2 data-bk="b.4" data-es="Lo que de verdad cuestan 90 días sin movimiento">What 90 days of no movement actually costs</h2>
+<p data-bk="b.5" data-es="Noventa días es una raya razonable para casi toda operación pequeña de retail o mayoreo: bastante para que una baja de temporada no dispare una falsa alarma, y bastante corta para atrapar el problema antes de que se acumule. Una vez que algo cruza esa raya, esto es lo que le está costando, aunque ninguna línea de su estado de resultados lo diga directamente:">Ninety days is a reasonable line to draw for most small retail and wholesale operations — long enough that seasonal lulls don't trip a false alarm, short enough that you catch problems before they compound. Once something crosses that line, here's what it's actually costing you, even if no line item on your P&L says so directly:</p>
 <ul>
-<li data-es="&lt;strong&gt;Espacio.&lt;/strong&gt; Un bin o un espacio de estante con stock muerto es un espacio que no puede usar para algo que sí se vendería. Si paga por metros cuadrados, ese espacio tiene un costo, esté produciendo o no."><strong>Space.</strong> A bin or shelf slot holding dead stock is a slot you can't use for something that would actually sell. If you're paying for square footage, that space has a cost whether it's earning or not.</li>
-<li data-es="&lt;strong&gt;Efectivo.&lt;/strong&gt; El dinero puesto en inventario que no se vende es dinero que no está disponible para inventario que sí. Está amarrado, no perdido, pero el efectivo amarrado sigue sin ser efectivo que pueda usar."><strong>Cash.</strong> Money spent on inventory that isn't selling is money that isn't available for inventory that would. It's tied up, not gone, but tied up cash still isn't cash you can use.</li>
-<li data-es="&lt;strong&gt;Mano de obra.&lt;/strong&gt; Cada conteo cíclico, cada reacomodo, cada vez que alguien tiene que mover un estante para alcanzar algo detrás — el stock muerto le suma fricción a tareas que no tienen nada que ver con él."><strong>Labor.</strong> Every cycle count, every reorganization, every time someone has to move a shelf to get at something behind it — dead stock adds friction to tasks that have nothing to do with it.</li>
-<li data-es="&lt;strong&gt;Decisiones.&lt;/strong&gt; Los números de inventario viejos distorsionan sus decisiones de reposición. Si un sistema o una persona mira el total de unidades disponibles sin considerar qué se está vendiendo de verdad, corre el riesgo de reordenar producto nuevo mientras el producto viejo, igual o parecido, sigue intacto."><strong>Decisions.</strong> Stale inventory numbers skew your reorder decisions. If a system or a person is looking at total units on hand without accounting for what's actually selling, you risk reordering fresh stock while old stock of the same or a similar item sits untouched.</li>
+<li data-bk="b.6" data-es="&lt;strong&gt;Espacio.&lt;/strong&gt; Un bin o un espacio de estante con stock muerto es un espacio que no puede usar para algo que sí se vendería. Si paga por metros cuadrados, ese espacio tiene un costo, esté produciendo o no."><strong>Space.</strong> A bin or shelf slot holding dead stock is a slot you can't use for something that would actually sell. If you're paying for square footage, that space has a cost whether it's earning or not.</li>
+<li data-bk="b.7" data-es="&lt;strong&gt;Efectivo.&lt;/strong&gt; El dinero puesto en inventario que no se vende es dinero que no está disponible para inventario que sí. Está amarrado, no perdido, pero el efectivo amarrado sigue sin ser efectivo que pueda usar."><strong>Cash.</strong> Money spent on inventory that isn't selling is money that isn't available for inventory that would. It's tied up, not gone, but tied up cash still isn't cash you can use.</li>
+<li data-bk="b.8" data-es="&lt;strong&gt;Mano de obra.&lt;/strong&gt; Cada conteo cíclico, cada reacomodo, cada vez que alguien tiene que mover un estante para alcanzar algo detrás — el stock muerto le suma fricción a tareas que no tienen nada que ver con él."><strong>Labor.</strong> Every cycle count, every reorganization, every time someone has to move a shelf to get at something behind it — dead stock adds friction to tasks that have nothing to do with it.</li>
+<li data-bk="b.9" data-es="&lt;strong&gt;Decisiones.&lt;/strong&gt; Los números de inventario viejos distorsionan sus decisiones de reposición. Si un sistema o una persona mira el total de unidades disponibles sin considerar qué se está vendiendo de verdad, corre el riesgo de reordenar producto nuevo mientras el producto viejo, igual o parecido, sigue intacto."><strong>Decisions.</strong> Stale inventory numbers skew your reorder decisions. If a system or a person is looking at total units on hand without accounting for what's actually selling, you risk reordering fresh stock while old stock of the same or a similar item sits untouched.</li>
 </ul>
-<p data-es="Nada de esto es dramático por sí solo. Es el tipo de costo fácil de encoger de hombros en cualquier semana, pero se acumula a lo largo de un año, y a lo largo de cada SKU de baja rotación que carga sin darse cuenta.">None of this is dramatic on its own. It's the kind of cost that's easy to shrug off in any given week, but it adds up across a year, and across every slow-moving SKU you're carrying without realizing it.</p>
+<p data-bk="b.10" data-es="Nada de esto es dramático por sí solo. Es el tipo de costo fácil de encoger de hombros en cualquier semana, pero se acumula a lo largo de un año, y a lo largo de cada SKU de baja rotación que carga sin darse cuenta.">None of this is dramatic on its own. It's the kind of cost that's easy to shrug off in any given week, but it adds up across a year, and across every slow-moving SKU you're carrying without realizing it.</p>
 
-<h2 data-es="Cómo encontrarlo de verdad">How to actually find it</h2>
-<p data-es="No necesita un sistema sofisticado para empezar. Necesita un hábito y un lugar donde mirar.">You don't need a fancy system to start. You need a habit and a place to look.</p>
-<p data-es="Si lo hace a mano, saque un reporte con la fecha de última venta de cada SKU y ordénelo del más viejo al más nuevo. Todo lo que no tenga venta en 90 días va a una lista. Después revise físicamente una muestra de esa lista contra el estante: a veces «sin venta» significa que el artículo de verdad está muerto, y a veces significa que estaba mal contado, mal etiquetado o metido en un bin que nadie escanea.">If you're doing this manually, pull a report of last-sold dates for every SKU and sort by oldest. Anything with no sale in 90 days goes on a list. Then physically check a sample of that list against the shelf — sometimes "no sale" means the item is genuinely dead, and sometimes it means it was miscounted, mislabeled, or sitting in a bin nobody scans.</p>
-<p data-es="Si usa un sistema que rastrea ubicaciones de bin y movimiento, esto se vuelve mucho más rápido, porque puede sacar la última actividad por bin en vez de depender de la memoria o de un recorrido. Aquí es donde Bins-USA se gana el sueldo: como cada selección, recibo y transferencia queda registrada contra un bin específico, puede ver de un vistazo qué ubicaciones llevan meses sin tocarse, sin tener que adivinar ni recorrer la bodega. Eso convierte el «algún día habría que auditar esto» en un reporte que sí puede correr.">If you're using a system that tracks bin locations and movement, this gets a lot faster, because you can pull last-activity by bin instead of relying on memory or a walkthrough. This is a place where Bins-USA earns its keep — since every pick, receive, and transfer is logged against a specific bin, you can see at a glance which locations haven't been touched in months, without having to guess or walk the floor. That turns "we should probably audit this sometime" into a report you can actually run.</p>
+<h2 data-bk="b.11" data-es="Cómo encontrarlo de verdad">How to actually find it</h2>
+<p data-bk="b.12" data-es="No necesita un sistema sofisticado para empezar. Necesita un hábito y un lugar donde mirar.">You don't need a fancy system to start. You need a habit and a place to look.</p>
+<p data-bk="b.13" data-es="Si lo hace a mano, saque un reporte con la fecha de última venta de cada SKU y ordénelo del más viejo al más nuevo. Todo lo que no tenga venta en 90 días va a una lista. Después revise físicamente una muestra de esa lista contra el estante: a veces «sin venta» significa que el artículo de verdad está muerto, y a veces significa que estaba mal contado, mal etiquetado o metido en un bin que nadie escanea.">If you're doing this manually, pull a report of last-sold dates for every SKU and sort by oldest. Anything with no sale in 90 days goes on a list. Then physically check a sample of that list against the shelf — sometimes "no sale" means the item is genuinely dead, and sometimes it means it was miscounted, mislabeled, or sitting in a bin nobody scans.</p>
+<p data-bk="b.14" data-es="Si usa un sistema que rastrea ubicaciones de bin y movimiento, esto se vuelve mucho más rápido, porque puede sacar la última actividad por bin en vez de depender de la memoria o de un recorrido. Aquí es donde Bins-USA se gana el sueldo: como cada selección, recibo y transferencia queda registrada contra un bin específico, puede ver de un vistazo qué ubicaciones llevan meses sin tocarse, sin tener que adivinar ni recorrer la bodega. Eso convierte el «algún día habría que auditar esto» en un reporte que sí puede correr.">If you're using a system that tracks bin locations and movement, this gets a lot faster, because you can pull last-activity by bin instead of relying on memory or a walkthrough. This is a place where Bins-USA earns its keep — since every pick, receive, and transfer is logged against a specific bin, you can see at a glance which locations haven't been touched in months, without having to guess or walk the floor. That turns "we should probably audit this sometime" into a report you can actually run.</p>
 
-<h2 data-es="Qué hacer cuando ya lo encontró">What to do once you've found it</h2>
-<p data-es="Encontrar stock muerto solo sirve si le sigue una decisión. Unas cuantas opciones realistas:">Finding dead stock is only useful if you follow it with a decision. A few realistic options:</p>
+<h2 data-bk="b.15" data-es="Qué hacer cuando ya lo encontró">What to do once you've found it</h2>
+<p data-bk="b.16" data-es="Encontrar stock muerto solo sirve si le sigue una decisión. Unas cuantas opciones realistas:">Finding dead stock is only useful if you follow it with a decision. A few realistic options:</p>
 <ul>
-<li data-es="&lt;strong&gt;Descontarlo y sacarlo.&lt;/strong&gt; Una rebaja que despeja el bin normalmente es mejor que un bin lleno otro trimestre más."><strong>Discount it and move it.</strong> A markdown that clears the bin is usually better than a bin that sits full for another quarter.</li>
-<li data-es="&lt;strong&gt;Armar paquetes.&lt;/strong&gt; Lo de baja rotación a veces se vende bien acompañado de algo que sí se mueve, sobre todo si el precio del paquete se siente como una oferta."><strong>Bundle it.</strong> Slow movers sometimes sell fine when paired with something that does move, especially if the bundle price feels like a deal.</li>
-<li data-es="&lt;strong&gt;Devolverlo al proveedor.&lt;/strong&gt; Si tiene un acuerdo de devolución o de reposición, esta suele ser la salida más limpia, aun con una pérdida parcial."><strong>Return it to the vendor.</strong> If you have a return or restocking agreement, this is often the cleanest option, even at a partial loss.</li>
-<li data-es="&lt;strong&gt;Darlo de baja.&lt;/strong&gt; A veces la respuesta honesta es que esa mercancía no va a revivir, y el espacio del bin vale más que la esperanza de una venta."><strong>Write it off.</strong> Sometimes the honest answer is that the stock isn't coming back to life, and the bin space is worth more than the hope of a sale.</li>
+<li data-bk="b.17" data-es="&lt;strong&gt;Descontarlo y sacarlo.&lt;/strong&gt; Una rebaja que despeja el bin normalmente es mejor que un bin lleno otro trimestre más."><strong>Discount it and move it.</strong> A markdown that clears the bin is usually better than a bin that sits full for another quarter.</li>
+<li data-bk="b.18" data-es="&lt;strong&gt;Armar paquetes.&lt;/strong&gt; Lo de baja rotación a veces se vende bien acompañado de algo que sí se mueve, sobre todo si el precio del paquete se siente como una oferta."><strong>Bundle it.</strong> Slow movers sometimes sell fine when paired with something that does move, especially if the bundle price feels like a deal.</li>
+<li data-bk="b.19" data-es="&lt;strong&gt;Devolverlo al proveedor.&lt;/strong&gt; Si tiene un acuerdo de devolución o de reposición, esta suele ser la salida más limpia, aun con una pérdida parcial."><strong>Return it to the vendor.</strong> If you have a return or restocking agreement, this is often the cleanest option, even at a partial loss.</li>
+<li data-bk="b.20" data-es="&lt;strong&gt;Darlo de baja.&lt;/strong&gt; A veces la respuesta honesta es que esa mercancía no va a revivir, y el espacio del bin vale más que la esperanza de una venta."><strong>Write it off.</strong> Sometimes the honest answer is that the stock isn't coming back to life, and the bin space is worth more than the hope of a sale.</li>
 </ul>
-<p data-es="Elija lo que elija, hágalo con un calendario — mensual o trimestral — y no solo cuando por casualidad note un estante lleno que no debería estarlo.">Whatever you choose, do it on a schedule — monthly or quarterly — rather than only when you happen to notice a full shelf that shouldn't be full.</p>
+<p data-bk="b.21" data-es="Elija lo que elija, hágalo con un calendario — mensual o trimestral — y no solo cuando por casualidad note un estante lleno que no debería estarlo.">Whatever you choose, do it on a schedule — monthly or quarterly — rather than only when you happen to notice a full shelf that shouldn't be full.</p>
 
-<p data-es="El stock muerto no es una falla moral ni una señal de que compró mal. Es un subproducto normal de manejar una bodega con más de unos cuantos SKUs. El único error es no revisarlo.">Dead stock isn't a moral failing or a sign you bought wrong. It's a normal byproduct of running a warehouse with more than a few SKUs. The only mistake is not checking for it.</p>
+<p data-bk="b.22" data-es="El stock muerto no es una falla moral ni una señal de que compró mal. Es un subproducto normal de manejar una bodega con más de unos cuantos SKUs. El único error es no revisarlo.">Dead stock isn't a moral failing or a sign you bought wrong. It's a normal byproduct of running a warehouse with more than a few SKUs. The only mistake is not checking for it.</p>
     </div>
-    <p style="margin-top:32px"><a href="/blog/" data-es="← Todos los artículos">← All posts</a></p>
+    <p style="margin-top:32px"><a href="/blog/" data-es="← Todos los artículos" data-bk="ui.allPosts">← All posts</a></p>
   </article>
   <section class="section" style="text-align:center;padding-top:0">
     <a href="https://apps.shopify.com/bins-usa" class="btn-plan basic" style="display:inline-block;padding:14px 28px;max-width:340px" data-es="🛍️ Instalar en Shopify — Es gratis →">🛍️ Install on Shopify — It's Free →</a>
@@ -246,50 +265,6 @@
       </div>
     </div>    <div class="footer-copy" data-es="© 2026 Bins-USA. Todos los derechos reservados. Hecho con ❤️ desde Kissimmee, Florida - USA, para comerciantes de Shopify.">© 2026 Bins-USA. All rights reserved. Made with ❤️ from Kissimmee, Florida - USA, for Shopify merchants.</div>
   </footer>
-  <!-- Language toggle.
-       The English copy stays in the HTML and the Spanish rides along in data-es, so
-       search engines index a real page in both and there is no second file to keep in
-       sync. The first English render is stored on the element the first time we switch,
-       which means nothing has to be duplicated up front. -->
-  <script>
-  (function () {
-    var KEY = 'binsusa_lang';
-    function apply(lang) {
-      document.querySelectorAll('[data-es]').forEach(function (el) {
-        if (el.dataset.en === undefined) el.dataset.en = el.innerHTML;
-        el.innerHTML = (lang === 'es') ? el.dataset.es : el.dataset.en;
-      });
-      // Images that exist in both languages (the Spanish banners carry Spanish text).
-      document.querySelectorAll('[data-es-src]').forEach(function (el) {
-        if (el.dataset.enSrc === undefined) el.dataset.enSrc = el.getAttribute('src');
-        el.setAttribute('src', (lang === 'es') ? el.dataset.esSrc : el.dataset.enSrc);
-      });
-      document.querySelectorAll('[data-es-alt]').forEach(function (el) {
-        if (el.dataset.enAlt === undefined) el.dataset.enAlt = el.getAttribute('alt') || '';
-        el.setAttribute('alt', (lang === 'es') ? el.dataset.esAlt : el.dataset.enAlt);
-      });
-      document.documentElement.lang = (lang === 'es') ? 'es' : 'en';
-      document.querySelectorAll('#langToggle button').forEach(function (b) {
-        var on = b.dataset.lang === lang;
-        b.style.background = on ? '#2563eb' : '#fff';
-        b.style.color = on ? '#fff' : '#475569';
-        b.setAttribute('aria-pressed', on ? 'true' : 'false');
-      });
-      try { localStorage.setItem(KEY, lang); } catch (e) {}
-    }
-    var saved = null;
-    try { saved = localStorage.getItem(KEY); } catch (e) {}
-    // No saved choice: follow the browser. A visitor reading Spanish should not have to
-    // find a button to be spoken to in their language.
-    var start = saved || ((navigator.language || 'en').toLowerCase().indexOf('es') === 0 ? 'es' : 'en');
-    document.addEventListener('DOMContentLoaded', function () {
-      document.querySelectorAll('#langToggle button').forEach(function (b) {
-        b.addEventListener('click', function () { apply(b.dataset.lang); });
-      });
-      apply(start);
-    });
-  })();
-  </script>
   <script src="/katya.js" defer></script>
 </body>
 </html>

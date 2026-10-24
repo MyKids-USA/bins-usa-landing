@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<!-- Written by build-langs.mjs from blog/posts.json and i18n/blog by generate-blog.mjs. -->
+<html lang="zh-Hant" dir="ltr">
+<head>
+  <!-- build: free-plan-v2 -->
+  <meta charset="UTF-8" />
+  <script>window.BINS_T = {"Bins-USA — Shopify Warehouse Bin Management":"Bins-USA — Shopify 倉庫儲位管理","Organize your Shopify warehouse with bins, scan products, generate pick lists, and track inventory — all in one app.":"用儲位整理 Shopify 倉庫、掃描商品、產生揀貨單、追蹤庫存，一個 App 全部搞定。","Sending…":"傳送中…","✅ Thank you! We have your message and will reply to {email} within 24 hours.":"✅ 謝謝！我們已收到您的訊息，會在 24 小時內回覆至 {email}。","Could not send. Email us at sales@bins-usa.com.":"無法送出。請寫信至 sales@bins-usa.com。","Tell us a little more — at least 10 characters.":"請再多寫一點：至少 10 個字元。","Started: ":"開始時間：","Already tried: ":"已嘗試：","Urgency: ":"緊急程度：","✅ \u003cstrong>Got it.\u003c/strong>\u003cbr/>We will reply to {email}. 🔴 Critical cases are handled first.":"✅ \u003cstrong>已收到。\u003c/strong>\u003cbr/>我們會回覆至 {email}。🔴 嚴重的狀況會優先處理。","Example: scanning a product into bin A-03 says \"not found\", but the product does exist in Shopify.":"例如：把商品掃進儲位 A-03 時，App 顯示「找不到」，但這個商品確實在 Shopify 裡。","Today, yesterday, after the last update…":"今天、昨天、上次更新後…","Reloaded the page, reinstalled…":"重新整理頁面、重新安裝…","🎥 Talk to Katya":"🎥 與 Katya 通話","Connecting…":"連線中…","⏹ End call":"⏹ 結束通話","I couldn't reach your microphone — check the permission, or type below.":"無法使用您的麥克風，請檢查權限，或在下方輸入。","I couldn't start the video just now. Type your question and I'll answer anyway.":"目前無法開啟視訊。請輸入您的問題，我一樣會回答。","Katya is typing…":"Katya 正在輸入…","I couldn't answer just now. Email us at sales@bins-usa.com.":"目前無法回答。請寫信至 sales@bins-usa.com。","Bins-USA assistant":"Bins-USA 小幫手","Type your question…":"輸入您的問題…","Chats are saved to help us answer you better.":"我們會保存對話，以便更好地為您服務。","Hi! 👋 I'm Katya. Ask me anything about Bins-USA — plans, features, or how to get started.":"您好！👋 我是 Katya。關於 Bins-USA 的方案、功能或如何開始，歡迎問我。","Questions about Bins-USA? I am happy to help. 👋":"對 Bins-USA 有疑問嗎？很樂意為您解答。👋","Language":"語言","A Shopify order page with the Bins-USA block, showing the line item and BIN 001":"顯示 Bins-USA 區塊的 Shopify 訂單頁面，可看到商品和 BIN 001"};</script>
+  <script src="/lang.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shopify 的地點不等於儲位 — Bins-USA</title>
+  <!-- Have I Been Pwned domain ownership: proves bins-usa.com is ours so breach
+       notifications for this domain reach us. Removing it un-verifies the domain. -->
+  <meta name="hibp-verify" content="dweb_a3cx516stk4rloobrm09oz3s" />
+  <meta name="description" content="Shopify 記錄什麼、不記錄什麼，以及為什麼只有數量沒有位置，只是一半的庫存。" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/png" href="https://cdn.shopify.com/s/files/1/0598/3312/2968/files/favicon_3502c043-d157-46db-b9b0-b9425a5402d8.png?v=1777043751" />
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Inter', sans-serif; color: #1e293b; background: #fff; }
+
+    /* NAV */
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: #fff; border-bottom: 2px solid #e2e8f0; box-shadow: 0 2px 0 0 #EAB308; padding: 0 40px; height: 64px; display: flex; align-items: center; justify-content: space-between; }
+    .nav-logo { display: flex; align-items: center; gap: 10px; font-size: 22px; font-weight: 800; color: #1e293b; }
+    .nav-logo span { color: #EAB308; }
+    .nav-links { display: flex; gap: 32px; }
+    .nav-links a { text-decoration: none; color: #64748b; font-size: 14px; font-weight: 500; transition: color 0.2s; }
+    .nav-links a:hover { color: #1e293b; }
+    .nav-cta { background: #2563eb; color: #fff; padding: 10px 20px; border-radius: 8px; font-size: 14px; font-weight: 600; text-decoration: none; transition: background 0.2s; }
+    .nav-cta:hover { background: #1d4ed8; }
+
+    /* HERO */
+    .hero { padding: 140px 40px 80px; text-align: center; background: linear-gradient(180deg, #f8fafc 0%, #fff 100%); }
+    .hero-badge { display: inline-block; background: #fef9c3; color: #854d0e; padding: 6px 16px; border-radius: 999px; font-size: 13px; font-weight: 600; margin-bottom: 24px; border: 1px solid #fde047; }
+    .hero h1 { font-size: clamp(36px, 6vw, 64px); font-weight: 800; line-height: 1.1; margin-bottom: 24px; }
+    .hero h1 span { color: #2563eb; }
+    .hero p { font-size: 20px; color: #64748b; max-width: 600px; margin: 0 auto 40px; line-height: 1.6; }
+    .hero-buttons { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+    .btn-primary { background: #2563eb; color: #fff; padding: 16px 32px; border-radius: 10px; font-size: 16px; font-weight: 700; text-decoration: none; transition: all 0.2s; display: flex; align-items: center; gap: 8px; }
+    .btn-primary:hover { background: #1d4ed8; transform: translateY(-1px); }
+    .btn-secondary { background: #fff; color: #1e293b; padding: 16px 32px; border-radius: 10px; font-size: 16px; font-weight: 600; text-decoration: none; border: 2px solid #e2e8f0; transition: all 0.2s; }
+    .btn-secondary:hover { border-color: #2563eb; color: #2563eb; }
+    .hero-stats { display: flex; gap: 48px; justify-content: center; margin-top: 64px; flex-wrap: wrap; }
+    .hero-stat { text-align: center; }
+    .hero-stat strong { display: block; font-size: 32px; font-weight: 800; color: #1e293b; }
+    .hero-stat span { font-size: 14px; color: #64748b; }
+
+    /* FEATURES */
+    .section { padding: 80px 40px; max-width: 1200px; margin: 0 auto; }
+    .section-label { text-align: center; font-size: 13px; font-weight: 600; color: #2563eb; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 12px; }
+    .section-title { text-align: center; font-size: clamp(28px, 4vw, 40px); font-weight: 800; margin-bottom: 16px; }
+    .section-subtitle { text-align: center; font-size: 18px; color: #64748b; max-width: 600px; margin: 0 auto 64px; }
+    .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; }
+    .video-wrap { position: relative; width: 100%; max-width: 900px; margin: 0 auto; aspect-ratio: 16 / 9; border-radius: 16px; overflow: hidden; box-shadow: 0 16px 48px rgba(15,23,42,0.16); border: 1px solid #e2e8f0; }
+    .video-wrap iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+    .feature-card { background: #f8fafc; border-radius: 16px; padding: 32px; border: 1px solid #e2e8f0; transition: all 0.2s; }
+    .feature-card:hover { border-color: #2563eb; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(37,99,235,0.1); }
+    .feature-icon { font-size: 36px; margin-bottom: 16px; }
+    .feature-card h3 { font-size: 18px; font-weight: 700; margin-bottom: 8px; }
+    .feature-card p { font-size: 14px; color: #64748b; line-height: 1.6; }
+    .feature-badge { display: inline-block; background: #faf5ff; color: #7c3aed; padding: 3px 10px; border-radius: 999px; font-size: 11px; font-weight: 600; margin-top: 12px; border: 1px solid #e9d5ff; }
+    .feature-badge.plus { background: #f0fdfa; color: #0f766e; border-color: #99f6e4; }
+    .feature-badge.basic { background: #eff6ff; color: #1d4ed8; border-color: #bfdbfe; }
+
+    /* HOW IT WORKS */
+    .how-section { background: #f8fafc; padding: 80px 40px; }
+    .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 32px; max-width: 1200px; margin: 0 auto; }
+    .step { text-align: center; }
+    .step-number { width: 56px; height: 56px; background: #2563eb; color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 22px; font-weight: 800; margin: 0 auto 20px; }
+    .step h3 { font-size: 18px; font-weight: 700; margin-bottom: 8px; }
+    .step p { font-size: 14px; color: #64748b; line-height: 1.6; }
+
+    /* PRICING */
+    /* Five plans on one row on a desktop. auto-fit with a 250px floor dropped WMS Cloud
+       to a second line, which read as an afterthought rather than the top of the range.
+       Fixed five columns, a wider container and tighter padding keep them level; the
+       media queries below step down to 3, then 2, then 1 as the screen narrows. */
+    .pricing-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 18px; max-width: 1600px; margin: 0 auto; align-items: stretch; }
+    .pricing-card { border-radius: 16px; padding: 28px 22px; border: 2px solid #e2e8f0; position: relative; display: flex; flex-direction: column; }
+    @media (max-width: 1560px) { .pricing-grid { grid-template-columns: repeat(3, 1fr); max-width: 1100px; } }
+    @media (max-width: 1000px) { .pricing-grid { grid-template-columns: repeat(2, 1fr); max-width: 760px; } }
+    @media (max-width: 700px)  { .pricing-grid { grid-template-columns: 1fr; max-width: 420px; } }
+    .pricing-card.popular { border-color: #2563eb; background: #eff6ff; }
+    .pricing-card.plus { border-color: #0d9488; background: #f0fdfa; }
+    .pricing-card.pro { border-color: #9333ea; background: #faf5ff; }
+    .pricing-card.enterprise { border-color: #EAB308; background: #fefce8; }
+    .pricing-badge { position: absolute; top: -14px; left: 50%; transform: translateX(-50%); background: #2563eb; color: #fff; padding: 4px 16px; border-radius: 999px; font-size: 12px; font-weight: 700; white-space: nowrap; }
+    .pricing-badge.plus { background: #0d9488; }
+    .pricing-badge.pro { background: #9333ea; }
+    .pricing-badge.enterprise { background: #EAB308; color: #1e293b; }
+    .pricing-card h3 { font-size: 20px; font-weight: 800; margin-bottom: 8px; }
+    /* Fixed heights per zone so the feature lists all start on the same line. Without
+       them WMS Cloud (no price) and Free (no annual line) shift everything up. */
+    .price { font-size: 42px; font-weight: 800; margin: 16px 0 4px; min-height: 56px; }
+    .price span { font-size: 16px; font-weight: 500; color: #64748b; }
+    .price-note { font-size: 13px; color: #64748b; margin: -2px 0 14px; min-height: 18px; }
+    .pricing-desc { font-size: 13px; color: #64748b; margin-bottom: 20px; line-height: 1.45; min-height: 56px; }
+    .pricing-features { list-style: none; margin-bottom: 24px; flex: 1; }
+    .pricing-features li { font-size: 13px; padding: 5px 0; line-height: 1.4; border-bottom: 1px solid rgba(0,0,0,0.05); display: flex; align-items: center; gap: 8px; }
+    .pricing-features li:last-child { border-bottom: none; }
+    .btn-plan { display: block; text-align: center; padding: 14px; border-radius: 10px; font-size: 15px; font-weight: 700; text-decoration: none; transition: all 0.2s; margin-top: auto; }
+    .btn-plan.basic { background: #2563eb; color: #fff; }
+    .btn-plan.basic:hover { background: #1d4ed8; }
+    .btn-plan.pro { background: #9333ea; color: #fff; }
+    .btn-plan.pro:hover { background: #7c3aed; }
+    .btn-plan.enterprise { background: #EAB308; color: #1e293b; }
+    .btn-plan.enterprise:hover { background: #ca8a04; }
+
+    /* FAQ */
+    .faq-section { background: #f8fafc; padding: 80px 40px; }
+    .faq-grid { max-width: 800px; margin: 0 auto; display: flex; flex-direction: column; gap: 16px; }
+    .faq-item { background: #fff; border-radius: 12px; padding: 24px; border: 1px solid #e2e8f0; }
+    .faq-item h4 { font-size: 16px; font-weight: 700; margin-bottom: 8px; }
+    .faq-item p { font-size: 14px; color: #64748b; line-height: 1.6; }
+
+    /* FOOTER */
+    footer { background: #1e293b; color: #fff; padding: 48px 40px; }
+    .footer-inner { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 24px; }
+    .footer-logo { font-size: 20px; font-weight: 800; }
+    .footer-logo span { color: #EAB308; }
+    .footer-links { display: flex; flex-wrap: wrap; gap: 12px 24px; }
+    .footer-links a { color: #94a3b8; font-size: 14px; text-decoration: none; transition: color 0.2s; }
+    .footer-links a:hover { color: #fff; }
+    @media (max-width: 760px) { .ob-grid { grid-template-columns: 1fr !important; } }
+    .footer-copy { color: #64748b; font-size: 13px; width: 100%; text-align: center; margin-top: 24px; border-top: 1px solid #334155; padding-top: 24px; }
+
+    @media (max-width: 768px) {
+      nav { padding: 0 20px; }
+      .nav-links { display: none; }
+      .hero { padding: 100px 20px 60px; }
+      .section { padding: 60px 20px; }
+      .how-section, .faq-section { padding: 60px 20px; }
+      footer { padding: 40px 20px; }
+    }
+
+    /* ── Accessibility (WCAG 2.2 AA) ── */
+    .skip-link { position: absolute; left: -9999px; top: 0; z-index: 100000; background: #2563eb; color: #fff; padding: 10px 16px; border-radius: 0 0 8px 0; font: 700 14px/1 'Inter', system-ui, sans-serif; text-decoration: none; }
+    .skip-link:focus { left: 0; }
+    a:focus-visible, button:focus-visible, [tabindex]:focus-visible, iframe:focus-visible { outline: 3px solid #1e3a8a; outline-offset: 2px; border-radius: 4px; }
+    .a11y-contrast { filter: contrast(1.25); }
+    .a11y-links a { text-decoration: underline !important; }
+    .a11y-reduce *, .a11y-reduce *::before, .a11y-reduce *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; scroll-behavior: auto !important; }
+    @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; } }
+    #a11y-btn { position: fixed; left: 20px; bottom: 20px; z-index: 99990; width: 52px; height: 52px; border-radius: 50%; border: none; cursor: pointer; background: #1e3a8a; color: #fff; font-size: 26px; box-shadow: 0 10px 30px rgba(15,23,42,.35); }
+    #a11y-panel { position: fixed; left: 20px; bottom: 84px; z-index: 99991; width: 288px; max-width: calc(100vw - 40px); background: #fff; border: 1px solid #e2e8f0; border-radius: 16px; box-shadow: 0 24px 60px rgba(0,0,0,.3); padding: 16px; color: #0f172a; font-size: 14px; }
+    #a11y-panel h2 { font-size: 16px; margin: 0 0 12px; }
+    .a11y-row { display: flex; justify-content: space-between; align-items: center; width: 100%; padding: 11px 13px; margin-bottom: 8px; border: 1px solid #e2e8f0; border-radius: 10px; background: #fff; cursor: pointer; font-size: 14px; font-weight: 700; color: #1e293b; }
+    .a11y-row[aria-pressed=true] { border-color: #2563eb; background: #eff6ff; }
+    .a11y-size { flex: 1; padding: 10px; border: 1px solid #e2e8f0; border-radius: 10px; background: #fff; font-size: 16px; font-weight: 800; cursor: pointer; }
+    .a11y-reset { width: 100%; margin-top: 6px; padding: 10px; border: 1px solid #cbd5e1; border-radius: 10px; background: #fff; font-weight: 700; color: #475569; cursor: pointer; }
+    .a11y-statement { max-width: 760px; margin: 0 auto; padding: 0 20px 40px; color: #64748b; font-size: 13.5px; line-height: 1.6; text-align: center; }
+    .a11y-statement h2 { color: #1e293b; font-size: 18px; margin-bottom: 8px; }
+    .a11y-statement a { color: #2563eb; }
+  </style>
+<!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-716NJK0VCG"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-716NJK0VCG');
+  </script>
+  <!-- hreflang:start -->
+  <link rel="alternate" hreflang="en" href="https://bins-usa.com/blog/shopify-inventory-locations-vs-bins.html" />
+  <link rel="alternate" hreflang="es" href="https://bins-usa.com/es/blog/shopify-inventory-locations-vs-bins.html" />
+  <link rel="alternate" hreflang="fr" href="https://bins-usa.com/fr/blog/shopify-inventory-locations-vs-bins.html" />
+  <link rel="alternate" hreflang="pt-BR" href="https://bins-usa.com/pt-BR/blog/shopify-inventory-locations-vs-bins.html" />
+  <link rel="alternate" hreflang="de" href="https://bins-usa.com/de/blog/shopify-inventory-locations-vs-bins.html" />
+  <link rel="alternate" hreflang="it" href="https://bins-usa.com/it/blog/shopify-inventory-locations-vs-bins.html" />
+  <link rel="alternate" hreflang="nl" href="https://bins-usa.com/nl/blog/shopify-inventory-locations-vs-bins.html" />
+  <link rel="alternate" hreflang="ja" href="https://bins-usa.com/ja/blog/shopify-inventory-locations-vs-bins.html" />
+  <link rel="alternate" hreflang="ko" href="https://bins-usa.com/ko/blog/shopify-inventory-locations-vs-bins.html" />
+  <link rel="alternate" hreflang="zh" href="https://bins-usa.com/zh/blog/shopify-inventory-locations-vs-bins.html" />
+  <link rel="alternate" hreflang="zh-Hant" href="https://bins-usa.com/zh-Hant/blog/shopify-inventory-locations-vs-bins.html" />
+  <link rel="alternate" hreflang="hi" href="https://bins-usa.com/hi/blog/shopify-inventory-locations-vs-bins.html" />
+  <link rel="alternate" hreflang="bn" href="https://bins-usa.com/bn/blog/shopify-inventory-locations-vs-bins.html" />
+  <link rel="alternate" hreflang="ur" href="https://bins-usa.com/ur/blog/shopify-inventory-locations-vs-bins.html" />
+  <link rel="alternate" hreflang="ar" href="https://bins-usa.com/ar/blog/shopify-inventory-locations-vs-bins.html" />
+  <link rel="alternate" hreflang="he" href="https://bins-usa.com/he/blog/shopify-inventory-locations-vs-bins.html" />
+  <link rel="alternate" hreflang="x-default" href="https://bins-usa.com/blog/shopify-inventory-locations-vs-bins.html" />
+<!-- hreflang:end -->
+  <link rel="canonical" href="https://bins-usa.com/zh-Hant/blog/shopify-inventory-locations-vs-bins.html" />
+</head><body>
+  <a class="skip-link" href="#maincontent">跳到主要內容</a>
+
+  <!-- NAV -->
+  <nav>
+    <div class="nav-logo"><img src="https://cdn.shopify.com/s/files/1/0598/3312/2968/files/logo-bins-Usa.png?v=1777043752" alt="Bins-USA" style="height:56px;object-fit:contain;" /></div>
+    <div class="nav-links">
+      <a href="/zh-Hant/">首頁</a>
+      <a href="/zh-Hant/demo.html">示範</a>
+      <a href="/zh-Hant/features.html">功能</a>
+      <a href="/zh-Hant/how-it-works.html">使用方式</a>
+      <a href="/zh-Hant/pricing.html">價格</a>
+      <a href="/zh-Hant/faq.html">常見問題</a>
+      <a href="/zh-Hant/blog/">部落格</a>
+    </div>
+    <div style="display:flex;align-items:center;gap:12px">
+      <select id="langPick" aria-label="語言"
+              style="padding:6px 10px;border:1px solid #e2e8f0;border-radius:8px;background:#fff;cursor:pointer;font-size:13px;font-weight:700;color:#1e293b;max-width:170px"></select>
+    </div>
+  </nav>
+
+  <main id="maincontent" tabindex="-1">
+  <article class="section" style="max-width:760px;margin:0 auto">
+    <p style="color:#64748b;font-size:13px;margin-bottom:6px">2026-09-06</p>
+    <h1 style="font-size:32px;font-weight:800;line-height:1.25;margin-bottom:20px">Shopify 的地點不等於儲位</h1>
+        <figure class="post-hero" style="margin:0 0 26px">
+          <img src="/assets/blog/warehouse-stacked.jpg" alt="立柱上貼有貨位標籤的高位貨架"
+               loading="lazy" decoding="async"
+               style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:12px;display:block" />
+          <figcaption style="color:#94a3b8;font-size:11px;margin-top:6px"><span>圖片</span>: Unsplash</figcaption>
+        </figure>
+    <div style="font-size:16px;line-height:1.75">
+<p>Shopify 的「地點」功能會告訴您某個商品有多少、在哪棟建築裡。這很有用。如果您經營一個倉庫，或者一個倉庫加一家門店，「地點」能回答「我們有沒有貨，貨在世界上的哪個地方」。但它回答不了「貨在這棟建築的哪裡」。這是兩個不同的問題，而能讓揀貨人員在一分鐘內走到商品面前的，只有其中一個。</p>
+
+<h2>Shopify 實際記錄的內容</h2>
+<p>Shopify 的一個地點是一個很大、很粗的單位：一個倉庫、一家門店、一個第三方物流。庫存數量掛在這個地點上。您能看到某個 SKU 在「主倉庫」有 340 件。但在 Shopify 裡您看不到，其中 200 件在 A 貨架第 3 層，另外 140 件在收貨區附近的一個儲位，因為上週二沒人有空把它們歸到一起。Shopify 本來就不是為了深入到建築以下的層級而設計的，它也沒有假裝能做到。這不是對平臺的批評，只是這個功能的邊界所在。</p>
+
+<h2>為什麼只有數量沒有位置，只是半個答案</h2>
+<p>想想訂單進來時實際發生了什麼。有人必須親自走到商品那裡把它揀出來。如果系統只告訴您數量、不告訴您位置，這一趟就變成了搜尋：看看老地方，問問別人，查查備貨架，再看看上次整理時有沒有被挪走。把這乘以每一個訂單、每一天、每一個還沒記住佈局的新員工。數量告訴您這個訂單理論上可以履行，位置才讓它在實際中得以完成。</p>
+<p>當倉庫小到一兩個人就能把整個佈局記在腦子裡時，這個缺口是看不見的。一旦增加第二個人、第二個班次，或者 SKU 多到誰的記憶都靠不住，它就變得非常明顯。到那時，「我們知道東西在哪裡」會悄悄變成「只有 Dave 知道東西在哪裡」，這是人員風險，不是庫存管理體系。</p>
+
+<h2>靠記憶存放已經不夠用的訊號</h2>
+<ul>
+<li>新員工要好幾週才能揀得快，因為佈局沒有寫在任何他們能查到的地方。</li>
+<li>同一個 SKU 最後分散在兩三個不同的地方，因為上架的人不知道原有的貨在哪裡。</li>
+<li>循環盤點花的時間比應有的長，因為盤點意味著先找、再數。</li>
+<li>旺季沒人願意休假，因為倉庫的「腦內地圖」會跟著人一起去度假。</li>
+<li>您已經開始在 Shopify 之外另做一張「東西在哪裡」的表格，而它已經過時了。</li>
+</ul>
+<p>如果其中兩條或以上聽起來很熟悉，問題就不在於商品數量或訂單量，而在於庫存資料和位置資料分別存放在兩個地方，而其中一個根本不算正式的記錄。</p>
+
+<h2>儲位真正增加了什麼</h2>
+<p>儲位就是一個有名字的具體位置，比如一層貨架、一個箱子、貨架的一段，某個 SKU 被分配到這裡，並在系統中保持這種關聯。一旦有了這個分配，「在哪裡」就不再是需要靠記憶回答的問題。揀貨單可以直接讓揀貨人員去 C-14 儲位，而不只是寫出商品名、剩下的讓他自己想辦法。收貨員可以在上架的同時登記儲位，而不是哪裡有空就放哪裡、指望有人記得。循環盤點也可以逐個儲位進行，而不是逐個 SKU 地去找。</p>
+<p>這正是 Shopify 缺少的那一層，也是當您管理一個有真實人員走動的真實物理空間時最重要的那一層。Bins-USA 架在 Shopify 之上，補的正是這一層：儲位分配、掃描，以及指向真實貨架位置、而不只是整個倉庫的揀貨單。它不改變 Shopify 在地點層面記錄的內容，只是補上進入這個地點之後發生的事情。</p>
+
+<h2>開始時不需要系統</h2>
+<p>只要自律，一個本子加幾張標籤就能獲得大部分好處。給每個商品分配一個具體位置。寫在每個人都能查到的地方。東西一動就立刻更新，而不是「回頭再說」。價值不在軟體，而在於始終知道東西放在哪裡、而不是每次都得去找的那份自律。當 SKU 數量或人手多到本子不再可靠時，軟體只是讓這份自律更容易堅持。</p>
+
+<p>Shopify 永遠會告訴您有什麼。而同時準確知道它放在哪裡，是另一個問題，值得單獨解決：用表格、用標籤機，或者用專門為此打造的系統。</p>
+    </div>
+    <p style="margin-top:32px"><a href="/zh-Hant/blog/">← 全部文章</a></p>
+  </article>
+  <section class="section" style="text-align:center;padding-top:0">
+    <a href="https://apps.shopify.com/bins-usa?locale=zh-TW" class="btn-plan basic" style="display:inline-block;padding:14px 28px;max-width:340px">🛍️ 在 Shopify 上安裝 — 免費 →</a>
+  </section>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-logo"><img src="https://cdn.shopify.com/s/files/1/0598/3312/2968/files/logo-bins-Usa.png?v=1777043752" alt="Bins-USA" style="height:44px;object-fit:contain;background:#fff;padding:8px 14px;border-radius:10px;display:block;" /></div>
+      <div class="footer-links">
+        <a href="/zh-Hant/features.html">功能</a>
+        <a href="/zh-Hant/pricing.html">價格</a>
+        <a href="/zh-Hant/faq.html">常見問題</a>
+        <a href="/zh-Hant/blog/">部落格</a>
+        <a href="/accessibility.html">無障礙</a>
+        <a href="/zh-Hant/support.html">支援</a>
+        <a href="/zh-Hant/contact.html">聯絡我們</a>
+        <a href="/privacy.html">隱私權</a>
+        <a href="/terms.html">條款</a>
+      </div>
+    </div>    <div class="footer-copy">© 2026 Bins-USA. 保留所有權利。在美國佛羅里達州基西米用 ❤️ 為 Shopify 商家打造。</div>
+  </footer>
+  <script src="/katya.js" defer></script>
+</body>
+</html>
