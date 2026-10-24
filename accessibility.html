@@ -3,6 +3,7 @@
 <head>
   <!-- build: free-plan-v2 -->
   <meta charset="UTF-8" />
+  <script src="/lang.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Accessibility — Bins-USA</title>
   <!-- Have I Been Pwned domain ownership: proves bins-usa.com is ours so breach
@@ -155,6 +156,12 @@
     gtag('js', new Date());
     gtag('config', 'G-716NJK0VCG');
   </script>
+  <!-- hreflang:start -->
+  <link rel="alternate" hreflang="en" href="https://bins-usa.com/accessibility.html" />
+  <link rel="alternate" hreflang="es" href="https://bins-usa.com/es/accessibility.html" />
+  <link rel="alternate" hreflang="x-default" href="https://bins-usa.com/accessibility.html" />
+<!-- hreflang:end -->
+  <link rel="canonical" href="https://bins-usa.com/accessibility.html" />
 </head><body>
   <a class="skip-link" href="#maincontent" data-es="Ir al contenido">Skip to content</a>
 
@@ -171,11 +178,8 @@
       <a href="/blog/" data-es="Blog">Blog</a>
     </div>
     <div style="display:flex;align-items:center;gap:12px">
-      <div id="langToggle" role="group" aria-label="Language / Idioma"
-           style="display:inline-flex;border:1px solid #e2e8f0;border-radius:8px;overflow:hidden;background:#fff">
-        <button type="button" data-lang="en" style="padding:6px 12px;border:none;cursor:pointer;font-size:13px;font-weight:700">English</button>
-        <button type="button" data-lang="es" style="padding:6px 12px;border:none;cursor:pointer;font-size:13px;font-weight:700">Español</button>
-      </div>
+      <select id="langPick" aria-label="Language"
+              style="padding:6px 10px;border:1px solid #e2e8f0;border-radius:8px;background:#fff;cursor:pointer;font-size:13px;font-weight:700;color:#1e293b;max-width:170px"></select>
     </div>
   </nav>
 
@@ -201,50 +205,6 @@
       </div>
     </div>    <div class="footer-copy" data-es="© 2026 Bins-USA. Todos los derechos reservados. Hecho con ❤️ desde Kissimmee, Florida - USA, para comerciantes de Shopify.">© 2026 Bins-USA. All rights reserved. Made with ❤️ from Kissimmee, Florida - USA, for Shopify merchants.</div>
   </footer>
-  <!-- Language toggle.
-       The English copy stays in the HTML and the Spanish rides along in data-es, so
-       search engines index a real page in both and there is no second file to keep in
-       sync. The first English render is stored on the element the first time we switch,
-       which means nothing has to be duplicated up front. -->
-  <script>
-  (function () {
-    var KEY = 'binsusa_lang';
-    function apply(lang) {
-      document.querySelectorAll('[data-es]').forEach(function (el) {
-        if (el.dataset.en === undefined) el.dataset.en = el.innerHTML;
-        el.innerHTML = (lang === 'es') ? el.dataset.es : el.dataset.en;
-      });
-      // Images that exist in both languages (the Spanish banners carry Spanish text).
-      document.querySelectorAll('[data-es-src]').forEach(function (el) {
-        if (el.dataset.enSrc === undefined) el.dataset.enSrc = el.getAttribute('src');
-        el.setAttribute('src', (lang === 'es') ? el.dataset.esSrc : el.dataset.enSrc);
-      });
-      document.querySelectorAll('[data-es-alt]').forEach(function (el) {
-        if (el.dataset.enAlt === undefined) el.dataset.enAlt = el.getAttribute('alt') || '';
-        el.setAttribute('alt', (lang === 'es') ? el.dataset.esAlt : el.dataset.enAlt);
-      });
-      document.documentElement.lang = (lang === 'es') ? 'es' : 'en';
-      document.querySelectorAll('#langToggle button').forEach(function (b) {
-        var on = b.dataset.lang === lang;
-        b.style.background = on ? '#2563eb' : '#fff';
-        b.style.color = on ? '#fff' : '#475569';
-        b.setAttribute('aria-pressed', on ? 'true' : 'false');
-      });
-      try { localStorage.setItem(KEY, lang); } catch (e) {}
-    }
-    var saved = null;
-    try { saved = localStorage.getItem(KEY); } catch (e) {}
-    // No saved choice: follow the browser. A visitor reading Spanish should not have to
-    // find a button to be spoken to in their language.
-    var start = saved || ((navigator.language || 'en').toLowerCase().indexOf('es') === 0 ? 'es' : 'en');
-    document.addEventListener('DOMContentLoaded', function () {
-      document.querySelectorAll('#langToggle button').forEach(function (b) {
-        b.addEventListener('click', function () { apply(b.dataset.lang); });
-      });
-      apply(start);
-    });
-  })();
-  </script>
   <script src="/katya.js" defer></script>
 </body>
 </html>

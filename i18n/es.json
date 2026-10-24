@@ -1,0 +1,31 @@
+{
+ "extra": {
+  "Bins-USA — Shopify Warehouse Bin Management": "Bins-USA — Gestión de bins para el almacén de Shopify",
+  "Organize your Shopify warehouse with bins, scan products, generate pick lists, and track inventory — all in one app.": "Organice el almacén de su tienda Shopify con bins, escanee productos, genere listas de picking y controle el inventario, todo en una sola app.",
+  "Sending…": "Enviando…",
+  "✅ Thank you! We have your message and will reply to {email} within 24 hours.": "✅ ¡Gracias! Recibimos su mensaje y le responderemos a {email} en menos de 24 horas.",
+  "Could not send. Email us at sales@bins-usa.com.": "No se pudo enviar. Escríbanos a sales@bins-usa.com.",
+  "Tell us a little more — at least 10 characters.": "Cuéntenos un poco más: al menos 10 caracteres.",
+  "Started: ": "Empezó: ",
+  "Already tried: ": "Ya intentó: ",
+  "Urgency: ": "Urgencia: ",
+  "✅ <strong>Got it.</strong><br/>We will reply to {email}. 🔴 Critical cases are handled first.": "✅ <strong>Recibido.</strong><br/>Le respondemos a {email}. Los casos 🔴 críticos los atendemos primero.",
+  "Example: scanning a product into bin A-03 says \"not found\", but the product does exist in Shopify.": "Ejemplo: al escanear un producto en el bin A-03 la app dice «no encontrado», pero el producto sí está en Shopify.",
+  "Today, yesterday, after the last update…": "Hoy, ayer, después de la última actualización…",
+  "Reloaded the page, reinstalled…": "Recargar la página, volver a instalar…",
+  "🎥 Talk to Katya": "🎥 Hablar con Katya",
+  "Connecting…": "Conectando…",
+  "⏹ End call": "⏹ Terminar",
+  "I couldn't reach your microphone — check the permission, or type below.": "No pude usar su micrófono — revise el permiso, o escríbame abajo.",
+  "I couldn't start the video just now. Type your question and I'll answer anyway.": "No pude iniciar el video ahora mismo. Escríbame y le respondo igual.",
+  "Katya is typing…": "Katya está escribiendo…",
+  "I couldn't answer just now. Email us at sales@bins-usa.com.": "No pude responder ahora. Escríbanos a sales@bins-usa.com.",
+  "Bins-USA assistant": "Asistente de Bins-USA",
+  "Type your question…": "Escriba su pregunta…",
+  "Chats are saved to help us answer you better.": "Guardamos las conversaciones para atenderle mejor.",
+  "Hi! 👋 I'm Katya. Ask me anything about Bins-USA — plans, features, or how to get started.": "¡Hola! 👋 Soy Katya. Pregúnteme lo que quiera sobre Bins-USA — planes, funciones o cómo empezar.",
+  "Questions about Bins-USA? I am happy to help. 👋": "¿Tiene preguntas sobre Bins-USA? Con gusto le ayudo. 👋",
+  "Language": "Idioma",
+  "A Shopify order page with the Bins-USA block, showing the line item and BIN 001": "Una página de orden de Shopify con el bloque de Bins-USA, mostrando el artículo y BIN 001"
+ }
+}
