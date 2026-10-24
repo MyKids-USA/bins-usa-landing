@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<!-- Written by build-langs.mjs from blog/posts.json and i18n/blog by generate-blog.mjs. -->
+<html lang="zh" dir="ltr">
+<head>
+  <!-- build: free-plan-v2 -->
+  <meta charset="UTF-8" />
+  <script>window.BINS_T = {"Bins-USA — Shopify Warehouse Bin Management":"Bins-USA — Shopify 仓库库位管理","Organize your Shopify warehouse with bins, scan products, generate pick lists, and track inventory — all in one app.":"用库位整理 Shopify 仓库，扫描商品，生成拣货单，跟踪库存，一个应用全搞定。","Sending…":"发送中…","✅ Thank you! We have your message and will reply to {email} within 24 hours.":"✅ 谢谢！我们已收到您的留言，会在 24 小时内回复至 {email}。","Could not send. Email us at sales@bins-usa.com.":"发送失败。请发邮件至 sales@bins-usa.com。","Tell us a little more — at least 10 characters.":"请再多写一点：至少 10 个字符。","Started: ":"开始时间：","Already tried: ":"已尝试：","Urgency: ":"紧急程度：","✅ \u003cstrong>Got it.\u003c/strong>\u003cbr/>We will reply to {email}. 🔴 Critical cases are handled first.":"✅ \u003cstrong>已收到。\u003c/strong>\u003cbr/>我们会回复至 {email}。🔴 严重问题优先处理。","Example: scanning a product into bin A-03 says \"not found\", but the product does exist in Shopify.":"例如：把商品扫进库位 A-03 时，应用显示“未找到”，但该商品在 Shopify 中确实存在。","Today, yesterday, after the last update…":"今天、昨天、上次更新后…","Reloaded the page, reinstalled…":"刷新了页面、重新安装了…","🎥 Talk to Katya":"🎥 与 Katya 通话","Connecting…":"连接中…","⏹ End call":"⏹ 结束通话","I couldn't reach your microphone — check the permission, or type below.":"无法使用您的麦克风，请检查权限，或在下方输入。","I couldn't start the video just now. Type your question and I'll answer anyway.":"暂时无法开启视频。请输入您的问题，我照样回答。","Katya is typing…":"Katya 正在输入…","I couldn't answer just now. Email us at sales@bins-usa.com.":"暂时无法回答。请发邮件至 sales@bins-usa.com。","Bins-USA assistant":"Bins-USA 助手","Type your question…":"输入您的问题…","Chats are saved to help us answer you better.":"我们会保存对话，以便更好地为您服务。","Hi! 👋 I'm Katya. Ask me anything about Bins-USA — plans, features, or how to get started.":"您好！👋 我是 Katya。关于 Bins-USA 的方案、功能或如何开始，尽管问我。","Questions about Bins-USA? I am happy to help. 👋":"对 Bins-USA 有疑问吗？很乐意为您解答。👋","Language":"语言","A Shopify order page with the Bins-USA block, showing the line item and BIN 001":"显示 Bins-USA 模块的 Shopify 订单页面，可见商品和 BIN 001"};</script>
+  <script src="/lang.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>收一托货，不必搭上整个下午 — Bins-USA</title>
+  <!-- Have I Been Pwned domain ownership: proves bins-usa.com is ours so breach
+       notifications for this domain reach us. Removing it un-verifies the domain. -->
+  <meta name="hibp-verify" content="dweb_a3cx516stk4rloobrm09oz3s" />
+  <meta name="description" content="边卸货边扫描进库位、什么时候贴标签，以及为什么一次处理一个库位最快。" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/png" href="https://cdn.shopify.com/s/files/1/0598/3312/2968/files/favicon_3502c043-d157-46db-b9b0-b9425a5402d8.png?v=1777043751" />
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Inter', sans-serif; color: #1e293b; background: #fff; }
+
+    /* NAV */
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: #fff; border-bottom: 2px solid #e2e8f0; box-shadow: 0 2px 0 0 #EAB308; padding: 0 40px; height: 64px; display: flex; align-items: center; justify-content: space-between; }
+    .nav-logo { display: flex; align-items: center; gap: 10px; font-size: 22px; font-weight: 800; color: #1e293b; }
+    .nav-logo span { color: #EAB308; }
+    .nav-links { display: flex; gap: 32px; }
+    .nav-links a { text-decoration: none; color: #64748b; font-size: 14px; font-weight: 500; transition: color 0.2s; }
+    .nav-links a:hover { color: #1e293b; }
+    .nav-cta { background: #2563eb; color: #fff; padding: 10px 20px; border-radius: 8px; font-size: 14px; font-weight: 600; text-decoration: none; transition: background 0.2s; }
+    .nav-cta:hover { background: #1d4ed8; }
+
+    /* HERO */
+    .hero { padding: 140px 40px 80px; text-align: center; background: linear-gradient(180deg, #f8fafc 0%, #fff 100%); }
+    .hero-badge { display: inline-block; background: #fef9c3; color: #854d0e; padding: 6px 16px; border-radius: 999px; font-size: 13px; font-weight: 600; margin-bottom: 24px; border: 1px solid #fde047; }
+    .hero h1 { font-size: clamp(36px, 6vw, 64px); font-weight: 800; line-height: 1.1; margin-bottom: 24px; }
+    .hero h1 span { color: #2563eb; }
+    .hero p { font-size: 20px; color: #64748b; max-width: 600px; margin: 0 auto 40px; line-height: 1.6; }
+    .hero-buttons { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+    .btn-primary { background: #2563eb; color: #fff; padding: 16px 32px; border-radius: 10px; font-size: 16px; font-weight: 700; text-decoration: none; transition: all 0.2s; display: flex; align-items: center; gap: 8px; }
+    .btn-primary:hover { background: #1d4ed8; transform: translateY(-1px); }
+    .btn-secondary { background: #fff; color: #1e293b; padding: 16px 32px; border-radius: 10px; font-size: 16px; font-weight: 600; text-decoration: none; border: 2px solid #e2e8f0; transition: all 0.2s; }
+    .btn-secondary:hover { border-color: #2563eb; color: #2563eb; }
+    .hero-stats { display: flex; gap: 48px; justify-content: center; margin-top: 64px; flex-wrap: wrap; }
+    .hero-stat { text-align: center; }
+    .hero-stat strong { display: block; font-size: 32px; font-weight: 800; color: #1e293b; }
+    .hero-stat span { font-size: 14px; color: #64748b; }
+
+    /* FEATURES */
+    .section { padding: 80px 40px; max-width: 1200px; margin: 0 auto; }
+    .section-label { text-align: center; font-size: 13px; font-weight: 600; color: #2563eb; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 12px; }
+    .section-title { text-align: center; font-size: clamp(28px, 4vw, 40px); font-weight: 800; margin-bottom: 16px; }
+    .section-subtitle { text-align: center; font-size: 18px; color: #64748b; max-width: 600px; margin: 0 auto 64px; }
+    .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; }
+    .video-wrap { position: relative; width: 100%; max-width: 900px; margin: 0 auto; aspect-ratio: 16 / 9; border-radius: 16px; overflow: hidden; box-shadow: 0 16px 48px rgba(15,23,42,0.16); border: 1px solid #e2e8f0; }
+    .video-wrap iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+    .feature-card { background: #f8fafc; border-radius: 16px; padding: 32px; border: 1px solid #e2e8f0; transition: all 0.2s; }
+    .feature-card:hover { border-color: #2563eb; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(37,99,235,0.1); }
+    .feature-icon { font-size: 36px; margin-bottom: 16px; }
+    .feature-card h3 { font-size: 18px; font-weight: 700; margin-bottom: 8px; }
+    .feature-card p { font-size: 14px; color: #64748b; line-height: 1.6; }
+    .feature-badge { display: inline-block; background: #faf5ff; color: #7c3aed; padding: 3px 10px; border-radius: 999px; font-size: 11px; font-weight: 600; margin-top: 12px; border: 1px solid #e9d5ff; }
+    .feature-badge.plus { background: #f0fdfa; color: #0f766e; border-color: #99f6e4; }
+    .feature-badge.basic { background: #eff6ff; color: #1d4ed8; border-color: #bfdbfe; }
+
+    /* HOW IT WORKS */
+    .how-section { background: #f8fafc; padding: 80px 40px; }
+    .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 32px; max-width: 1200px; margin: 0 auto; }
+    .step { text-align: center; }
+    .step-number { width: 56px; height: 56px; background: #2563eb; color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 22px; font-weight: 800; margin: 0 auto 20px; }
+    .step h3 { font-size: 18px; font-weight: 700; margin-bottom: 8px; }
+    .step p { font-size: 14px; color: #64748b; line-height: 1.6; }
+
+    /* PRICING */
+    /* Five plans on one row on a desktop. auto-fit with a 250px floor dropped WMS Cloud
+       to a second line, which read as an afterthought rather than the top of the range.
+       Fixed five columns, a wider container and tighter padding keep them level; the
+       media queries below step down to 3, then 2, then 1 as the screen narrows. */
+    .pricing-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 18px; max-width: 1600px; margin: 0 auto; align-items: stretch; }
+    .pricing-card { border-radius: 16px; padding: 28px 22px; border: 2px solid #e2e8f0; position: relative; display: flex; flex-direction: column; }
+    @media (max-width: 1560px) { .pricing-grid { grid-template-columns: repeat(3, 1fr); max-width: 1100px; } }
+    @media (max-width: 1000px) { .pricing-grid { grid-template-columns: repeat(2, 1fr); max-width: 760px; } }
+    @media (max-width: 700px)  { .pricing-grid { grid-template-columns: 1fr; max-width: 420px; } }
+    .pricing-card.popular { border-color: #2563eb; background: #eff6ff; }
+    .pricing-card.plus { border-color: #0d9488; background: #f0fdfa; }
+    .pricing-card.pro { border-color: #9333ea; background: #faf5ff; }
+    .pricing-card.enterprise { border-color: #EAB308; background: #fefce8; }
+    .pricing-badge { position: absolute; top: -14px; left: 50%; transform: translateX(-50%); background: #2563eb; color: #fff; padding: 4px 16px; border-radius: 999px; font-size: 12px; font-weight: 700; white-space: nowrap; }
+    .pricing-badge.plus { background: #0d9488; }
+    .pricing-badge.pro { background: #9333ea; }
+    .pricing-badge.enterprise { background: #EAB308; color: #1e293b; }
+    .pricing-card h3 { font-size: 20px; font-weight: 800; margin-bottom: 8px; }
+    /* Fixed heights per zone so the feature lists all start on the same line. Without
+       them WMS Cloud (no price) and Free (no annual line) shift everything up. */
+    .price { font-size: 42px; font-weight: 800; margin: 16px 0 4px; min-height: 56px; }
+    .price span { font-size: 16px; font-weight: 500; color: #64748b; }
+    .price-note { font-size: 13px; color: #64748b; margin: -2px 0 14px; min-height: 18px; }
+    .pricing-desc { font-size: 13px; color: #64748b; margin-bottom: 20px; line-height: 1.45; min-height: 56px; }
+    .pricing-features { list-style: none; margin-bottom: 24px; flex: 1; }
+    .pricing-features li { font-size: 13px; padding: 5px 0; line-height: 1.4; border-bottom: 1px solid rgba(0,0,0,0.05); display: flex; align-items: center; gap: 8px; }
+    .pricing-features li:last-child { border-bottom: none; }
+    .btn-plan { display: block; text-align: center; padding: 14px; border-radius: 10px; font-size: 15px; font-weight: 700; text-decoration: none; transition: all 0.2s; margin-top: auto; }
+    .btn-plan.basic { background: #2563eb; color: #fff; }
+    .btn-plan.basic:hover { background: #1d4ed8; }
+    .btn-plan.pro { background: #9333ea; color: #fff; }
+    .btn-plan.pro:hover { background: #7c3aed; }
+    .btn-plan.enterprise { background: #EAB308; color: #1e293b; }
+    .btn-plan.enterprise:hover { background: #ca8a04; }
+
+    /* FAQ */
+    .faq-section { background: #f8fafc; padding: 80px 40px; }
+    .faq-grid { max-width: 800px; margin: 0 auto; display: flex; flex-direction: column; gap: 16px; }
+    .faq-item { background: #fff; border-radius: 12px; padding: 24px; border: 1px solid #e2e8f0; }
+    .faq-item h4 { font-size: 16px; font-weight: 700; margin-bottom: 8px; }
+    .faq-item p { font-size: 14px; color: #64748b; line-height: 1.6; }
+
+    /* FOOTER */
+    footer { background: #1e293b; color: #fff; padding: 48px 40px; }
+    .footer-inner { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 24px; }
+    .footer-logo { font-size: 20px; font-weight: 800; }
+    .footer-logo span { color: #EAB308; }
+    .footer-links { display: flex; flex-wrap: wrap; gap: 12px 24px; }
+    .footer-links a { color: #94a3b8; font-size: 14px; text-decoration: none; transition: color 0.2s; }
+    .footer-links a:hover { color: #fff; }
+    @media (max-width: 760px) { .ob-grid { grid-template-columns: 1fr !important; } }
+    .footer-copy { color: #64748b; font-size: 13px; width: 100%; text-align: center; margin-top: 24px; border-top: 1px solid #334155; padding-top: 24px; }
+
+    @media (max-width: 768px) {
+      nav { padding: 0 20px; }
+      .nav-links { display: none; }
+      .hero { padding: 100px 20px 60px; }
+      .section { padding: 60px 20px; }
+      .how-section, .faq-section { padding: 60px 20px; }
+      footer { padding: 40px 20px; }
+    }
+
+    /* ── Accessibility (WCAG 2.2 AA) ── */
+    .skip-link { position: absolute; left: -9999px; top: 0; z-index: 100000; background: #2563eb; color: #fff; padding: 10px 16px; border-radius: 0 0 8px 0; font: 700 14px/1 'Inter', system-ui, sans-serif; text-decoration: none; }
+    .skip-link:focus { left: 0; }
+    a:focus-visible, button:focus-visible, [tabindex]:focus-visible, iframe:focus-visible { outline: 3px solid #1e3a8a; outline-offset: 2px; border-radius: 4px; }
+    .a11y-contrast { filter: contrast(1.25); }
+    .a11y-links a { text-decoration: underline !important; }
+    .a11y-reduce *, .a11y-reduce *::before, .a11y-reduce *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; scroll-behavior: auto !important; }
+    @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; } }
+    #a11y-btn { position: fixed; left: 20px; bottom: 20px; z-index: 99990; width: 52px; height: 52px; border-radius: 50%; border: none; cursor: pointer; background: #1e3a8a; color: #fff; font-size: 26px; box-shadow: 0 10px 30px rgba(15,23,42,.35); }
+    #a11y-panel { position: fixed; left: 20px; bottom: 84px; z-index: 99991; width: 288px; max-width: calc(100vw - 40px); background: #fff; border: 1px solid #e2e8f0; border-radius: 16px; box-shadow: 0 24px 60px rgba(0,0,0,.3); padding: 16px; color: #0f172a; font-size: 14px; }
+    #a11y-panel h2 { font-size: 16px; margin: 0 0 12px; }
+    .a11y-row { display: flex; justify-content: space-between; align-items: center; width: 100%; padding: 11px 13px; margin-bottom: 8px; border: 1px solid #e2e8f0; border-radius: 10px; background: #fff; cursor: pointer; font-size: 14px; font-weight: 700; color: #1e293b; }
+    .a11y-row[aria-pressed=true] { border-color: #2563eb; background: #eff6ff; }
+    .a11y-size { flex: 1; padding: 10px; border: 1px solid #e2e8f0; border-radius: 10px; background: #fff; font-size: 16px; font-weight: 800; cursor: pointer; }
+    .a11y-reset { width: 100%; margin-top: 6px; padding: 10px; border: 1px solid #cbd5e1; border-radius: 10px; background: #fff; font-weight: 700; color: #475569; cursor: pointer; }
+    .a11y-statement { max-width: 760px; margin: 0 auto; padding: 0 20px 40px; color: #64748b; font-size: 13.5px; line-height: 1.6; text-align: center; }
+    .a11y-statement h2 { color: #1e293b; font-size: 18px; margin-bottom: 8px; }
+    .a11y-statement a { color: #2563eb; }
+  </style>
+<!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-716NJK0VCG"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-716NJK0VCG');
+  </script>
+  <!-- hreflang:start -->
+  <link rel="alternate" hreflang="en" href="https://bins-usa.com/blog/receiving-a-pallet.html" />
+  <link rel="alternate" hreflang="es" href="https://bins-usa.com/es/blog/receiving-a-pallet.html" />
+  <link rel="alternate" hreflang="fr" href="https://bins-usa.com/fr/blog/receiving-a-pallet.html" />
+  <link rel="alternate" hreflang="pt-BR" href="https://bins-usa.com/pt-BR/blog/receiving-a-pallet.html" />
+  <link rel="alternate" hreflang="de" href="https://bins-usa.com/de/blog/receiving-a-pallet.html" />
+  <link rel="alternate" hreflang="it" href="https://bins-usa.com/it/blog/receiving-a-pallet.html" />
+  <link rel="alternate" hreflang="nl" href="https://bins-usa.com/nl/blog/receiving-a-pallet.html" />
+  <link rel="alternate" hreflang="ja" href="https://bins-usa.com/ja/blog/receiving-a-pallet.html" />
+  <link rel="alternate" hreflang="ko" href="https://bins-usa.com/ko/blog/receiving-a-pallet.html" />
+  <link rel="alternate" hreflang="zh" href="https://bins-usa.com/zh/blog/receiving-a-pallet.html" />
+  <link rel="alternate" hreflang="zh-Hant" href="https://bins-usa.com/zh-Hant/blog/receiving-a-pallet.html" />
+  <link rel="alternate" hreflang="hi" href="https://bins-usa.com/hi/blog/receiving-a-pallet.html" />
+  <link rel="alternate" hreflang="bn" href="https://bins-usa.com/bn/blog/receiving-a-pallet.html" />
+  <link rel="alternate" hreflang="ur" href="https://bins-usa.com/ur/blog/receiving-a-pallet.html" />
+  <link rel="alternate" hreflang="ar" href="https://bins-usa.com/ar/blog/receiving-a-pallet.html" />
+  <link rel="alternate" hreflang="he" href="https://bins-usa.com/he/blog/receiving-a-pallet.html" />
+  <link rel="alternate" hreflang="x-default" href="https://bins-usa.com/blog/receiving-a-pallet.html" />
+<!-- hreflang:end -->
+  <link rel="canonical" href="https://bins-usa.com/zh/blog/receiving-a-pallet.html" />
+</head><body>
+  <a class="skip-link" href="#maincontent">跳到正文</a>
+
+  <!-- NAV -->
+  <nav>
+    <div class="nav-logo"><img src="https://cdn.shopify.com/s/files/1/0598/3312/2968/files/logo-bins-Usa.png?v=1777043752" alt="Bins-USA" style="height:56px;object-fit:contain;" /></div>
+    <div class="nav-links">
+      <a href="/zh/">首页</a>
+      <a href="/zh/demo.html">演示</a>
+      <a href="/zh/features.html">功能</a>
+      <a href="/zh/how-it-works.html">使用方法</a>
+      <a href="/zh/pricing.html">价格</a>
+      <a href="/zh/faq.html">常见问题</a>
+      <a href="/zh/blog/">博客</a>
+    </div>
+    <div style="display:flex;align-items:center;gap:12px">
+      <select id="langPick" aria-label="语言"
+              style="padding:6px 10px;border:1px solid #e2e8f0;border-radius:8px;background:#fff;cursor:pointer;font-size:13px;font-weight:700;color:#1e293b;max-width:170px"></select>
+    </div>
+  </nav>
+
+  <main id="maincontent" tabindex="-1">
+  <article class="section" style="max-width:760px;margin:0 auto">
+    <p style="color:#64748b;font-size:13px;margin-bottom:6px">2026-09-06</p>
+    <h1 style="font-size:32px;font-weight:800;line-height:1.25;margin-bottom:20px">收一托货，不必搭上整个下午</h1>
+        <figure class="post-hero" style="margin:0 0 26px">
+          <img src="/assets/blog/warehouse-pallets.jpg" alt="装卸门旁地面上缠着膜、等待收货的托盘"
+               loading="lazy" decoding="async"
+               style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:12px;display:block" />
+          <figcaption style="color:#94a3b8;font-size:11px;margin-top:6px"><span>图片</span>: Unsplash</figcaption>
+        </figure>
+    <div style="font-size:16px;line-height:1.75">
+<p>一托货到了，司机要签字，您面前有一堆箱子，必须先在系统里变成库存，才有人能卖。人们很容易想先全部卸下来，堆在通道里，以后再清点。一个下午通常就是这样没的。</p>
+
+<h2>边卸货边登记</h2>
+<p>最快的收货流程不会把“从车上卸下来”和“录进系统”分成两步。每个箱子只碰一次：从托盘上拿下来，扫描，放进它的库位，接着下一箱。如果您先把托盘放下、打算以后再回来扫描，最后就会重新清点、猜哪个箱子是哪个，再去对一张已经沾满咖啡渍的送货单。</p>
+<p>这一点对混装托盘比对单一 SKU 托盘更重要。只有一种商品的托盘，事后用眼睛核对也容易。一托货里有一种商品一整箱、另一种半箱、第三种还有几件散装，这正是不边做边扫、只靠记忆时最容易出错的地方。</p>
+
+<h2>一次一个库位，而不是一次一种商品</h2>
+<p>人们很自然会想：“先把所有螺丝放好，再把所有螺母放好。”实际上，这意味着要在仓库里来回穿行好几趟，还要在往返之间记住一部分数量。更快的方法正好相反：选定一个库位，把这批货里属于它的东西全部放进去，确认数量，然后去下一个库位。</p>
+<p>之所以可行，是因为大多数到货托盘本来就有天然的分组：这里一箱，那里一套缠膜的。顺着这种分组去对应您的库位，而不是和它较劲。如果一个库位要放 40 件某商品，只要系统允许一次扫描登记一个数量，就不必 40 件逐一扫描。但您确实需要把库位和商品正确地扫描一次，而不是指望自己到下班时记得去对账。</p>
+
+<h2>什么时候给新库位贴标签</h2>
+<p>收货时的大多数小麻烦都不在商品本身，而在于库位还没贴标签。如果您要新设货架、新的备货位，或者把一个塞得太满的库位拆开，要在放货之前贴标签，而不是之后。一个已经放了货却没有标签的库位，是库存数逐渐走偏最常见的原因：有人“临时”放了点东西，三周后还在那里，系统却看不见。</p>
+<ul>
+<li><strong>新库位、新位置：</strong>永远先贴标签。只要三十秒，就能避免以后出现一堆来历不明的货。</li>
+<li><strong>已有库位、同一商品：</strong>不需要新标签，扫描后加到数量上即可。</li>
+<li><strong>已有库位、新商品共用空间：</strong>人们常在这里因为“已经贴过了”而省掉标签。要改名或补充标签，让它反映现在里面真正放的东西，否则一个月后打开这个库位，您会搞不清为什么里面有两个 SKU。</li>
+</ul>
+<p>如果您使用 Bins-USA，为新库位打印标签并扫描进系统，所花的时间和在胶带上手写差不多。不同的是，之后可以搜索到，而且它会直接关联到之后的拣货单和循环盘点。</p>
+
+<h2>不要让送货单成为唯一的记录</h2>
+<p>送货单告诉您托盘上应该有什么，却不告诉您这些东西最后放到了哪里。如果您唯一的收货记录是文件夹里一张签过字的送货单，那您记录了交易，却没有记录位置，下一个要找这件商品的人只能从零开始。边卸货边扫描，一个动作解决两个问题：既确认到货与送货单相符，又准确记录每个库位放了什么，不需要第二遍。</p>
+<p>短少和多到也是在这一步尽早发现的。如果少了一箱或数量不对，您会在托盘还在眼前、司机还没走时就注意到，而不是三周后有人找不到某件商品的最后一箱，而那一箱其实根本没送到。</p>
+
+<h2>您不想搭进去的那个下午</h2>
+<p>吃掉整个下午的收货，是卸货、清点、录入分成三遍完成，而且常常分在三天。只花一小时的收货，是一遍就完成：卸下一箱，扫进库位，接着下一箱。它快不是因为有什么特别的窍门，而是因为您没有把同样的活儿干两遍。</p>
+    </div>
+    <p style="margin-top:32px"><a href="/zh/blog/">← 全部文章</a></p>
+  </article>
+  <section class="section" style="text-align:center;padding-top:0">
+    <a href="https://apps.shopify.com/bins-usa?locale=zh-CN" class="btn-plan basic" style="display:inline-block;padding:14px 28px;max-width:340px">🛍️ 在 Shopify 上安装 — 免费 →</a>
+  </section>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-logo"><img src="https://cdn.shopify.com/s/files/1/0598/3312/2968/files/logo-bins-Usa.png?v=1777043752" alt="Bins-USA" style="height:44px;object-fit:contain;background:#fff;padding:8px 14px;border-radius:10px;display:block;" /></div>
+      <div class="footer-links">
+        <a href="/zh/features.html">功能</a>
+        <a href="/zh/pricing.html">价格</a>
+        <a href="/zh/faq.html">常见问题</a>
+        <a href="/zh/blog/">博客</a>
+        <a href="/accessibility.html">无障碍</a>
+        <a href="/zh/support.html">支持</a>
+        <a href="/zh/contact.html">联系我们</a>
+        <a href="/privacy.html">隐私</a>
+        <a href="/terms.html">条款</a>
+      </div>
+    </div>    <div class="footer-copy">© 2026 Bins-USA. 保留所有权利。用 ❤️ 在美国佛罗里达州基西米为 Shopify 商家打造。</div>
+  </footer>
+  <script src="/katya.js" defer></script>
+</body>
+</html>

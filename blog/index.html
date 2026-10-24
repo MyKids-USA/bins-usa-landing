@@ -3,12 +3,13 @@
 <head>
   <!-- build: free-plan-v2 -->
   <meta charset="UTF-8" />
+  <script src="/lang.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Blog — Bins-USA</title>
   <!-- Have I Been Pwned domain ownership: proves bins-usa.com is ours so breach
        notifications for this domain reach us. Removing it un-verifies the domain. -->
   <meta name="hibp-verify" content="dweb_a3cx516stk4rloobrm09oz3s" />
-  <meta name="description" content="Organize your Shopify warehouse with bins, scan products, generate pick lists, and track inventory — all in one app." />
+  <meta name="description" content="Practical ideas for organising a Shopify warehouse: bins, picking, counting and receiving." />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="icon" type="image/png" href="https://cdn.shopify.com/s/files/1/0598/3312/2968/files/favicon_3502c043-d157-46db-b9b0-b9425a5402d8.png?v=1777043751" />
   <style>
@@ -117,6 +118,7 @@
     .footer-links { display: flex; flex-wrap: wrap; gap: 12px 24px; }
     .footer-links a { color: #94a3b8; font-size: 14px; text-decoration: none; transition: color 0.2s; }
     .footer-links a:hover { color: #fff; }
+    @media (max-width: 760px) { .ob-grid { grid-template-columns: 1fr !important; } }
     .footer-copy { color: #64748b; font-size: 13px; width: 100%; text-align: center; margin-top: 24px; border-top: 1px solid #334155; padding-top: 24px; }
 
     @media (max-width: 768px) {
@@ -155,6 +157,26 @@
     gtag('js', new Date());
     gtag('config', 'G-716NJK0VCG');
   </script>
+  <!-- hreflang:start -->
+  <link rel="alternate" hreflang="en" href="https://bins-usa.com/blog/" />
+  <link rel="alternate" hreflang="es" href="https://bins-usa.com/es/blog/" />
+  <link rel="alternate" hreflang="fr" href="https://bins-usa.com/fr/blog/" />
+  <link rel="alternate" hreflang="pt-BR" href="https://bins-usa.com/pt-BR/blog/" />
+  <link rel="alternate" hreflang="de" href="https://bins-usa.com/de/blog/" />
+  <link rel="alternate" hreflang="it" href="https://bins-usa.com/it/blog/" />
+  <link rel="alternate" hreflang="nl" href="https://bins-usa.com/nl/blog/" />
+  <link rel="alternate" hreflang="ja" href="https://bins-usa.com/ja/blog/" />
+  <link rel="alternate" hreflang="ko" href="https://bins-usa.com/ko/blog/" />
+  <link rel="alternate" hreflang="zh" href="https://bins-usa.com/zh/blog/" />
+  <link rel="alternate" hreflang="zh-Hant" href="https://bins-usa.com/zh-Hant/blog/" />
+  <link rel="alternate" hreflang="hi" href="https://bins-usa.com/hi/blog/" />
+  <link rel="alternate" hreflang="bn" href="https://bins-usa.com/bn/blog/" />
+  <link rel="alternate" hreflang="ur" href="https://bins-usa.com/ur/blog/" />
+  <link rel="alternate" hreflang="ar" href="https://bins-usa.com/ar/blog/" />
+  <link rel="alternate" hreflang="he" href="https://bins-usa.com/he/blog/" />
+  <link rel="alternate" hreflang="x-default" href="https://bins-usa.com/blog/" />
+<!-- hreflang:end -->
+  <link rel="canonical" href="https://bins-usa.com/blog/" />
 </head><body>
   <a class="skip-link" href="#maincontent" data-es="Ir al contenido">Skip to content</a>
 
@@ -171,75 +193,72 @@
       <a href="/blog/" data-es="Blog">Blog</a>
     </div>
     <div style="display:flex;align-items:center;gap:12px">
-      <div id="langToggle" role="group" aria-label="Language / Idioma"
-           style="display:inline-flex;border:1px solid #e2e8f0;border-radius:8px;overflow:hidden;background:#fff">
-        <button type="button" data-lang="en" style="padding:6px 12px;border:none;cursor:pointer;font-size:13px;font-weight:700">English</button>
-        <button type="button" data-lang="es" style="padding:6px 12px;border:none;cursor:pointer;font-size:13px;font-weight:700">Español</button>
-      </div>
+      <select id="langPick" aria-label="Language"
+              style="padding:6px 10px;border:1px solid #e2e8f0;border-radius:8px;background:#fff;cursor:pointer;font-size:13px;font-weight:700;color:#1e293b;max-width:170px"></select>
     </div>
   </nav>
 
   <main id="maincontent" tabindex="-1">
   <section class="section">
     <div class="section-label" data-es="Blog">Blog</div>
-    <h2 class="section-title" data-es="Ideas para organizar su bodega">Ideas for organising your warehouse</h2>
-    <p class="section-subtitle" data-es="Cosas prácticas que sirven aunque nunca instale nada.">Practical things that are useful even if you never install anything.</p>
+    <h2 class="section-title" data-es="Ideas para organizar su bodega" data-bk="ui.title">Ideas for organising your warehouse</h2>
+    <p class="section-subtitle" data-es="Cosas prácticas que sirven aunque nunca instale nada." data-bk="ui.subtitle">Practical things that are useful even if you never install anything.</p>
     <div class="features-grid" style="max-width:1040px;margin:0 auto">
       <a class="feature-card" href="/blog/how-to-organize-a-shopify-warehouse.html" style="text-decoration:none;color:inherit;display:block">
-        <img src="/assets/blog/warehouse-racking.jpg" alt="A tidy warehouse aisle with numbered bays and labelled shelves" data-es-alt="Un pasillo de bodega ordenado, con bahías numeradas y estantes etiquetados" loading="lazy" decoding="async"
+        <img src="/assets/blog/warehouse-racking.jpg" alt="A tidy warehouse aisle with numbered bays and labelled shelves" data-es-alt="Un pasillo de bodega ordenado, con bahías numeradas y estantes etiquetados" data-bk-alt="how-to-organize-a-shopify-warehouse.alt" loading="lazy" decoding="async"
              style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:10px;border:1px solid #e2e8f0;margin-bottom:14px;display:block" />
         <p style="color:#64748b;font-size:12px;margin-bottom:6px">2026-09-06</p>
-        <h3 data-es="Cómo organizar una bodega pequeña de Shopify">How to organise a small Shopify warehouse</h3>
-        <p data-es="Alguien con un cuarto libre o una bodega alquilada, cajas en el piso y ningún sistema. Cómo nombrar los estantes, qué tan detallado ir, y cuándo los bins empiezan a pagarse solos.">Somebody with a spare room or a unit, boxes on the floor, and no system. What to name shelves, how granular to go, and when bins start paying off.</p>
+        <h3 data-es="Cómo organizar una bodega pequeña de Shopify" data-bk="how-to-organize-a-shopify-warehouse.title">How to organise a small Shopify warehouse</h3>
+        <p data-es="Alguien con un cuarto libre o una bodega alquilada, cajas en el piso y ningún sistema. Cómo nombrar los estantes, qué tan detallado ir, y cuándo los bins empiezan a pagarse solos." data-bk="how-to-organize-a-shopify-warehouse.brief">Somebody with a spare room or a unit, boxes on the floor, and no system. What to name shelves, how granular to go, and when bins start paying off.</p>
       </a>
       <a class="feature-card" href="/blog/bin-naming-conventions.html" style="text-decoration:none;color:inherit;display:block">
-        <img src="/assets/blog/wh-11.jpg" alt="Small-parts bins with printed labels" data-es-alt="Bins de partes pequeñas con etiquetas impresas" loading="lazy" decoding="async"
+        <img src="/assets/blog/wh-11.jpg" alt="Small-parts bins with printed labels" data-es-alt="Bins de partes pequeñas con etiquetas impresas" data-bk-alt="bin-naming-conventions.alt" loading="lazy" decoding="async"
              style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:10px;border:1px solid #e2e8f0;margin-bottom:14px;display:block" />
         <p style="color:#64748b;font-size:12px;margin-bottom:6px">2026-09-06</p>
-        <h3 data-es="Nombres de bins que siguen teniendo sentido con 400 bins">Bin naming that still makes sense at 400 bins</h3>
-        <p data-es="Esquemas de pasillo-rack-estante, por qué la numeración secuencial se cae, y cómo dejar espacio para crecer.">Aisle-rack-shelf schemes, why sequential numbers fall apart, and how to leave room to grow.</p>
+        <h3 data-es="Nombres de bins que siguen teniendo sentido con 400 bins" data-bk="bin-naming-conventions.title">Bin naming that still makes sense at 400 bins</h3>
+        <p data-es="Esquemas de pasillo-rack-estante, por qué la numeración secuencial se cae, y cómo dejar espacio para crecer." data-bk="bin-naming-conventions.brief">Aisle-rack-shelf schemes, why sequential numbers fall apart, and how to leave room to grow.</p>
       </a>
       <a class="feature-card" href="/blog/pick-list-mistakes.html" style="text-decoration:none;color:inherit;display:block">
-        <img src="/assets/blog/warehouse-aisle.jpg" alt="A picker on a ladder working a narrow aisle of labelled shelves" data-es-alt="Un seleccionador en una escalera en un pasillo estrecho de estantes etiquetados" loading="lazy" decoding="async"
+        <img src="/assets/blog/warehouse-aisle.jpg" alt="A picker on a ladder working a narrow aisle of labelled shelves" data-es-alt="Un seleccionador en una escalera en un pasillo estrecho de estantes etiquetados" data-bk-alt="pick-list-mistakes.alt" loading="lazy" decoding="async"
              style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:10px;border:1px solid #e2e8f0;margin-bottom:14px;display:block" />
         <p style="color:#64748b;font-size:12px;margin-bottom:6px">2026-09-06</p>
-        <h3 data-es="Cinco cosas que hacen lenta la selección">Five things that slow down picking</h3>
-        <p data-es="El orden de recorrido, un producto en varios bins, sin código de barras, el trabajo por lotes, e imprimir la lista demasiado pronto.">Walking order, one product in several bins, no barcode, batching, and printing the list too late.</p>
+        <h3 data-es="Cinco cosas que hacen lenta la selección" data-bk="pick-list-mistakes.title">Five things that slow down picking</h3>
+        <p data-es="El orden de recorrido, un producto en varios bins, sin código de barras, el trabajo por lotes, e imprimir la lista demasiado pronto." data-bk="pick-list-mistakes.brief">Walking order, one product in several bins, no barcode, batching, and printing the list too late.</p>
       </a>
       <a class="feature-card" href="/blog/cycle-counting-small-warehouse.html" style="text-decoration:none;color:inherit;display:block">
-        <img src="/assets/blog/wh-24.jpg" alt="Fully loaded pallet racking down a lit aisle" data-es-alt="Racks de pallets llenos a lo largo de un pasillo iluminado" loading="lazy" decoding="async"
+        <img src="/assets/blog/wh-24.jpg" alt="Fully loaded pallet racking down a lit aisle" data-es-alt="Racks de pallets llenos a lo largo de un pasillo iluminado" data-bk-alt="cycle-counting-small-warehouse.alt" loading="lazy" decoding="async"
              style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:10px;border:1px solid #e2e8f0;margin-bottom:14px;display:block" />
         <p style="color:#64748b;font-size:12px;margin-bottom:6px">2026-09-06</p>
-        <h3 data-es="Conteo cíclico sin cerrar un día entero">Cycle counting without closing for a day</h3>
-        <p data-es="Contar unos pocos bins por semana en vez de todo de golpe, por cuáles bins empezar, y qué hacer con las diferencias.">Counting a few bins a week instead of everything at once, which bins to start with, and what to do with the differences.</p>
+        <h3 data-es="Conteo cíclico sin cerrar un día entero" data-bk="cycle-counting-small-warehouse.title">Cycle counting without closing for a day</h3>
+        <p data-es="Contar unos pocos bins por semana en vez de todo de golpe, por cuáles bins empezar, y qué hacer con las diferencias." data-bk="cycle-counting-small-warehouse.brief">Counting a few bins a week instead of everything at once, which bins to start with, and what to do with the differences.</p>
       </a>
       <a class="feature-card" href="/blog/shopify-inventory-locations-vs-bins.html" style="text-decoration:none;color:inherit;display:block">
-        <img src="/assets/blog/warehouse-stacked.jpg" alt="High racking with bay labels on the uprights" data-es-alt="Racks altos con las etiquetas de bahía en los postes" loading="lazy" decoding="async"
+        <img src="/assets/blog/warehouse-stacked.jpg" alt="High racking with bay labels on the uprights" data-es-alt="Racks altos con las etiquetas de bahía en los postes" data-bk-alt="shopify-inventory-locations-vs-bins.alt" loading="lazy" decoding="async"
              style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:10px;border:1px solid #e2e8f0;margin-bottom:14px;display:block" />
         <p style="color:#64748b;font-size:12px;margin-bottom:6px">2026-09-06</p>
-        <h3 data-es="Las ubicaciones de Shopify no son bins">Shopify locations are not bins</h3>
-        <p data-es="Qué rastrea Shopify, qué no, y por qué la cantidad sin la posición es media respuesta.">What Shopify tracks, what it does not, and why quantity without position is only half an inventory.</p>
+        <h3 data-es="Las ubicaciones de Shopify no son bins" data-bk="shopify-inventory-locations-vs-bins.title">Shopify locations are not bins</h3>
+        <p data-es="Qué rastrea Shopify, qué no, y por qué la cantidad sin la posición es media respuesta." data-bk="shopify-inventory-locations-vs-bins.brief">What Shopify tracks, what it does not, and why quantity without position is only half an inventory.</p>
       </a>
       <a class="feature-card" href="/blog/receiving-a-pallet.html" style="text-decoration:none;color:inherit;display:block">
-        <img src="/assets/blog/warehouse-pallets.jpg" alt="Wrapped pallets on the floor by the dock door, waiting to be received" data-es-alt="Pallets envueltos en el piso junto al portón, esperando ser recibidos" loading="lazy" decoding="async"
+        <img src="/assets/blog/warehouse-pallets.jpg" alt="Wrapped pallets on the floor by the dock door, waiting to be received" data-es-alt="Pallets envueltos en el piso junto al portón, esperando ser recibidos" data-bk-alt="receiving-a-pallet.alt" loading="lazy" decoding="async"
              style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:10px;border:1px solid #e2e8f0;margin-bottom:14px;display:block" />
         <p style="color:#64748b;font-size:12px;margin-bottom:6px">2026-09-06</p>
-        <h3 data-es="Recibir un pallet sin perder la tarde">Receiving a pallet without losing an afternoon</h3>
-        <p data-es="Escanear a un bin mientras descarga, cuándo etiquetar, y por qué el camino rápido es un bin a la vez.">Scanning into a bin as you unload, when to label, and why the fast path is one bin at a time.</p>
+        <h3 data-es="Recibir un pallet sin perder la tarde" data-bk="receiving-a-pallet.title">Receiving a pallet without losing an afternoon</h3>
+        <p data-es="Escanear a un bin mientras descarga, cuándo etiquetar, y por qué el camino rápido es un bin a la vez." data-bk="receiving-a-pallet.brief">Scanning into a bin as you unload, when to label, and why the fast path is one bin at a time.</p>
       </a>
       <a class="feature-card" href="/blog/dead-stock.html" style="text-decoration:none;color:inherit;display:block">
-        <img src="/assets/blog/wh-31.jpg" alt="Stacked totes on pallets in a warehouse" data-es-alt="Contenedores apilados sobre pallets en una bodega" loading="lazy" decoding="async"
+        <img src="/assets/blog/wh-31.jpg" alt="Stacked totes on pallets in a warehouse" data-es-alt="Contenedores apilados sobre pallets en una bodega" data-bk-alt="dead-stock.alt" loading="lazy" decoding="async"
              style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:10px;border:1px solid #e2e8f0;margin-bottom:14px;display:block" />
         <p style="color:#64748b;font-size:12px;margin-bottom:6px">2026-09-06</p>
-        <h3 data-es="Encontrar la mercancía que no se está moviendo">Finding the stock that is not moving</h3>
-        <p data-es="Cómo se esconde el stock muerto en una bodega, lo que de verdad cuestan 90 días sin movimiento, y qué hacer al respecto.">How dead stock hides in a warehouse, what 90 days of no movement really costs, and what to do about it.</p>
+        <h3 data-es="Encontrar la mercancía que no se está moviendo" data-bk="dead-stock.title">Finding the stock that is not moving</h3>
+        <p data-es="Cómo se esconde el stock muerto en una bodega, lo que de verdad cuestan 90 días sin movimiento, y qué hacer al respecto." data-bk="dead-stock.brief">How dead stock hides in a warehouse, what 90 days of no movement really costs, and what to do about it.</p>
       </a>
       <a class="feature-card" href="/blog/warehouse-staff-access.html" style="text-decoration:none;color:inherit;display:block">
-        <img src="/assets/blog/wh-36.jpg" alt="A worker driving a reach truck" data-es-alt="Un trabajador manejando un montacargas de alcance" loading="lazy" decoding="async"
+        <img src="/assets/blog/wh-36.jpg" alt="A worker driving a reach truck" data-es-alt="Un trabajador manejando un montacargas de alcance" data-bk-alt="warehouse-staff-access.alt" loading="lazy" decoding="async"
              style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:10px;border:1px solid #e2e8f0;margin-bottom:14px;display:block" />
         <p style="color:#64748b;font-size:12px;margin-bottom:6px">2026-09-06</p>
-        <h3 data-es="Lo que su personal de bodega no debería ver">What your warehouse staff should not see</h3>
-        <p data-es="Costos, márgenes y pagos en una tablet compartida, y cómo darle a alguien la pantalla de selección y nada más.">Costs, margins and payouts on a shared tablet, and how to give someone the picking screen and nothing else.</p>
+        <h3 data-es="Lo que su personal de bodega no debería ver" data-bk="warehouse-staff-access.title">What your warehouse staff should not see</h3>
+        <p data-es="Costos, márgenes y pagos en una tablet compartida, y cómo darle a alguien la pantalla de selección y nada más." data-bk="warehouse-staff-access.brief">Costs, margins and payouts on a shared tablet, and how to give someone the picking screen and nothing else.</p>
       </a>
     </div>
   </section>
@@ -261,51 +280,6 @@
       </div>
     </div>    <div class="footer-copy" data-es="© 2026 Bins-USA. Todos los derechos reservados. Hecho con ❤️ desde Kissimmee, Florida - USA, para comerciantes de Shopify.">© 2026 Bins-USA. All rights reserved. Made with ❤️ from Kissimmee, Florida - USA, for Shopify merchants.</div>
   </footer>
-  <!-- Language toggle.
-       The English copy stays in the HTML and the Spanish rides along in data-es, so
-       search engines index a real page in both and there is no second file to keep in
-       sync. The first English render is stored on the element the first time we switch,
-       which means nothing has to be duplicated up front. -->
-  <script>
-  (function () {
-    var KEY = 'binsusa_lang';
-    function apply(lang) {
-      document.querySelectorAll('[data-es]').forEach(function (el) {
-        if (el.dataset.en === undefined) el.dataset.en = el.innerHTML;
-        el.innerHTML = (lang === 'es') ? el.dataset.es : el.dataset.en;
-      });
-      // Images that exist in both languages (the Spanish banners carry Spanish text).
-      document.querySelectorAll('[data-es-src]').forEach(function (el) {
-        if (el.dataset.enSrc === undefined) el.dataset.enSrc = el.getAttribute('src');
-        el.setAttribute('src', (lang === 'es') ? el.dataset.esSrc : el.dataset.enSrc);
-      });
-      document.querySelectorAll('[data-es-alt]').forEach(function (el) {
-        if (el.dataset.enAlt === undefined) el.dataset.enAlt = el.getAttribute('alt') || '';
-        el.setAttribute('alt', (lang === 'es') ? el.dataset.esAlt : el.dataset.enAlt);
-      });
-      document.documentElement.lang = (lang === 'es') ? 'es' : 'en';
-      document.querySelectorAll('#langToggle button').forEach(function (b) {
-        var on = b.dataset.lang === lang;
-        b.style.background = on ? '#2563eb' : '#fff';
-        b.style.color = on ? '#fff' : '#475569';
-        b.setAttribute('aria-pressed', on ? 'true' : 'false');
-      });
-      try { localStorage.setItem(KEY, lang); } catch (e) {}
-    }
-    var saved = null;
-    try { saved = localStorage.getItem(KEY); } catch (e) {}
-    // No saved choice: follow the browser. A visitor reading Spanish should not have to
-    // find a button to be spoken to in their language.
-    var start = saved || ((navigator.language || 'en').toLowerCase().indexOf('es') === 0 ? 'es' : 'en');
-    document.addEventListener('DOMContentLoaded', function () {
-      document.querySelectorAll('#langToggle button').forEach(function (b) {
-        b.addEventListener('click', function () { apply(b.dataset.lang); });
-      });
-      apply(start);
-    });
-  })();
-  </script>
   <script src="/katya.js" defer></script>
-
 </body>
 </html>

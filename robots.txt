@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://bins-usa.com/sitemap.xml

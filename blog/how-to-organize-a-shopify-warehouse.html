@@ -3,12 +3,13 @@
 <head>
   <!-- build: free-plan-v2 -->
   <meta charset="UTF-8" />
+  <script src="/lang.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title data-es="Cómo organizar una bodega pequeña de Shopify — Bins-USA">How to organise a small Shopify warehouse — Bins-USA</title>
+  <title>How to organise a small Shopify warehouse — Bins-USA</title>
   <!-- Have I Been Pwned domain ownership: proves bins-usa.com is ours so breach
        notifications for this domain reach us. Removing it un-verifies the domain. -->
   <meta name="hibp-verify" content="dweb_a3cx516stk4rloobrm09oz3s" />
-  <meta name="description" content="Organize your Shopify warehouse with bins, scan products, generate pick lists, and track inventory — all in one app." />
+  <meta name="description" content="Somebody with a spare room or a unit, boxes on the floor, and no system. What to name shelves, how granular to go, and when bins start paying off." />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="icon" type="image/png" href="https://cdn.shopify.com/s/files/1/0598/3312/2968/files/favicon_3502c043-d157-46db-b9b0-b9425a5402d8.png?v=1777043751" />
   <style>
@@ -117,6 +118,7 @@
     .footer-links { display: flex; flex-wrap: wrap; gap: 12px 24px; }
     .footer-links a { color: #94a3b8; font-size: 14px; text-decoration: none; transition: color 0.2s; }
     .footer-links a:hover { color: #fff; }
+    @media (max-width: 760px) { .ob-grid { grid-template-columns: 1fr !important; } }
     .footer-copy { color: #64748b; font-size: 13px; width: 100%; text-align: center; margin-top: 24px; border-top: 1px solid #334155; padding-top: 24px; }
 
     @media (max-width: 768px) {
@@ -155,6 +157,26 @@
     gtag('js', new Date());
     gtag('config', 'G-716NJK0VCG');
   </script>
+  <!-- hreflang:start -->
+  <link rel="alternate" hreflang="en" href="https://bins-usa.com/blog/how-to-organize-a-shopify-warehouse.html" />
+  <link rel="alternate" hreflang="es" href="https://bins-usa.com/es/blog/how-to-organize-a-shopify-warehouse.html" />
+  <link rel="alternate" hreflang="fr" href="https://bins-usa.com/fr/blog/how-to-organize-a-shopify-warehouse.html" />
+  <link rel="alternate" hreflang="pt-BR" href="https://bins-usa.com/pt-BR/blog/how-to-organize-a-shopify-warehouse.html" />
+  <link rel="alternate" hreflang="de" href="https://bins-usa.com/de/blog/how-to-organize-a-shopify-warehouse.html" />
+  <link rel="alternate" hreflang="it" href="https://bins-usa.com/it/blog/how-to-organize-a-shopify-warehouse.html" />
+  <link rel="alternate" hreflang="nl" href="https://bins-usa.com/nl/blog/how-to-organize-a-shopify-warehouse.html" />
+  <link rel="alternate" hreflang="ja" href="https://bins-usa.com/ja/blog/how-to-organize-a-shopify-warehouse.html" />
+  <link rel="alternate" hreflang="ko" href="https://bins-usa.com/ko/blog/how-to-organize-a-shopify-warehouse.html" />
+  <link rel="alternate" hreflang="zh" href="https://bins-usa.com/zh/blog/how-to-organize-a-shopify-warehouse.html" />
+  <link rel="alternate" hreflang="zh-Hant" href="https://bins-usa.com/zh-Hant/blog/how-to-organize-a-shopify-warehouse.html" />
+  <link rel="alternate" hreflang="hi" href="https://bins-usa.com/hi/blog/how-to-organize-a-shopify-warehouse.html" />
+  <link rel="alternate" hreflang="bn" href="https://bins-usa.com/bn/blog/how-to-organize-a-shopify-warehouse.html" />
+  <link rel="alternate" hreflang="ur" href="https://bins-usa.com/ur/blog/how-to-organize-a-shopify-warehouse.html" />
+  <link rel="alternate" hreflang="ar" href="https://bins-usa.com/ar/blog/how-to-organize-a-shopify-warehouse.html" />
+  <link rel="alternate" hreflang="he" href="https://bins-usa.com/he/blog/how-to-organize-a-shopify-warehouse.html" />
+  <link rel="alternate" hreflang="x-default" href="https://bins-usa.com/blog/how-to-organize-a-shopify-warehouse.html" />
+<!-- hreflang:end -->
+  <link rel="canonical" href="https://bins-usa.com/blog/how-to-organize-a-shopify-warehouse.html" />
 </head><body>
   <a class="skip-link" href="#maincontent" data-es="Ir al contenido">Skip to content</a>
 
@@ -171,74 +193,71 @@
       <a href="/blog/" data-es="Blog">Blog</a>
     </div>
     <div style="display:flex;align-items:center;gap:12px">
-      <div id="langToggle" role="group" aria-label="Language / Idioma"
-           style="display:inline-flex;border:1px solid #e2e8f0;border-radius:8px;overflow:hidden;background:#fff">
-        <button type="button" data-lang="en" style="padding:6px 12px;border:none;cursor:pointer;font-size:13px;font-weight:700">English</button>
-        <button type="button" data-lang="es" style="padding:6px 12px;border:none;cursor:pointer;font-size:13px;font-weight:700">Español</button>
-      </div>
+      <select id="langPick" aria-label="Language"
+              style="padding:6px 10px;border:1px solid #e2e8f0;border-radius:8px;background:#fff;cursor:pointer;font-size:13px;font-weight:700;color:#1e293b;max-width:170px"></select>
     </div>
   </nav>
 
   <main id="maincontent" tabindex="-1">
   <article class="section" style="max-width:760px;margin:0 auto">
     <p style="color:#64748b;font-size:13px;margin-bottom:6px">2026-09-06</p>
-    <h1 style="font-size:32px;font-weight:800;line-height:1.25;margin-bottom:20px" data-es="Cómo organizar una bodega pequeña de Shopify">How to organise a small Shopify warehouse</h1>
+    <h1 data-es="Cómo organizar una bodega pequeña de Shopify" data-bk="title" style="font-size:32px;font-weight:800;line-height:1.25;margin-bottom:20px">How to organise a small Shopify warehouse</h1>
         <figure class="post-hero" style="margin:0 0 26px">
-          <img src="/assets/blog/warehouse-racking.jpg" alt="A tidy warehouse aisle with numbered bays and labelled shelves" data-es-alt="Un pasillo de bodega ordenado, con bahías numeradas y estantes etiquetados"
+          <img src="/assets/blog/warehouse-racking.jpg" alt="A tidy warehouse aisle with numbered bays and labelled shelves" data-es-alt="Un pasillo de bodega ordenado, con bahías numeradas y estantes etiquetados" data-bk-alt="alt"
                loading="lazy" decoding="async"
                style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:12px;display:block" />
-          <figcaption style="color:#94a3b8;font-size:11px;margin-top:6px">Photo: Unsplash</figcaption>
+          <figcaption style="color:#94a3b8;font-size:11px;margin-top:6px"><span data-es="Foto" data-bk="ui.photo">Photo</span>: Unsplash</figcaption>
         </figure>
     <div style="font-size:16px;line-height:1.75">
-<p data-es="Casi ninguna bodega pequeña nace como bodega. Empieza como un cuarto libre, después un garaje, después una bodega alquilada, y en algún punto de ese crecimiento el «sistema» desaparece sin que nadie se dé cuenta. Usted sigue recordando dónde está todo porque usted mismo lo puso ahí. El problema empieza cuando ya no lo recuerda, o cuando otra persona tiene que encontrar algo y no puede.">Most small warehouses don't start as warehouses. They start as a spare room, then a garage, then a rented unit, and somewhere in that growth the "system" quietly disappears. You still remember where things are because you put them there yourself. The trouble starts when you can't remember anymore, or when someone else has to find something and can't.</p>
+<p data-bk="b.0" data-es="Casi ninguna bodega pequeña nace como bodega. Empieza como un cuarto libre, después un garaje, después una bodega alquilada, y en algún punto de ese crecimiento el «sistema» desaparece sin que nadie se dé cuenta. Usted sigue recordando dónde está todo porque usted mismo lo puso ahí. El problema empieza cuando ya no lo recuerda, o cuando otra persona tiene que encontrar algo y no puede.">Most small warehouses don't start as warehouses. They start as a spare room, then a garage, then a rented unit, and somewhere in that growth the "system" quietly disappears. You still remember where things are because you put them there yourself. The trouble starts when you can't remember anymore, or when someone else has to find something and can't.</p>
 
-<p data-es="Así se arma una estructura básica antes de que se vuelva urgente.">Here's how to put a basic structure in place before it becomes urgent.</p>
+<p data-bk="b.1" data-es="Así se arma una estructura básica antes de que se vuelva urgente.">Here's how to put a basic structure in place before it becomes urgent.</p>
 
-<h2 data-es="Empiece por zonas, no por bins">Start with zones, not bins</h2>
-<p data-es="Antes de etiquetar un solo estante, recorra el espacio y divídalo en zonas. Puede ser tan simple como «pared del frente», «racks del medio», «rincón de sobrante». Las zonas existen para que, cuando busque algo, esté buscando en una sección y no en todo el local. Si su bodega tiene divisiones naturales — pasillos, cuartos, un mezanine — úselas como primera capa.">Before you label a single shelf, walk the space and divide it into zones. This can be as simple as "front wall," "middle racking," "overflow corner." Zones exist so that when you're looking for something, you're searching a section, not the whole room. If your unit has any natural divisions — aisles, rooms, a mezzanine — use those as your first layer.</p>
+<h2 data-bk="b.2" data-es="Empiece por zonas, no por bins">Start with zones, not bins</h2>
+<p data-bk="b.3" data-es="Antes de etiquetar un solo estante, recorra el espacio y divídalo en zonas. Puede ser tan simple como «pared del frente», «racks del medio», «rincón de sobrante». Las zonas existen para que, cuando busque algo, esté buscando en una sección y no en todo el local. Si su bodega tiene divisiones naturales — pasillos, cuartos, un mezanine — úselas como primera capa.">Before you label a single shelf, walk the space and divide it into zones. This can be as simple as "front wall," "middle racking," "overflow corner." Zones exist so that when you're looking for something, you're searching a section, not the whole room. If your unit has any natural divisions — aisles, rooms, a mezzanine — use those as your first layer.</p>
 
-<p data-es="No le dé demasiadas vueltas a este paso. Cuatro o cinco zonas sobran para una operación pequeña. No está diseñando un aeropuerto, se está dando un punto de partida.">Don't overthink this step. Four or five zones is plenty for a small operation. You're not designing an airport, you're giving yourself a starting point.</p>
+<p data-bk="b.4" data-es="No le dé demasiadas vueltas a este paso. Cuatro o cinco zonas sobran para una operación pequeña. No está diseñando un aeropuerto, se está dando un punto de partida.">Don't overthink this step. Four or five zones is plenty for a small operation. You're not designing an airport, you're giving yourself a starting point.</p>
 
-<h2 data-es="Nombrar estantes y racks: lo aburrido es lo correcto">Naming shelves and racks: boring is correct</h2>
-<p data-es="Resista la tentación de nombrar las ubicaciones por lo que hay guardado ahí hoy — «el estante de las velas», «el rack de la ropa de invierno». La mercancía se mueve. Los nombres deben describir la ubicación, no el contenido. Un código simple funciona mejor de lo que parece:">Resist the urge to name locations after what's currently stored there — "candles shelf," "the winter stuff rack." Stock moves. Names should describe the location, not the contents. A simple code works better than it sounds like it should:</p>
-
-<ul>
-<li data-es="&lt;strong&gt;A1, A2, A3&lt;/strong&gt; para zona A, estante 1, 2, 3"><strong>A1, A2, A3</strong> for zone A, shelf 1, 2, 3</li>
-<li data-es="&lt;strong&gt;B-R2-S3&lt;/strong&gt; para zona B, rack 2, estante 3"><strong>B-R2-S3</strong> for zone B, rack 2, shelf 3</li>
-<li data-es="Códigos de fila y columna si su estantería está dispuesta en cuadrícula">Row-and-column codes if your shelving is laid out in a grid</li>
-</ul>
-
-<p data-es="El esquema exacto importa menos que la consistencia. Escoja un patrón y úselo en todas partes, incluida la estantería nueva que agregue después. Una mezcla de estilos de nombres es peor que un mal estilo de nombres, porque obliga a todos a recordar qué sistema aplica dónde.">The exact scheme matters less than consistency. Pick one pattern and use it everywhere, including on new shelving you add later. A mix of naming styles is worse than a bad naming style, because it means everyone has to remember which system applies where.</p>
-
-<h2 data-es="Qué tan detallado ir">How granular to go</h2>
-<p data-es="Aquí es donde la gente se pasa o se queda corta. Demasiado amplio («Zona A») y todavía tiene que rebuscar entre las cajas de un estante entero para hallar un SKU. Demasiado detallado («Zona A, Estante 2, Bin 4, lado izquierdo, segunda fila») y nadie lo va a mantener, usted incluido.">This is where people either overdo it or underdo it. Too broad ("Zone A") and you still have to hunt through a whole shelf's worth of boxes to find one SKU. Too granular ("Zone A, Shelf 2, Bin 4, Left Side, Second Row") and nobody will maintain it, including you.</p>
-
-<p data-es="Una regla razonable: sea lo bastante detallado como para que una ubicación tenga un producto, o una cantidad tan pequeña de productos que pueda identificar el correcto de un vistazo en unos segundos. Si un estante guarda cuarenta SKUs distintos, eso no es una ubicación, es un montón con una etiqueta encima.">A reasonable rule: go granular enough that one location holds one product, or a small enough number of products that you can eyeball the right one in a few seconds. If a shelf holds forty different SKUs, that's not a location, that's a pile with a label on it.</p>
-
-<p data-es="En bodegas pequeñas esto normalmente significa bins o cajas individuales dentro de un estante, cada una con su código, en vez de tratar el estante entero como una sola dirección. Cuesta un poco más de tiempo al principio. Le devuelve ese tiempo cada día que alguien tiene que despachar una orden.">For small warehouses, this usually means individual bins or boxes within a shelf, each with their own code, rather than treating the whole shelf as one address. It costs a bit more time upfront. It saves that time back every single day someone has to fulfil an order.</p>
-
-<h2 data-es="Cuándo dejan de servir las cajas en el piso">When boxes-on-the-floor stops working</h2>
-<p data-es="No hay nada de malo en tener cajas en el piso cuando uno es pequeño. El problema no son las cajas: es el momento en que su memoria deja de ser un índice confiable de dónde está todo. Algunas señales de que ese momento llegó:">There's no shame in boxes on the floor when you're small. The problem isn't the boxes — it's the moment your memory stops being a reliable index of where everything is. A few signs that moment has arrived:</p>
+<h2 data-bk="b.5" data-es="Nombrar estantes y racks: lo aburrido es lo correcto">Naming shelves and racks: boring is correct</h2>
+<p data-bk="b.6" data-es="Resista la tentación de nombrar las ubicaciones por lo que hay guardado ahí hoy — «el estante de las velas», «el rack de la ropa de invierno». La mercancía se mueve. Los nombres deben describir la ubicación, no el contenido. Un código simple funciona mejor de lo que parece:">Resist the urge to name locations after what's currently stored there — "candles shelf," "the winter stuff rack." Stock moves. Names should describe the location, not the contents. A simple code works better than it sounds like it should:</p>
 
 <ul>
-<li data-es="Usted o un empleado pierden tiempo real cada día buscando mercancía que debería encontrarse en segundos">You or an employee spend real time each day searching for stock that should take seconds to find</li>
-<li data-es="Los empleados nuevos no ubican productos sin que alguien los lleve personalmente">New hires can't locate products without someone walking them there personally</li>
-<li data-es="Ha despachado la variante equivocada porque dos productos parecidos estaban cerca sin nada que los distinguiera">You've shipped the wrong variant because two similar products were near each other with no distinction</li>
-<li data-es="Un conteo cíclico se convierte en medio día de trabajo porque nada tiene un lugar fijo">A cycle count turns into a half-day event because nothing has a fixed home</li>
+<li data-bk="b.7" data-es="&lt;strong&gt;A1, A2, A3&lt;/strong&gt; para zona A, estante 1, 2, 3"><strong>A1, A2, A3</strong> for zone A, shelf 1, 2, 3</li>
+<li data-bk="b.8" data-es="&lt;strong&gt;B-R2-S3&lt;/strong&gt; para zona B, rack 2, estante 3"><strong>B-R2-S3</strong> for zone B, rack 2, shelf 3</li>
+<li data-bk="b.9" data-es="Códigos de fila y columna si su estantería está dispuesta en cuadrícula">Row-and-column codes if your shelving is laid out in a grid</li>
 </ul>
 
-<p data-es="Ninguna de estas cosas es catastrófica por sí sola. Pero se acumulan. El tiempo que se va buscando es tiempo que no se dedica a empacar, y es el tipo de costo fácil de ignorar porque no aparece como una línea en ningún lado.">None of these are catastrophic on their own. But they compound. Time spent searching is time not spent packing, and it's the kind of cost that's easy to ignore because it doesn't show up as a line item anywhere.</p>
+<p data-bk="b.10" data-es="El esquema exacto importa menos que la consistencia. Escoja un patrón y úselo en todas partes, incluida la estantería nueva que agregue después. Una mezcla de estilos de nombres es peor que un mal estilo de nombres, porque obliga a todos a recordar qué sistema aplica dónde.">The exact scheme matters less than consistency. Pick one pattern and use it everywhere, including on new shelving you add later. A mix of naming styles is worse than a bad naming style, because it means everyone has to remember which system applies where.</p>
 
-<h2 data-es="Cuándo los bins empiezan a pagarse solos">Where bins start paying for themselves</h2>
-<p data-es="Una vez que tiene zonas, códigos de estante y una decisión sobre qué tan detallado ir, técnicamente ya tiene un sistema de ubicaciones — en papel, en la cabeza, o garabateado en una pizarra. Para algunas operaciones eso de verdad alcanza. Si su catálogo es pequeño y su memoria buena, no deje que nadie le diga que necesita software para manejar un cuarto libre.">Once you've got zones, shelf codes, and a decision about how granular to go, you technically have a location system already — on paper, or in your head, or scrawled on a whiteboard. That's genuinely enough for some operations. If you've got a small enough catalog and a good memory, don't let anyone tell you that you need software to run a spare room.</p>
+<h2 data-bk="b.11" data-es="Qué tan detallado ir">How granular to go</h2>
+<p data-bk="b.12" data-es="Aquí es donde la gente se pasa o se queda corta. Demasiado amplio («Zona A») y todavía tiene que rebuscar entre las cajas de un estante entero para hallar un SKU. Demasiado detallado («Zona A, Estante 2, Bin 4, lado izquierdo, segunda fila») y nadie lo va a mantener, usted incluido.">This is where people either overdo it or underdo it. Too broad ("Zone A") and you still have to hunt through a whole shelf's worth of boxes to find one SKU. Too granular ("Zone A, Shelf 2, Bin 4, Left Side, Second Row") and nobody will maintain it, including you.</p>
 
-<p data-es="El punto en que vale la pena formalizarlo suele ser cuando más de una persona necesita saber dónde están las cosas, o cuando su cantidad de SKUs creció más allá de lo que una sola persona puede tener en la cabeza, o cuando recibir mercancía nueva significa que alguien tiene que adivinar dónde va porque el sistema viejo nunca se escribió bien.">The point where it's worth formalising is usually when more than one person needs to know where things are, or when your SKU count has grown past what any one person can hold in their head, or when receiving new stock means someone has to guess where it goes because the old system was never written down properly.</p>
+<p data-bk="b.13" data-es="Una regla razonable: sea lo bastante detallado como para que una ubicación tenga un producto, o una cantidad tan pequeña de productos que pueda identificar el correcto de un vistazo en unos segundos. Si un estante guarda cuarenta SKUs distintos, eso no es una ubicación, es un montón con una etiqueta encima.">A reasonable rule: go granular enough that one location holds one product, or a small enough number of products that you can eyeball the right one in a few seconds. If a shelf holds forty different SKUs, that's not a location, that's a pile with a label on it.</p>
 
-<p data-es="Ese es el punto donde Bins-USA suele tener sentido para quien vende en Shopify: toma los códigos de estante y bin que usted ya definió y los liga a sus registros reales de productos, de modo que quien selecciona, recibe o hace un conteo pueda escanear una ubicación en vez de andar preguntando. No reemplaza una buena distribución. Es lo que evita que una buena distribución se degrade en cuanto más de una persona depende de ella.">That's the point where Bins-USA tends to make sense for Shopify sellers — it takes the shelf and bin codes you've already worked out and ties them to your actual product records, so anyone doing picking, receiving, or a cycle count can scan a location instead of asking around. It's not a replacement for a sensible layout. It's what keeps a sensible layout from decaying once more than one person is relying on it.</p>
+<p data-bk="b.14" data-es="En bodegas pequeñas esto normalmente significa bins o cajas individuales dentro de un estante, cada una con su código, en vez de tratar el estante entero como una sola dirección. Cuesta un poco más de tiempo al principio. Le devuelve ese tiempo cada día que alguien tiene que despachar una orden.">For small warehouses, this usually means individual bins or boxes within a shelf, each with their own code, rather than treating the whole shelf as one address. It costs a bit more time upfront. It saves that time back every single day someone has to fulfil an order.</p>
 
-<p data-es="Acierte primero con los nombres y el nivel de detalle. El sistema que arme en papel es el mismo que después llevará al software, así que vale la pena hacerlo bien mientras todavía le cuesta apenas una tarde.">Get the naming and granularity right first. The system you build on paper is the same one you'll eventually put into software, so it's worth getting it right while it still only costs you an afternoon.</p>
+<h2 data-bk="b.15" data-es="Cuándo dejan de servir las cajas en el piso">When boxes-on-the-floor stops working</h2>
+<p data-bk="b.16" data-es="No hay nada de malo en tener cajas en el piso cuando uno es pequeño. El problema no son las cajas: es el momento en que su memoria deja de ser un índice confiable de dónde está todo. Algunas señales de que ese momento llegó:">There's no shame in boxes on the floor when you're small. The problem isn't the boxes — it's the moment your memory stops being a reliable index of where everything is. A few signs that moment has arrived:</p>
+
+<ul>
+<li data-bk="b.17" data-es="Usted o un empleado pierden tiempo real cada día buscando mercancía que debería encontrarse en segundos">You or an employee spend real time each day searching for stock that should take seconds to find</li>
+<li data-bk="b.18" data-es="Los empleados nuevos no ubican productos sin que alguien los lleve personalmente">New hires can't locate products without someone walking them there personally</li>
+<li data-bk="b.19" data-es="Ha despachado la variante equivocada porque dos productos parecidos estaban cerca sin nada que los distinguiera">You've shipped the wrong variant because two similar products were near each other with no distinction</li>
+<li data-bk="b.20" data-es="Un conteo cíclico se convierte en medio día de trabajo porque nada tiene un lugar fijo">A cycle count turns into a half-day event because nothing has a fixed home</li>
+</ul>
+
+<p data-bk="b.21" data-es="Ninguna de estas cosas es catastrófica por sí sola. Pero se acumulan. El tiempo que se va buscando es tiempo que no se dedica a empacar, y es el tipo de costo fácil de ignorar porque no aparece como una línea en ningún lado.">None of these are catastrophic on their own. But they compound. Time spent searching is time not spent packing, and it's the kind of cost that's easy to ignore because it doesn't show up as a line item anywhere.</p>
+
+<h2 data-bk="b.22" data-es="Cuándo los bins empiezan a pagarse solos">Where bins start paying for themselves</h2>
+<p data-bk="b.23" data-es="Una vez que tiene zonas, códigos de estante y una decisión sobre qué tan detallado ir, técnicamente ya tiene un sistema de ubicaciones — en papel, en la cabeza, o garabateado en una pizarra. Para algunas operaciones eso de verdad alcanza. Si su catálogo es pequeño y su memoria buena, no deje que nadie le diga que necesita software para manejar un cuarto libre.">Once you've got zones, shelf codes, and a decision about how granular to go, you technically have a location system already — on paper, or in your head, or scrawled on a whiteboard. That's genuinely enough for some operations. If you've got a small enough catalog and a good memory, don't let anyone tell you that you need software to run a spare room.</p>
+
+<p data-bk="b.24" data-es="El punto en que vale la pena formalizarlo suele ser cuando más de una persona necesita saber dónde están las cosas, o cuando su cantidad de SKUs creció más allá de lo que una sola persona puede tener en la cabeza, o cuando recibir mercancía nueva significa que alguien tiene que adivinar dónde va porque el sistema viejo nunca se escribió bien.">The point where it's worth formalising is usually when more than one person needs to know where things are, or when your SKU count has grown past what any one person can hold in their head, or when receiving new stock means someone has to guess where it goes because the old system was never written down properly.</p>
+
+<p data-bk="b.25" data-es="Ese es el punto donde Bins-USA suele tener sentido para quien vende en Shopify: toma los códigos de estante y bin que usted ya definió y los liga a sus registros reales de productos, de modo que quien selecciona, recibe o hace un conteo pueda escanear una ubicación en vez de andar preguntando. No reemplaza una buena distribución. Es lo que evita que una buena distribución se degrade en cuanto más de una persona depende de ella.">That's the point where Bins-USA tends to make sense for Shopify sellers — it takes the shelf and bin codes you've already worked out and ties them to your actual product records, so anyone doing picking, receiving, or a cycle count can scan a location instead of asking around. It's not a replacement for a sensible layout. It's what keeps a sensible layout from decaying once more than one person is relying on it.</p>
+
+<p data-bk="b.26" data-es="Acierte primero con los nombres y el nivel de detalle. El sistema que arme en papel es el mismo que después llevará al software, así que vale la pena hacerlo bien mientras todavía le cuesta apenas una tarde.">Get the naming and granularity right first. The system you build on paper is the same one you'll eventually put into software, so it's worth getting it right while it still only costs you an afternoon.</p>
     </div>
-    <p style="margin-top:32px"><a href="/blog/" data-es="← Todos los artículos">← All posts</a></p>
+    <p style="margin-top:32px"><a href="/blog/" data-es="← Todos los artículos" data-bk="ui.allPosts">← All posts</a></p>
   </article>
   <section class="section" style="text-align:center;padding-top:0">
     <a href="https://apps.shopify.com/bins-usa" class="btn-plan basic" style="display:inline-block;padding:14px 28px;max-width:340px" data-es="🛍️ Instalar en Shopify — Es gratis →">🛍️ Install on Shopify — It's Free →</a>
@@ -261,50 +280,6 @@
       </div>
     </div>    <div class="footer-copy" data-es="© 2026 Bins-USA. Todos los derechos reservados. Hecho con ❤️ desde Kissimmee, Florida - USA, para comerciantes de Shopify.">© 2026 Bins-USA. All rights reserved. Made with ❤️ from Kissimmee, Florida - USA, for Shopify merchants.</div>
   </footer>
-  <!-- Language toggle.
-       The English copy stays in the HTML and the Spanish rides along in data-es, so
-       search engines index a real page in both and there is no second file to keep in
-       sync. The first English render is stored on the element the first time we switch,
-       which means nothing has to be duplicated up front. -->
-  <script>
-  (function () {
-    var KEY = 'binsusa_lang';
-    function apply(lang) {
-      document.querySelectorAll('[data-es]').forEach(function (el) {
-        if (el.dataset.en === undefined) el.dataset.en = el.innerHTML;
-        el.innerHTML = (lang === 'es') ? el.dataset.es : el.dataset.en;
-      });
-      // Images that exist in both languages (the Spanish banners carry Spanish text).
-      document.querySelectorAll('[data-es-src]').forEach(function (el) {
-        if (el.dataset.enSrc === undefined) el.dataset.enSrc = el.getAttribute('src');
-        el.setAttribute('src', (lang === 'es') ? el.dataset.esSrc : el.dataset.enSrc);
-      });
-      document.querySelectorAll('[data-es-alt]').forEach(function (el) {
-        if (el.dataset.enAlt === undefined) el.dataset.enAlt = el.getAttribute('alt') || '';
-        el.setAttribute('alt', (lang === 'es') ? el.dataset.esAlt : el.dataset.enAlt);
-      });
-      document.documentElement.lang = (lang === 'es') ? 'es' : 'en';
-      document.querySelectorAll('#langToggle button').forEach(function (b) {
-        var on = b.dataset.lang === lang;
-        b.style.background = on ? '#2563eb' : '#fff';
-        b.style.color = on ? '#fff' : '#475569';
-        b.setAttribute('aria-pressed', on ? 'true' : 'false');
-      });
-      try { localStorage.setItem(KEY, lang); } catch (e) {}
-    }
-    var saved = null;
-    try { saved = localStorage.getItem(KEY); } catch (e) {}
-    // No saved choice: follow the browser. A visitor reading Spanish should not have to
-    // find a button to be spoken to in their language.
-    var start = saved || ((navigator.language || 'en').toLowerCase().indexOf('es') === 0 ? 'es' : 'en');
-    document.addEventListener('DOMContentLoaded', function () {
-      document.querySelectorAll('#langToggle button').forEach(function (b) {
-        b.addEventListener('click', function () { apply(b.dataset.lang); });
-      });
-      apply(start);
-    });
-  })();
-  </script>
   <script src="/katya.js" defer></script>
 </body>
 </html>
