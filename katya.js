@@ -13,10 +13,11 @@
 
   var API = 'https://bins-usa-backend.onrender.com';
   var SDK_URL = 'https://unpkg.com/@heygen/liveavatar-web-sdk@0.0.18/dist/index.umd.js';
-  // The page's own language (one of sixteen). The typed chat answers in it; the video
-  // call is English or Spanish only, so it gets lang().
+  // The page's own language (one of sixteen). The typed chat answers in it, and the
+  // video call opens in it: LiveAvatar fixes a call's language when it starts, so the
+  // backend picks her voice, her greeting and what she listens for from this. A
+  // language the backend has not opened comes back as an English call.
   var pageLang = function () { return document.documentElement.lang || 'en'; };
-  var lang = function () { return (pageLang() === 'es') ? 'es' : 'en'; };
   var L = function (es, en) {
     var l = pageLang();
     if (l === 'es') return es;
@@ -171,6 +172,7 @@
     if (s) { try { s.stop(); } catch (e) {} }
     if (el.stage) el.stage.style.display = 'none';
     if (el.callBtn) el.callBtn.textContent = L('🎥 Hablar con Katya', '🎥 Talk to Katya');
+    if (el.input) el.input.placeholder = L('Escriba su pregunta…', 'Type your question…');
   }
 
   function initGl() {
@@ -247,7 +249,7 @@
         loadSdk(),
         fetch(API + '/api/liveavatar/session', {
           method: 'POST', headers: { 'content-type': 'application/json' },
-          body: JSON.stringify({ language: lang(), page: origin().page, ref: origin().ref })
+          body: JSON.stringify({ language: pageLang(), page: origin().page, ref: origin().ref })
         }).then(function (r) { return r.json(); })
       ]);
       var SDK = out[0], data = out[1];
@@ -258,6 +260,7 @@
         session.attach(el.video);
         el.stage.style.display = 'block';
         el.callBtn.textContent = L('⏹ Terminar', '⏹ End call');
+        el.input.placeholder = L('Hable, o escriba aquí y Katya le responde en voz alta…', 'Speak, or type here and Katya answers out loud…');
         place();
         if (!gl) gl = initGl();
         if (!gl) el.canvas.style.display = 'none';   // no WebGL: show the raw stream
@@ -271,6 +274,13 @@
         });
       });
       session.on('session.disconnected', stopLive);
+      // What is said on the call is written in the chat too: someone who misses a
+      // word can read it, and the typed chat afterwards knows what was asked.
+      // Her first line is the greeting LiveAvatar speaks from the call's context, not a
+      // reply to anyone, so it is shown but not kept as a turn.
+      var greeting = true;
+      session.on('user.transcription', function (e) { heard('user', e && e.text, true); });
+      session.on('avatar.transcription', function (e) { heard('assistant', e && e.text, !greeting); greeting = false; });
 
       await session.start();
       // The microphone is a separate switch and only works once the room is connected.
@@ -288,6 +298,13 @@
     }
   }
 
+  function heard(role, text, keep) {
+    text = String(text || '').trim();
+    if (!text) return;
+    say(role, text);
+    if (keep) msgs.push({ role: role, content: text });
+  }
+
   function say(role, text) {
     var d = document.createElement('div');
     d.style.cssText = 'margin:8px 0;display:flex;' + (role === 'user' ? 'justify-content:flex-end' : '');
@@ -295,6 +312,7 @@
     b.style.cssText = 'max-width:82%;padding:9px 12px;border-radius:12px;font-size:14px;line-height:1.5;white-space:pre-wrap;'
       + (role === 'user' ? 'background:#2563eb;color:#fff' : 'background:#f1f5f9;color:#1e293b');
     b.textContent = text;
+    b.dir = 'auto';   // a Latin name or price inside Arabic, Hebrew or Urdu stays in order
     d.appendChild(b); el.log.appendChild(d);
     el.log.scrollTop = el.log.scrollHeight;
   }
@@ -302,6 +320,17 @@
   async function send() {
     var text = el.input.value.trim();
     if (!text || busy) return;
+    // On a call she answers out loud: the typed question goes to her, and her answer
+    // comes back as a caption like a spoken one.
+    if (session) {
+      try {
+        session.message(text);
+        el.input.value = '';
+        say('user', text);
+        msgs.push({ role: 'user', content: text });
+        return;
+      } catch (e) { /* not connected yet: answer in writing below */ }
+    }
     el.input.value = ''; busy = true;
     say('user', text);
     msgs.push({ role: 'user', content: text });
@@ -383,7 +412,9 @@
 
     function texts() {
       document.getElementById('katyaSub').textContent = L('Asistente de Bins-USA', 'Bins-USA assistant');
-      el.input.placeholder = L('Escriba su pregunta…', 'Type your question…');
+      el.input.placeholder = session
+        ? L('Hable, o escriba aquí y Katya le responde en voz alta…', 'Speak, or type here and Katya answers out loud…')
+        : L('Escriba su pregunta…', 'Type your question…');
       document.getElementById('katyaNotice').textContent =
         L('Guardamos las conversaciones para atenderle mejor.', 'Chats are saved to help us answer you better.');
       if (!session) el.callBtn.textContent = L('🎥 Hablar con Katya', '🎥 Talk to Katya');
