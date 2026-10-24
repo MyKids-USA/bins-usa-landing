@@ -71,11 +71,16 @@
        to a second line, which read as an afterthought rather than the top of the range.
        Fixed five columns, a wider container and tighter padding keep them level; the
        media queries below step down to 3, then 2, then 1 as the screen narrows. */
-    .pricing-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 18px; max-width: 1600px; margin: 0 auto; align-items: stretch; }
-    .pricing-card { border-radius: 16px; padding: 28px 22px; border: 2px solid #e2e8f0; position: relative; display: flex; flex-direction: column; }
-    @media (max-width: 1560px) { .pricing-grid { grid-template-columns: repeat(3, 1fr); max-width: 1100px; } }
-    @media (max-width: 1000px) { .pricing-grid { grid-template-columns: repeat(2, 1fr); max-width: 760px; } }
-    @media (max-width: 700px)  { .pricing-grid { grid-template-columns: 1fr; max-width: 420px; } }
+    #pricing.section { max-width: 1440px; }
+    .pricing-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; max-width: 1360px; margin: 0 auto; align-items: stretch; }
+    .pricing-card { border-radius: 16px; padding: 32px 28px; border: 2px solid #e2e8f0; position: relative; display: flex; flex-direction: column; }
+    /* WMS Cloud is the fifth card: it takes a whole row, its list in two columns. */
+    .pricing-card.enterprise { grid-column: 1 / -1; }
+    .pricing-card.enterprise .pricing-features { columns: 2; column-gap: 32px; }
+    .pricing-card.enterprise .pricing-features li { break-inside: avoid; }
+    .pricing-card.enterprise .btn-plan { align-self: center; min-width: 280px; padding-left: 28px; padding-right: 28px; }
+    @media (max-width: 1279px) { .pricing-grid { grid-template-columns: repeat(2, 1fr); max-width: 900px; } }
+    @media (max-width: 700px)  { .pricing-grid { grid-template-columns: 1fr; max-width: 480px; } .pricing-card { padding: 28px 22px; } .pricing-card.enterprise .pricing-features { columns: 1; } .pricing-card.enterprise .btn-plan { min-width: 0; align-self: stretch; } }
     .pricing-card.popular { border-color: #2563eb; background: #eff6ff; }
     .pricing-card.plus { border-color: #0d9488; background: #f0fdfa; }
     .pricing-card.pro { border-color: #9333ea; background: #faf5ff; }
@@ -114,7 +119,7 @@
     .footer-inner { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 24px; }
     .footer-logo { font-size: 20px; font-weight: 800; }
     .footer-logo span { color: #EAB308; }
-    .footer-links { display: flex; gap: 24px; }
+    .footer-links { display: flex; flex-wrap: wrap; gap: 12px 24px; }
     .footer-links a { color: #94a3b8; font-size: 14px; text-decoration: none; transition: color 0.2s; }
     .footer-links a:hover { color: #fff; }
     .footer-copy { color: #64748b; font-size: 13px; width: 100%; text-align: center; margin-top: 24px; border-top: 1px solid #334155; padding-top: 24px; }
@@ -213,7 +218,7 @@
           <li data-es="✅ Productos ilimitados en los bins">✅ Unlimited products in bins</li>
           <li data-es="✅ Cree cientos de bins de una sola vez">✅ Bulk-create hundreds of bins at once</li>
           <li data-es="✅ Imprima las etiquetas de todo un rack">✅ Print a whole rack of labels at once</li>
-          <li data-es="✅ Varias ubicaciones de Shopify">✅ Multiple Shopify locations</li>
+          <li data-es="✅ Una ubicación de Shopify">✅ One Shopify location</li>
           <li data-es="✅ El bin dentro de las órdenes de Shopify">✅ Bin numbers inside Shopify orders</li>
           <li data-es="✅ Exporte cualquier reporte a Excel">✅ Export any report to Excel</li>
           <li data-es="✅ Prueba gratis de 14 días">✅ 14-day free trial</li>
@@ -224,14 +229,14 @@
         <div class="pricing-badge plus" data-es="⭐ Mejor valor">⭐ Best Value</div>
         <h3 data-es="Plus">Plus</h3>
         <div class="price">$49.99<span data-es="/mes">/mo</span></div>
-        <div class="price-note" data-es="o $499.90/año · ahorre 17%">or $499.90/year · save 17%</div>
+        <div class="price-note" data-es="o $479.90/año · ahorre 20%">or $479.90/year · save 20%</div>
         <p class="pricing-desc" data-es="Recoja más rápido, envíe sin errores y no se quede sin stock.">Pick faster, ship it right, never run out.</p>
         <ul class="pricing-features">
           <li data-es="✅ Todo lo de Basic">✅ Everything in Basic</li>
           <li data-es="✅ Picking por lotes: varias órdenes en una lista, ordenada por bin, con una caja por orden">✅ Batch picking: several orders in one list, sorted by bin, a tote per order</li>
           <li data-es="✅ Verificación del empaque por escaneo: avisa de lo equivocado, lo que falta o lo que sobra">✅ Scan-to-verify packing: flags wrong, missing or extra items</li>
           <li data-es="✅ Alertas de stock bajo por bin, por correo, con el bin de reserva para rellenar">✅ Low-stock alerts per bin by email, with the reserve bin to refill from</li>
-          <li data-es="✅ Todas sus ubicaciones: lotes y alertas por ubicación, y una vista de todas">✅ All your locations: batches and alerts per location, one overview</li>
+          <li data-es="✅ Todas sus ubicaciones de Shopify: lotes y alertas por ubicación, y una vista de todas">✅ All your Shopify locations: batches and alerts per location, one overview</li>
           <li data-es="✅ Seis informes avanzados con gráficas: rotación, ventas y márgenes, bins activos, sin movimiento, transferencias, costo y venta por bin">✅ Six advanced reports with charts: rotation, sales and margins, active bins, dead stock, transfers, cost vs retail by bin</li>
           <li data-es="✅ Prueba gratis de 14 días">✅ 14-day free trial</li>
         </ul>
@@ -241,7 +246,7 @@
         <div class="pricing-badge pro" data-es="⭐ Pro">⭐ Pro</div>
         <h3 data-es="Pro">Pro</h3>
         <div class="price">$69.99<span data-es="/mes">/mo</span></div>
-        <div class="price-note" data-es="o $599.90/año · ahorre 29%">or $599.90/year · save 29%</div>
+        <div class="price-note" data-es="o $671.90/año · ahorre 20%">or $671.90/year · save 20%</div>
         <p class="pricing-desc" data-es="Para bodegas con equipo.">For warehouses with a team.</p>
         <ul class="pricing-features">
           <li data-es="✅ Todo lo de Plus">✅ Everything in Plus</li>
