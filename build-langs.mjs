@@ -32,6 +32,7 @@ const DEMO_VIDEO = {
   nl: 'wQUB2uTPzvc',
   ur: 'L9hQ_IhoQqQ',
   zh: 'QVuq4-b0oFw',
+  'zh-Hant': 'Lv6e_9Q6K3A',
 };
 import path from 'node:path';
 
