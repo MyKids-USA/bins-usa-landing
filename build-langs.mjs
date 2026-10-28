@@ -18,6 +18,11 @@
 // i18n/blog/<lang>.json, looked up by the data-bk name each element carries, and the
 // Spanish from the data-es that generate-blog.mjs put in the English page.
 import fs from 'node:fs';
+
+// The Lite promo video per language, by YouTube id (Aharon uploads each one; 28 Oct 2026: French).
+const DEMO_VIDEO = {
+  fr: 'qpMWMeiAawo',
+};
 import path from 'node:path';
 
 const ROOT = path.dirname(new URL(import.meta.url).pathname);
@@ -128,8 +133,9 @@ function build(lang, page, dict, blog) {
     (all, a, esPh, b, enPh) => `${a}${b} placeholder="${escAttr(lang === 'es' ? unesc(esPh) : ex(unesc(enPh)))}"`);
   html = html.replace(/(<textarea[^>]*?)\sdata-es-ph="([^"]*)"([^>]*?)\splaceholder="([^"]*)"/g,
     (all, a, esPh, b, enPh) => `${a}${b} placeholder="${escAttr(lang === 'es' ? unesc(esPh) : ex(unesc(enPh)))}"`);
+  // The Lite demo video in the page's language once it is on YouTube (DEMO_VIDEO); English until then.
   html = html.replace(/(<[^>]*?)\ssrc="([^"]*)"([^>]*?)\sdata-es-src="([^"]*)"/g,
-    (all, a, enSrc, b, esSrc) => `${a} src="${lang === 'es' ? esSrc : enSrc}"${b}`);
+    (all, a, enSrc, b, esSrc) => `${a} src="${lang === 'es' ? esSrc : DEMO_VIDEO[lang] && /youtube/.test(enSrc) ? `https://www.youtube-nocookie.com/embed/${DEMO_VIDEO[lang]}?rel=0` : enSrc}"${b}`);
   if (/data-es-(alt|ph|src)=/.test(html)) throw new Error(`${lang}/${page}: an attribute was not translated`);
 
   // <html>, <title>, description, the language menu's label.
