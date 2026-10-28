@@ -25,6 +25,7 @@ const DEMO_VIDEO = {
   he: 'cMEuFyPRQG8',
   ar: '4dJO_TXoZCM',
   'pt-BR': 'LHjwwUKv9PE',
+  de: 'j9bfF53aaBY',
 };
 import path from 'node:path';
 
