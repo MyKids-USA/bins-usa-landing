@@ -23,6 +23,7 @@ import fs from 'node:fs';
 const DEMO_VIDEO = {
   fr: 'qpMWMeiAawo',
   he: 'cMEuFyPRQG8',
+  ar: '4dJO_TXoZCM',
 };
 import path from 'node:path';
 
