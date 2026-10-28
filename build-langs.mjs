@@ -22,6 +22,7 @@ import fs from 'node:fs';
 // The Lite promo video per language, by YouTube id (Aharon uploads each one; 28 Oct 2026: French).
 const DEMO_VIDEO = {
   fr: 'qpMWMeiAawo',
+  he: 'cMEuFyPRQG8',
 };
 import path from 'node:path';
 
