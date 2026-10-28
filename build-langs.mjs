@@ -34,6 +34,7 @@ const DEMO_VIDEO = {
   zh: 'QVuq4-b0oFw',
   'zh-Hant': 'Lv6e_9Q6K3A',
   hi: 'Jan7ggU2feM',
+  bn: 'eTI26YL1kHA',
 };
 import path from 'node:path';
 
